@@ -26,6 +26,10 @@ namespace DocumentationLogicielle.App.ViewModels
             LogInCommand = new CommandHandler(NavigateToLogInPage, () => true);
         }
 
+        /// <summary>
+        /// Sortir de l'application
+        /// </summary>
+        /// <param name="parameter"></param>
         private void Exit(object parameter)
         {
             Application.Current.Shutdown();

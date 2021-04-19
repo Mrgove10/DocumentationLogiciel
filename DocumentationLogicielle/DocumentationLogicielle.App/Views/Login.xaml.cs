@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using DocumentationLogicielle.App.ViewModels;
 
 namespace DocumentationLogicielle.App.Views
 {
@@ -9,6 +10,7 @@ namespace DocumentationLogicielle.App.Views
     {
         public Login()
         {
+            DataContext = new LoginViewModel(this);
             InitializeComponent();
         }
         

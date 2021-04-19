@@ -26,11 +26,11 @@
     /// Ceci est une fonction d'incrémentation
     /// </summary>
     /// <returns></returns>
-    private async Task IncrementCount()
+    private void IncrementCount()
     {
         // j'incrémente
         currentCount++;
-        await Context.database.InsertAsync(new User {Login = "Lou", Password = "Lou"});
+        Context.database.InsertAsync(new User {Login = "Lou", Password = "Lou"});
         StateHasChanged();
     }
 }

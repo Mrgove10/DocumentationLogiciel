@@ -9,7 +9,7 @@ jobs:
 
       - name: Generate Documentation 📝
         run: |
-          sudo apt install doxygen
+          sudo apt install doxygen --install-recommends
           doxygen doxygen.conf 
 
       - name: Deploy 🚀

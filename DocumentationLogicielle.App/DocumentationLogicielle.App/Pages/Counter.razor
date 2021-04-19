@@ -1,4 +1,6 @@
 ﻿@page "/counter"
+@using DocumentationLogicielle.Models
+@inject ProjectDatabase Context
 
 <h1>Counter</h1>
 
@@ -6,11 +8,29 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+@foreach (var user in users)
+{
+    <p>Login : @user.Login / Password : @user.Password</p>
+}
+
 @code {
     private int currentCount = 0;
+    private List<User> users = new List<User>();
 
-    private void IncrementCount()
+    protected override async Task OnInitializedAsync()
     {
+        users = await Context.database.Table<User>().ToListAsync();
+    }
+
+    /// <summary>
+    /// Ceci est une fonction d'incrémentation
+    /// </summary>
+    /// <returns></returns>
+    private async Task IncrementCount()
+    {
+        // j'incrémente
         currentCount++;
+        await Context.database.InsertAsync(new User {Login = "Lou", Password = "Lou"});
+        StateHasChanged();
     }
 }

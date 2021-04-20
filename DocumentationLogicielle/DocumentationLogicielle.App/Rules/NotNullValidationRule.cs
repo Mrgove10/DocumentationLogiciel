@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 using System.Windows.Controls;
 
 namespace DocumentationLogicielle.App.Rules
 {
+    /// <summary>
+    /// Validation rule to check empty value
+    /// </summary>
     public class NotNullValidationRule : ValidationRule
     {
         public override ValidationResult Validate(object value, CultureInfo cultureInfo)

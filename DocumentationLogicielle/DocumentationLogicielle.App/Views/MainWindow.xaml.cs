@@ -17,6 +17,11 @@ namespace DocumentationLogicielle.App.Views
             DataContext = new MainWindowViewModel(this, userServices);
         }
 
+        /// <summary>
+        /// Each time the user write a letter, call this function and set field in DataContext (see <see cref="MainWindowViewModel"/>)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             if (this.DataContext != null)

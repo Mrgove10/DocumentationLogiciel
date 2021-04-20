@@ -9,8 +9,5 @@ var dir_28e34c3c128435da97fb545b550a9b80 =
     [ "AssemblyInfo.cs", "_assembly_info_8cs.html", null ],
     [ "CommandHandler.cs", "_command_handler_8cs.html", [
       [ "CommandHandler", "class_documentation_logicielle_1_1_app_1_1_command_handler.html", "class_documentation_logicielle_1_1_app_1_1_command_handler" ]
-    ] ],
-    [ "MainWindow.xaml.cs", "_main_window_8xaml_8cs.html", [
-      [ "MainWindow", "class_documentation_logicielle_1_1_app_1_1_main_window.html", "class_documentation_logicielle_1_1_app_1_1_main_window" ]
     ] ]
 ];

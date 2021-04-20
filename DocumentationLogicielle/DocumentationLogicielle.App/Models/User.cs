@@ -5,7 +5,7 @@ namespace DocumentationLogicielle.App.Models
     public class User
     {
         /// <summary>
-        /// Id de l'utilisateur
+        /// Id of the user
         /// </summary>
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -17,9 +17,15 @@ namespace DocumentationLogicielle.App.Models
         public string Login { get; set; }
 
         /// <summary>
-        /// Password de l'utilisateur
+        /// Password of the user
         /// </summary>
         [NotNull]
         public string Password { get; set; }
+
+        /// <summary>
+        /// Role of the user
+        /// </summary>
+        [NotNull] 
+        public string Role { get; set; } = ERole.User.ToString();
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.IO;
-using SQLite;
+﻿using SQLite;
 
 namespace DocumentationLogicielle.App.Models
 {
@@ -10,9 +8,10 @@ namespace DocumentationLogicielle.App.Models
 
         public ProjectDatabase()
         {
-            database = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DocumentationLogicielle.db3"));
+            database = new SQLiteAsyncConnection(@"E:\Cours\I1\Documentation Logicielle\Projet groupe\DocumentationLogicielle.db3");
             database.CreateTableAsync<User>().Wait();
-            //database.InsertAsync(new User {Login = "lou", Password = "lou"});
+            //database.InsertAsync(new User { Login = "user", Password = "user", Role = ERole.User.ToString() });
+            //database.InsertAsync(new User { Login = "admin", Password = "admin", Role = ERole.Administrator.ToString() });
         }
     }
 }

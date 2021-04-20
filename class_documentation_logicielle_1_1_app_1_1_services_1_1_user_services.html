@@ -94,8 +94,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a350af9598b971922b3219c75dc392690"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html#a350af9598b971922b3219c75dc392690">UserServices</a> (<a class="el" href="class_documentation_logicielle_1_1_app_1_1_models_1_1_project_database.html">ProjectDatabase</a> context)</td></tr>
 <tr class="separator:a350af9598b971922b3219c75dc392690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e3110abfc52db2d7003246d70c31955"><td class="memItemLeft" align="right" valign="top">async Task&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html#a0e3110abfc52db2d7003246d70c31955">IsUserExists</a> (string login, string password)</td></tr>
+<tr class="memdesc:a0e3110abfc52db2d7003246d70c31955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a user exists in the database  <a href="class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html#a0e3110abfc52db2d7003246d70c31955">More...</a><br /></td></tr>
 <tr class="separator:a0e3110abfc52db2d7003246d70c31955"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0bc15f0df05d8f6fc56f45a9a8911a5"><td class="memItemLeft" align="right" valign="top">async Task&lt; <a class="el" href="class_documentation_logicielle_1_1_app_1_1_models_1_1_user.html">User</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html#ab0bc15f0df05d8f6fc56f45a9a8911a5">GetUser</a> (string login, string password)</td></tr>
+<tr class="memdesc:ab0bc15f0df05d8f6fc56f45a9a8911a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a user see User  <a href="class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html#ab0bc15f0df05d8f6fc56f45a9a8911a5">More...</a><br /></td></tr>
 <tr class="separator:ab0bc15f0df05d8f6fc56f45a9a8911a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -144,6 +146,16 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get a user see User </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Login of the user</td></tr>
+    <tr><td class="paramname">password</td><td>Password of the user</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>If the user exists : <b>all his information</b> OR If the user does not exist : <b>Null</b></dd></dl>
+
 </div>
 </div>
 <a id="a0e3110abfc52db2d7003246d70c31955"></a>
@@ -171,6 +183,18 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check if a user exists in the database </p>
+<p>This function is mainly used for the login page</p>
+<p>see User</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Login of the user</td></tr>
+    <tr><td class="paramname">password</td><td>Password of the user</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Boolean : <b>True</b>, the user exists or <b>False</b>, the user does not exist</dd></dl>
 
 </div>
 </div>

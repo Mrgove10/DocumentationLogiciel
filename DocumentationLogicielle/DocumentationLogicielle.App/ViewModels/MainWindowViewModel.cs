@@ -44,7 +44,7 @@ namespace DocumentationLogicielle.App.ViewModels
 
         private void NavigateToLogInPage(object parameter)
         {
-            Login page = new Login();
+            LoginWindow page = new LoginWindow();
             page.Show();
             CurrentPage.Close();
         }

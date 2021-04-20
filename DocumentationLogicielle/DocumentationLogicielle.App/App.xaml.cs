@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using DocumentationLogicielle.App.Models;
 using DocumentationLogicielle.App.Views;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,12 +28,13 @@ namespace DocumentationLogicielle.App
         private void ConfigureServices(IServiceCollection services)
         {
             //services.AddDbContext<AgileTeamsContext>(options => options.UseSqlServer("Server=Poulpe;Database=AgileTeams;Trusted_Connection=True;"));
-
+            services.AddSingleton<ProjectDatabase>();
+            
             //services.AddSingleton<UsersServices>();
             //services.AddSingleton<TeamsServices>();
 
             services.AddSingleton<MainWindow>();
-            services.AddSingleton<Login>();
+            services.AddSingleton<LoginWindow>();
             //services.AddSingleton<SignOnWindow>();
             //services.AddSingleton<ListingActionsWindow>();
             //services.AddSingleton<ProfileWindow>();

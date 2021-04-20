@@ -11,6 +11,7 @@ namespace DocumentationLogicielle.App.Models
         public ProjectDatabase()
         {
             database = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DocumentationLogicielle.db3"));
+            database.CreateTableAsync<User>().Wait();
         }
     }
 }

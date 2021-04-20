@@ -1,4 +1,4 @@
-﻿<Window x:Class="DocumentationLogicielle.App.Views.Login"
+﻿<Window x:Class="DocumentationLogicielle.App.Views.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800"
+        Title="LoginWindow" Height="450" Width="800"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>

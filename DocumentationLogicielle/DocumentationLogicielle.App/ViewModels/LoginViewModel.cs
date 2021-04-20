@@ -15,9 +15,9 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-        public Login CurrentPage { get; set; }
+        public LoginWindow CurrentPage { get; set; }
 
-        public LoginViewModel(Login currentPage)
+        public LoginViewModel(LoginWindow currentPage)
         {
             CurrentPage = currentPage;
 

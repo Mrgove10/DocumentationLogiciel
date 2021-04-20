@@ -4,7 +4,7 @@ using System.Windows.Navigation;
 using DocumentationLogicielle.App.ViewModels;
 using DocumentationLogicielle.App.Views;
 
-namespace DocumentationLogicielle.App
+namespace DocumentationLogicielle.App.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

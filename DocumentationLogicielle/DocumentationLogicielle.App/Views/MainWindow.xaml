@@ -5,29 +5,97 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DocumentationLogicielle.App"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:rules="clr-namespace:DocumentationLogicielle.App.Rules"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal" 
-        TextOptions.TextRenderingMode="Auto"        
-        Background="{DynamicResource MaterialDesignPaper}"
+        TextOptions.TextRenderingMode="Auto"       
+        Background="{DynamicResource MaterialDesignPaper}" 
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStyle="None"
-        WindowStartupLocation="CenterScreen" WindowState="Maximized"
->
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <materialDesign:Card Padding="32" Margin="16">
-                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center">FormaBois - Stock</TextBlock>
+                <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center" Foreground="White">FormaBois</TextBlock>
             </materialDesign:Card>
         </StackPanel>
         <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" 
+                           Text="Email"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                <TextBox Grid.Row="1"
+                         FontSize="18"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center">
+                    <Binding Path="LoginInput" UpdateSourceTrigger="PropertyChanged">
+                        <Binding.ValidationRules>
+                            <rules:NotNullValidationRule ValidationStep="RawProposedValue" />
+                        </Binding.ValidationRules>
+                    </Binding>
+                </TextBox>
+                
+            </Grid>
+
+            <Grid Grid.Column="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" 
+                           Text="Password"
+                           FontSize="20"
+                           Foreground="White"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                <PasswordBox Grid.Row="1"
+                             FontSize="18"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             PasswordChanged="PasswordBox_PasswordChanged">
+                </PasswordBox>
+
+                <TextBlock Grid.Row="2"
+                           Margin="0 3 0 0"
+                           Foreground="Red"
+                           FontSize="11"
+                           Text="{Binding PasswordValidation}"/>
+            </Grid>
+
+        </Grid>
+        <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
@@ -37,8 +105,21 @@
                 <ColumnDefinition Width="1*"/>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
+            
+            <TextBlock Grid.Row="0"
+                       Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Bottom"
+                       Foreground="Red"
+                       FontSize="15"
+                       FontWeight="ExtraBold"
+                       Text="{Binding ButtonValidation}"/>
+
             <Button Grid.Row="1" Grid.Column="1" Command="{Binding LogInCommand}" Content="Login" />
+            <Button Grid.Row="1" Grid.Column="3" Command="{Binding ExitCommand}" Content="Exit" Background="Red"/>
         </Grid>
     </Grid>
 </Window>

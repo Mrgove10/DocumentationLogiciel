@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using DocumentationLogicielle.App.Models;
+using DocumentationLogicielle.App.Services;
 using DocumentationLogicielle.App.Views;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -27,20 +22,10 @@ namespace DocumentationLogicielle.App
 
         private void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<AgileTeamsContext>(options => options.UseSqlServer("Server=Poulpe;Database=AgileTeams;Trusted_Connection=True;"));
             services.AddSingleton<ProjectDatabase>();
-            
-            //services.AddSingleton<UsersServices>();
-            //services.AddSingleton<TeamsServices>();
-
+            services.AddSingleton<UserServices>();
             services.AddSingleton<MainWindow>();
-            services.AddSingleton<LoginWindow>();
-            //services.AddSingleton<SignOnWindow>();
-            //services.AddSingleton<ListingActionsWindow>();
-            //services.AddSingleton<ProfileWindow>();
-            //services.AddSingleton<CreateTeamWindow>();
-            //services.AddSingleton<JoinTeamWindow>();
-            //services.AddSingleton<MyTeamsWindow>();
+            services.AddSingleton<BoardWindow>();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)

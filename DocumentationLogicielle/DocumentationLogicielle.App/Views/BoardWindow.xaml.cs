@@ -4,16 +4,14 @@ using DocumentationLogicielle.App.ViewModels;
 namespace DocumentationLogicielle.App.Views
 {
     /// <summary>
-    /// Interaction logic for LoginWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class BoardWindow : Window
     {
-        public LoginWindow()
+        public BoardWindow()
         {
-            DataContext = new LoginViewModel(this);
             InitializeComponent();
+            DataContext = new BoardViewModel(this);
         }
-        
-        
     }
 }

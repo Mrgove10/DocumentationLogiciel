@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <None Remove="Images\background-black.jpg" />
+    <None Remove="Images\logo.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,7 +18,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Views\LoginWindow.xaml">
+    <Resource Include="Images\background-black.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\BoardWindow.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>

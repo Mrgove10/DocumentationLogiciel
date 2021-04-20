@@ -12,6 +12,7 @@ namespace DocumentationLogicielle.App.Models
         {
             database = new SQLiteAsyncConnection(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DocumentationLogicielle.db3"));
             database.CreateTableAsync<User>().Wait();
+            //database.InsertAsync(new User {Login = "lou", Password = "lou"});
         }
     }
 }

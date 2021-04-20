@@ -1,8 +1,8 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Navigation;
+using DocumentationLogicielle.App.Services;
 using DocumentationLogicielle.App.ViewModels;
-using DocumentationLogicielle.App.Views;
 
 namespace DocumentationLogicielle.App.Views
 {
@@ -11,12 +11,16 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public NavigationService Navigation;
-
-        public MainWindow()
+        public MainWindow(UserServices userServices)
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel(this);
+            DataContext = new MainWindowViewModel(this, userServices);
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            if (this.DataContext != null)
+            { ((dynamic)this.DataContext).PasswordInput = ((PasswordBox)sender).Password; }
         }
     }
 }

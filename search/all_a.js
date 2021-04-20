@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['user_32',['User',['../class_documentation_logicielle_1_1_app_1_1_models_1_1_user.html',1,'DocumentationLogicielle::App::Models']]],
-  ['user_2ecs_33',['User.cs',['../_user_8cs.html',1,'']]]
+  ['onpropertychange_44',['OnPropertyChange',['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6673717ffb3840858453c92d44f457e7',1,'DocumentationLogicielle::App::ViewModels::MainWindowViewModel']]]
 ];

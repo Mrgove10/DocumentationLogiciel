@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['app_8',['App',['../namespace_documentation_logicielle_1_1_app.html',1,'DocumentationLogicielle']]],
-  ['database_9',['database',['../class_documentation_logicielle_1_1_app_1_1_models_1_1_project_database.html#a0051d047d72c9df31fc6ad75907a7c4d',1,'DocumentationLogicielle::App::Models::ProjectDatabase']]],
-  ['documentationlogicielle_10',['DocumentationLogicielle',['../namespace_documentation_logicielle.html',1,'']]],
-  ['models_11',['Models',['../namespace_documentation_logicielle_1_1_app_1_1_models.html',1,'DocumentationLogicielle::App']]],
-  ['viewmodels_12',['ViewModels',['../namespace_documentation_logicielle_1_1_app_1_1_view_models.html',1,'DocumentationLogicielle::App']]],
-  ['views_13',['Views',['../namespace_documentation_logicielle_1_1_app_1_1_views.html',1,'DocumentationLogicielle::App']]]
+  ['canexecute_11',['CanExecute',['../class_documentation_logicielle_1_1_app_1_1_async_command.html#a110a4a369e4b2b600f40ad1e09bda4bf',1,'DocumentationLogicielle.App.AsyncCommand.CanExecute()'],['../class_documentation_logicielle_1_1_app_1_1_command_handler.html#ac744eb58f8f054c232304347cbc0b651',1,'DocumentationLogicielle.App.CommandHandler.CanExecute()']]],
+  ['canexecutechanged_12',['CanExecuteChanged',['../class_documentation_logicielle_1_1_app_1_1_async_command.html#a66ede59ed987052f8c6c3b522cb85185',1,'DocumentationLogicielle.App.AsyncCommand.CanExecuteChanged()'],['../class_documentation_logicielle_1_1_app_1_1_command_handler.html#a8a602ecfddba6031657dbdf65ea7aa81',1,'DocumentationLogicielle.App.CommandHandler.CanExecuteChanged()']]],
+  ['commandhandler_13',['CommandHandler',['../class_documentation_logicielle_1_1_app_1_1_command_handler.html',1,'DocumentationLogicielle.App.CommandHandler'],['../class_documentation_logicielle_1_1_app_1_1_command_handler.html#a7fcd7e3f4070f998d5ce35812f219f13',1,'DocumentationLogicielle.App.CommandHandler.CommandHandler(Action&lt; object &gt; action, Func&lt; bool &gt; canExecute)'],['../class_documentation_logicielle_1_1_app_1_1_command_handler.html#a74ef9e8396c80d21c2eb8786e869e7a0',1,'DocumentationLogicielle.App.CommandHandler.CommandHandler(Action&lt; object &gt; action)']]],
+  ['commandhandler_2ecs_14',['CommandHandler.cs',['../_command_handler_8cs.html',1,'']]],
+  ['currentpage_15',['CurrentPage',['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#abb98ca037d8eb36426908582a7f4d115',1,'DocumentationLogicielle.App.ViewModels.BoardViewModel.CurrentPage()'],['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#af04a46cf13b74b856bb18c739d25c021',1,'DocumentationLogicielle.App.ViewModels.MainWindowViewModel.CurrentPage()']]]
 ];

@@ -3,15 +3,24 @@ var hierarchy =
     [ "Application", null, [
       [ "DocumentationLogicielle.App.App", "class_documentation_logicielle_1_1_app_1_1_app.html", null ]
     ] ],
+    [ "DocumentationLogicielle.App.ViewModels.BoardViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html", null ],
     [ "ICommand", null, [
-      [ "DocumentationLogicielle.App.CommandHandler", "class_documentation_logicielle_1_1_app_1_1_command_handler.html", null ]
+      [ "DocumentationLogicielle.App.CommandHandler", "class_documentation_logicielle_1_1_app_1_1_command_handler.html", null ],
+      [ "DocumentationLogicielle.App.IAsyncCommand", "interface_documentation_logicielle_1_1_app_1_1_i_async_command.html", [
+        [ "DocumentationLogicielle.App.AsyncCommand", "class_documentation_logicielle_1_1_app_1_1_async_command.html", null ]
+      ] ]
     ] ],
-    [ "DocumentationLogicielle.App.ViewModels.LoginViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_login_view_model.html", null ],
-    [ "DocumentationLogicielle.App.ViewModels.MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html", null ],
+    [ "INotifyPropertyChanged", null, [
+      [ "DocumentationLogicielle.App.ViewModels.MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html", null ]
+    ] ],
     [ "DocumentationLogicielle.App.Models.ProjectDatabase", "class_documentation_logicielle_1_1_app_1_1_models_1_1_project_database.html", null ],
     [ "DocumentationLogicielle.App.Models.User", "class_documentation_logicielle_1_1_app_1_1_models_1_1_user.html", null ],
+    [ "DocumentationLogicielle.App.Services.UserServices", "class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html", null ],
+    [ "ValidationRule", null, [
+      [ "DocumentationLogicielle.App.Rules.NotNullValidationRule", "class_documentation_logicielle_1_1_app_1_1_rules_1_1_not_null_validation_rule.html", null ]
+    ] ],
     [ "Window", null, [
-      [ "DocumentationLogicielle.App.Views.LoginWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_login_window.html", null ],
+      [ "DocumentationLogicielle.App.Views.BoardWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_board_window.html", null ],
       [ "DocumentationLogicielle.App.Views.MainWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_main_window.html", null ]
     ] ]
 ];

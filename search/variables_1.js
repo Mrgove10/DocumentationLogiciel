@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['navigation_66',['Navigation',['../class_documentation_logicielle_1_1_app_1_1_views_1_1_main_window.html#a7d5fcaed61babf49c3b4b98a05b4b49b',1,'DocumentationLogicielle::App::Views::MainWindow']]]
+  ['database_105',['database',['../class_documentation_logicielle_1_1_app_1_1_models_1_1_project_database.html#a0051d047d72c9df31fc6ad75907a7c4d',1,'DocumentationLogicielle::App::Models::ProjectDatabase']]]
 ];

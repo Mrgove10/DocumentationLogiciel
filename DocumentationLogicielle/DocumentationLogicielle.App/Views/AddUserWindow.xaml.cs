@@ -11,10 +11,10 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class AddUserWindow : Window
     {
-        public AddUserWindow(UserServices userServices)
+        public AddUserWindow(UserServices userServices, AlertServices alertServices)
         {
             InitializeComponent();
-            DataContext = new AddUserViewModel(this, userServices);
+            DataContext = new AddUserViewModel(this, userServices, alertServices);
         }
 
         /// <summary>

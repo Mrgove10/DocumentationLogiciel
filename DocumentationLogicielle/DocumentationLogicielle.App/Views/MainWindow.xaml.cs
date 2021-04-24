@@ -10,10 +10,10 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(UserServices userServices)
+        public MainWindow(UserServices userServices, AlertServices alertServices)
         {
             InitializeComponent();
-            DataContext = new MainWindowViewModel(this, userServices);
+            DataContext = new MainWindowViewModel(this, userServices, alertServices);
         }
 
         /// <summary>

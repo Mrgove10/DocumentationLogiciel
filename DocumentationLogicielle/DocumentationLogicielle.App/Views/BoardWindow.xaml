@@ -46,8 +46,8 @@
                 </Grid.ColumnDefinitions>
 
 
-                <materialDesign:Badged Grid.Row="1" Grid.Column="1" Badge="3">
-                    <Button Content="Alerts"/>
+                <materialDesign:Badged Grid.Row="1" Grid.Column="1" Badge="{Binding BadgeAlert}">
+                    <Button Content="Alerts" Command="{Binding GoToAlertsCommand}"/>
                 </materialDesign:Badged>
             </Grid>
 

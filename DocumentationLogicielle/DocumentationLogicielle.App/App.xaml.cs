@@ -24,8 +24,10 @@ namespace DocumentationLogicielle.App
         {
             services.AddSingleton<ProjectDatabase>();
             services.AddSingleton<UserServices>();
+            services.AddSingleton<AlertServices>();
             services.AddSingleton<MainWindow>();
             services.AddSingleton<BoardWindow>();
+            services.AddSingleton<AddUserWindow>();
         }
 
         private void OnStartup(object sender, StartupEventArgs e)

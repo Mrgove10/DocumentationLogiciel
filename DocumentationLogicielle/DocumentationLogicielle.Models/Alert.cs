@@ -2,10 +2,10 @@
 
 namespace DocumentationLogicielle.Models
 {
-    public class User
+    public class Alert
     {
         /// <summary>
-        /// Id of the user
+        /// Id of the alert
         /// This is the primary key of the table
         /// It's auto increment : 0,1,2,3 ...etc
         /// </summary>
@@ -13,25 +13,25 @@ namespace DocumentationLogicielle.Models
         public int Id { get; set; }
 
         /// <summary>
-        /// Username of the user
-        /// Primary key of the table
+        /// Title of the alert
         /// Can't be null
         /// </summary>
         [NotNull]
-        public string Login { get; set; }
+        public string Title { get; set; }
 
         /// <summary>
-        /// Password of the user
+        /// Message of the alert
         /// Can't be null
         /// </summary>
         [NotNull]
-        public string Password { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
-        /// Role of the user
+        /// Boolean indicates if the alert is dismiss
         /// Can't be null
+        /// Default is False
         /// </summary>
-        [NotNull] 
-        public string Role { get; set; }
+        [NotNull]
+        public bool IsDismiss { get; set; } = false;
     }
 }

@@ -14,7 +14,7 @@ namespace DocumentationLogicielle.App.ViewModels
     public class AddUserViewModel : INotifyPropertyChanged
     {
         private User user;
-        public ICommand GoBackCommand { get; }
+        public IAsyncCommand GoBackCommand { get; }
         public ICommand AddUserCommand { get; }
 
 
@@ -106,11 +106,13 @@ namespace DocumentationLogicielle.App.ViewModels
 
         public AddUserWindow CurrentPage { get; set; }
         public UserServices UserServices { get; set; }
+        public AlertServices AlertServices { get; set; }
 
-        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices)
+        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             UserServices = userServices;
+            AlertServices = alertServices;
 
             user = new User
             {
@@ -120,7 +122,7 @@ namespace DocumentationLogicielle.App.ViewModels
             };
 
             CurrentPage = currentPage;
-            GoBackCommand = new CommandHandler(GoBack, () => true);
+            GoBackCommand = new AsyncCommand(GoBack, () => true);
             AddUserCommand = new CommandHandler(Create, CanCreate);
         }
 
@@ -143,9 +145,9 @@ namespace DocumentationLogicielle.App.ViewModels
         #endregion
 
 
-        private void GoBack(object parameter)
+        private async Task GoBack()
         {
-            BoardWindow page = new BoardWindow(UserServices);
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

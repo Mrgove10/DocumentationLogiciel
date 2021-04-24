@@ -9,10 +9,10 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class BoardWindow : Window
     {
-        public BoardWindow(UserServices userServices)
+        public BoardWindow(UserServices userServices, AlertServices alertServices, int countAlerts)
         {
             InitializeComponent();
-            DataContext = new BoardViewModel(this, userServices);
+            DataContext = new BoardViewModel(this, userServices, alertServices, countAlerts);
         }
     }
 }

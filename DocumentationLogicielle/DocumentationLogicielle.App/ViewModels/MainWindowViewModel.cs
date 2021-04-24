@@ -124,11 +124,13 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "User" (model : <see cref="User"/>) of the database
         /// </summary>
         public UserServices UserServices { get; set; }
+        public AlertServices AlertServices { get; set; }
 
-        public MainWindowViewModel(MainWindow currentPage, UserServices userServices)
+        public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices)
         {
             CurrentPage = currentPage;
             UserServices = userServices;
+            AlertServices = alertServices;
 
             user = new User
             {
@@ -180,7 +182,7 @@ namespace DocumentationLogicielle.App.ViewModels
             if (IsButtonOk)
             {
                 AppSettings.CurrentUser = await UserServices.GetUser(LoginInput, PasswordInput);
-                BoardWindow page = new BoardWindow(UserServices);
+                BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
                 page.Show();
                 CurrentPage.Close();
             }

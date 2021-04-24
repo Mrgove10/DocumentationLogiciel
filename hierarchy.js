@@ -1,5 +1,8 @@
 var hierarchy =
 [
+    [ "DocumentationLogicielle.Models.Alert", "class_documentation_logicielle_1_1_models_1_1_alert.html", null ],
+    [ "DocumentationLogicielle.Services.AlertServices", "class_documentation_logicielle_1_1_services_1_1_alert_services.html", null ],
+    [ "DocumentationLogicielle.App.ViewModels.AlertsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html", null ],
     [ "Application", null, [
       [ "DocumentationLogicielle.App.App", "class_documentation_logicielle_1_1_app_1_1_app.html", null ]
     ] ],
@@ -22,6 +25,7 @@ var hierarchy =
     ] ],
     [ "Window", null, [
       [ "DocumentationLogicielle.App.Views.AddUserWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_user_window.html", null ],
+      [ "DocumentationLogicielle.App.Views.AlertsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_alerts_window.html", null ],
       [ "DocumentationLogicielle.App.Views.BoardWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_board_window.html", null ],
       [ "DocumentationLogicielle.App.Views.MainWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_main_window.html", null ]
     ] ]

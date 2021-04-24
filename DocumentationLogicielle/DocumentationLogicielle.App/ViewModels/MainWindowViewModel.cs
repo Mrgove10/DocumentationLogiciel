@@ -3,10 +3,10 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using DocumentationLogicielle.App.Models;
 using DocumentationLogicielle.App.Rules;
-using DocumentationLogicielle.App.Services;
 using DocumentationLogicielle.App.Views;
+using DocumentationLogicielle.Models;
+using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {

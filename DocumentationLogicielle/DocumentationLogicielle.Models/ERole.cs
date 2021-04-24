@@ -1,4 +1,4 @@
-﻿namespace DocumentationLogicielle.App.Models
+﻿namespace DocumentationLogicielle.Models
 {
     public enum ERole
     {

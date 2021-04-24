@@ -1,8 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Navigation;
-using DocumentationLogicielle.App.Services;
 using DocumentationLogicielle.App.ViewModels;
+using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.Views
 {

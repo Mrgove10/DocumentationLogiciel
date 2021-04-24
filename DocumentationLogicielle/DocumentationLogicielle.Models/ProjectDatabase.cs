@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace DocumentationLogicielle.App.Models
+namespace DocumentationLogicielle.Models
 {
     public class ProjectDatabase
     {

@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using DocumentationLogicielle.App.Models;
+using DocumentationLogicielle.Models;
 using SQLite;
 
-namespace DocumentationLogicielle.App.Services
+namespace DocumentationLogicielle.Services
 {
     public class UserServices
     {

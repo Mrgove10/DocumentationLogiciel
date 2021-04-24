@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using DocumentationLogicielle.App.Models;
-using DocumentationLogicielle.App.Services;
 using DocumentationLogicielle.App.Views;
+using DocumentationLogicielle.Models;
+using DocumentationLogicielle.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 

@@ -1,4 +1,4 @@
-﻿using DocumentationLogicielle.App.Models;
+﻿using DocumentationLogicielle.Models;
 
 namespace DocumentationLogicielle.App
 {

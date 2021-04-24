@@ -18,6 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DocumentationLogicielle.Models\DocumentationLogicielle.Models.csproj" />
+    <ProjectReference Include="..\DocumentationLogicielle.Services\DocumentationLogicielle.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\background-black.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

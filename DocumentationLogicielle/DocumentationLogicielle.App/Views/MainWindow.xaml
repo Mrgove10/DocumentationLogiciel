@@ -20,8 +20,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.3*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.7*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <StackPanel.Background>
@@ -31,7 +32,7 @@
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center" Foreground="White">FormaBois</TextBlock>
             </materialDesign:Card>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -98,7 +99,7 @@
             </Grid>
 
         </Grid>
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>

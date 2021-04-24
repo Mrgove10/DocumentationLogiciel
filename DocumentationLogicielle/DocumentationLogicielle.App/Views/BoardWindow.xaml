@@ -51,12 +51,12 @@
 
             </Grid>
 
-            <Grid Grid.Column="2">
+            <Grid Grid.Column="2" Visibility="{Binding CurrentUserAdmin}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Grid.Row="0" 
                            Foreground="White" 
                            FontSize="15"
@@ -70,13 +70,23 @@
                         <ColumnDefinition Width="0.7*"></ColumnDefinition>
                         <ColumnDefinition Width="*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    
+
                     <materialDesign:Badged Grid.Column="1" 
                                            Badge="{Binding BadgeAlert}">
                         <Button Content="Alerts" 
                                 Command="{Binding GoToAlertsCommand}"/>
                     </materialDesign:Badged>
                 </Grid>
+            </Grid>
+
+            <Grid Grid.Column="2" Visibility="{Binding CurrentUserLambda}">
+                <TextBlock Grid.Row="0" 
+                           Foreground="White" 
+                           FontSize="15"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           FontWeight="Bold" 
+                           Text="{Binding CurrentUserName}"/>
             </Grid>
 
         </Grid>

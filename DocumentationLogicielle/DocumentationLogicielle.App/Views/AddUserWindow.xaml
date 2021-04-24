@@ -25,6 +25,9 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush ImageSource="../Images/background-black.jpg"></ImageBrush>
+            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.4*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>

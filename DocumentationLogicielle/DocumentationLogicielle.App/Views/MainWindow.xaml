@@ -19,11 +19,14 @@
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="../Images/background-black.jpg"></ImageBrush>
+            </StackPanel.Background>
             <materialDesign:Card Padding="32" Margin="16">
                 <TextBlock Style="{DynamicResource MaterialDesignHeadline6TextBlock}" TextAlignment="Center" Foreground="White">FormaBois</TextBlock>
             </materialDesign:Card>

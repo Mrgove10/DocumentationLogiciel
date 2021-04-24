@@ -50,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_app_8xaml_8cs.html"
+"_add_user_view_model_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

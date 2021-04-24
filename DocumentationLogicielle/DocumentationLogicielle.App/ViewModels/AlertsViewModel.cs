@@ -17,6 +17,7 @@ namespace DocumentationLogicielle.App.ViewModels
         public IAsyncCommand GoBackCommand { get; }
 
         public List<Alert> Alerts { get; set; }
+        public string CurrentUserName { get; set; }
 
         public AlertServices AlertServices { get; set; }
         public UserServices UserServices { get; set; }
@@ -25,6 +26,7 @@ namespace DocumentationLogicielle.App.ViewModels
 
         public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, List<Alert> alerts)
         {
+            CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             CurrentPage = currentPage;
             AlertServices = alertServices;
             UserServices = userServices;

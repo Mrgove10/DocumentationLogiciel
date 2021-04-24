@@ -33,6 +33,24 @@
                     Content=" ⬅ Logout"
                     Command="{Binding GoBackCommand}" />
 
+            <Grid Grid.Column="1" Visibility="{Binding CurrentUserAdmin}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2.5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+
+                <materialDesign:Badged Grid.Row="1" Grid.Column="1" Badge="3">
+                    <Button Content="Alerts"/>
+                </materialDesign:Badged>
+            </Grid>
+
             <TextBlock Grid.Column="2" 
                        Foreground="White" 
                        FontSize="15"
@@ -54,7 +72,7 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="5*"></RowDefinition>
@@ -79,9 +97,103 @@
                             Command="{Binding GoToAddUserCommand}"/>
                 </Grid>
 
-                <StackPanel Grid.Row="1" Grid.Column="1" Visibility="{Binding CurrentUserLambda}">
-                    <!--<TextBlock>C'est un user lambda</TextBlock>-->
-                </StackPanel>
+                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding CurrentUserLambda}">
+                    <!-- User : Stats -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                           Source="../Images/statistics.png"/>
+                    <Button Grid.Row="1" 
+                            Content="See statistics" 
+                            Background="DarkGoldenrod" 
+                            Command="{Binding GoToStatisticsCommand}"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <!-- Admin : Add éléments -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding CurrentUserAdmin}">
+                    <!--<TextBlock>C'est un admin</TextBlock>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                           Source="../Images/addStock.png"/>
+                    <Button Grid.Row="1" 
+                            Content="Add element" 
+                            Background="DarkGoldenrod" 
+                            Command="{Binding GoToAddUserCommand}"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <!-- Admin + User : Listing éléments -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <!--<TextBlock>C'est un admin</TextBlock>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                           Source="../Images/listingStock.png"/>
+                    <Button Grid.Row="1" 
+                            Content="Listing stock" 
+                            Background="DarkGoldenrod" 
+                            Command="{Binding GoToAddUserCommand}"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="2">
+                <!-- Admin : Maj éléments -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding CurrentUserAdmin}">
+                    <!--<TextBlock>C'est un admin</TextBlock>-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                           Source="../Images/majStock.png"/>
+                    <Button Grid.Row="1" 
+                            Content="Change stock" 
+                            Background="DarkGoldenrod" 
+                            Command="{Binding GoToAddUserCommand}"/>
+                </Grid>
             </Grid>
 
         </Grid>

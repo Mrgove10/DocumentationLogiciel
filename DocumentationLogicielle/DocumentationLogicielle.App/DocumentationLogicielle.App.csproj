@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\addStock.png" />
     <None Remove="Images\addUser.png" />
     <None Remove="Images\background-black.jpg" />
+    <None Remove="Images\listingStock.png" />
     <None Remove="Images\logo.jpg" />
+    <None Remove="Images\majStock.png" />
+    <None Remove="Images\statistics.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,10 +28,22 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\addStock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Images\addUser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Images\background-black.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\listingStock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\majStock.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\statistics.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

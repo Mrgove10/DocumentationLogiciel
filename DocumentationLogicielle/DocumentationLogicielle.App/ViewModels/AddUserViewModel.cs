@@ -14,10 +14,24 @@ namespace DocumentationLogicielle.App.ViewModels
     public class AddUserViewModel : INotifyPropertyChanged
     {
         private User user;
+
+        #region Commands
+
+        /// <summary>
+        /// Command to go back to the precedent page
+        /// </summary>
         public IAsyncCommand GoBackCommand { get; }
+
+        /// <summary>
+        /// Command to add a user
+        /// </summary>
         public ICommand AddUserCommand { get; }
 
+        #endregion
 
+        /// <summary>
+        /// The name of the current user
+        /// </summary>
         public string CurrentUserName { get; set; }
 
         #region Inputs
@@ -103,9 +117,19 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Property which correspond to the current page
+        /// </summary>
         public AddUserWindow CurrentPage { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "User" (<see cref="User"/>)
+        /// </summary>
         public UserServices UserServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
+        /// </summary>
         public AlertServices AlertServices { get; set; }
 
         public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices)
@@ -144,7 +168,10 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Method to go back to the precedent page
+        /// </summary>
+        /// <param name="parameter"></param>
         private async Task GoBack()
         {
             BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
@@ -152,6 +179,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Method to create a user
+        /// </summary>
+        /// <param name="parameter"></param>
         private void Create(object parameter)
         {
             try

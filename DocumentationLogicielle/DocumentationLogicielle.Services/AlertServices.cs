@@ -14,16 +14,28 @@ namespace DocumentationLogicielle.Services
             _context = context.database;
         }
 
+        /// <summary>
+        /// Count the number of alerts not dismissed
+        /// </summary>
+        /// <returns>Return an int</returns>
         public async Task<int> CountAlerts()
         {
             return await _context.Table<Alert>().CountAsync(x => !x.IsDismiss);
         }
 
+        /// <summary>
+        /// Get all alerts which are not dismissed
+        /// </summary>
+        /// <returns>Return a list of alerts</returns>
         public async Task<List<Alert>> GetAllAlerts()
         {
             return await _context.Table<Alert>().Where(x => !x.IsDismiss).ToListAsync();
         }
 
+        /// <summary>
+        /// Method to update a list of alerts
+        /// </summary>
+        /// <param name="alerts">List of alerts to update</param>
         public void UpdateAlerts(List<Alert> alerts)
         {
             _context.UpdateAllAsync(alerts).Wait();

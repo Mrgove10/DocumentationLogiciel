@@ -14,14 +14,38 @@ namespace DocumentationLogicielle.App.ViewModels
 {
     public class AlertsViewModel
     {
+        #region Commands
+
+        /// <summary>
+        /// Command to go back to the precedent page
+        /// </summary>
         public IAsyncCommand GoBackCommand { get; }
 
+        #endregion
+
+        /// <summary>
+        /// List of alerts which are not dismiss
+        /// </summary>
         public List<Alert> Alerts { get; set; }
+
+        /// <summary>
+        /// Name of the current user
+        /// </summary>
         public string CurrentUserName { get; set; }
 
+        /// <summary>
+        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
+        /// </summary>
         public AlertServices AlertServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "User" (<see cref="User"/>)
+        /// </summary>
         public UserServices UserServices { get; set; }
 
+        /// <summary>
+        /// Correspond to the current page
+        /// </summary>
         public AlertsWindow CurrentPage { get; set; }
 
         public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, List<Alert> alerts)
@@ -37,6 +61,11 @@ namespace DocumentationLogicielle.App.ViewModels
             GoBackCommand = new AsyncCommand(GoBack, () => true);
         }
 
+        /// <summary>
+        /// Method to go back to the precedent page
+        /// Update the alerts in the same time
+        /// </summary>
+        /// <returns></returns>
         private async Task GoBack()
         {
             UpdateAlerts();
@@ -45,6 +74,9 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Method to update the alert
+        /// </summary>
         public void UpdateAlerts()
         {
             var childrens = CurrentPage.ListAlerts.Children;
@@ -67,6 +99,9 @@ namespace DocumentationLogicielle.App.ViewModels
             AlertServices.UpdateAlerts(updatedAlerts);
         }
 
+        /// <summary>
+        /// Generate the alerts in Cards
+        /// </summary>
         public void GenerateAlertsCards()
         {
             for (int i = 0; i < Alerts.Count; i++)

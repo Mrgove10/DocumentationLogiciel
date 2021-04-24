@@ -124,6 +124,10 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "User" (model : <see cref="User"/>) of the database
         /// </summary>
         public UserServices UserServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Alert" (model : <see cref="Alert"/>) of the database
+        /// </summary>
         public AlertServices AlertServices { get; set; }
 
         public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices)

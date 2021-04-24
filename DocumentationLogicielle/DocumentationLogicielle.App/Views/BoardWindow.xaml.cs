@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using DocumentationLogicielle.App.ViewModels;
+using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.Views
 {
@@ -8,10 +9,10 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class BoardWindow : Window
     {
-        public BoardWindow()
+        public BoardWindow(UserServices userServices)
         {
             InitializeComponent();
-            DataContext = new BoardViewModel(this);
+            DataContext = new BoardViewModel(this, userServices);
         }
     }
 }

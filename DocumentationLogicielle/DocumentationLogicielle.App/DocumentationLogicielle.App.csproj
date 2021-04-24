@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\addUser.png" />
     <None Remove="Images\background-black.jpg" />
     <None Remove="Images\logo.jpg" />
   </ItemGroup>
@@ -23,15 +24,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\background-black.jpg">
+    <Resource Include="Images\addUser.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Images\logo.jpg">
+    <Resource Include="Images\background-black.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Views\AddUserWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\BoardWindow.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>

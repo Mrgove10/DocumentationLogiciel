@@ -38,5 +38,16 @@ namespace DocumentationLogicielle.Services
         {
             return await _context.Table<User>().FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
         }
+
+        /// <summary>
+        /// Create a user
+        /// </summary>
+        /// <param name="login">Login of the user</param>
+        /// <param name="password">Password of the user</param>
+        /// <param name="role">Role of the user</param>
+        public void CreateUser(string login, string password, string role)
+        {
+            _context.InsertAsync(new User {Login = login, Password = password, Role = role}).Wait();
+        }
     }
 }

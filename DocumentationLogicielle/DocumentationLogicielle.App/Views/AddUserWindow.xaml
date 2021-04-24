@@ -1,0 +1,188 @@
+﻿<Window x:Class="DocumentationLogicielle.App.Views.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocumentationLogicielle.App"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:rules="clr-namespace:DocumentationLogicielle.App.Rules"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}" 
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="AddUser" Height="450" Width="800"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Content=" ⬅ Go back"
+                    Command="{Binding GoBackCommand}" />
+
+            <TextBlock Grid.Column="2" 
+                       Foreground="White" 
+                       FontSize="15"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontWeight="Bold" 
+                       Text="{Binding CurrentUserName}"/>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                           Text="Username"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                    <TextBox Grid.Row="1"
+                         FontSize="18"
+                         HorizontalContentAlignment="Center"
+                         VerticalContentAlignment="Center">
+                        <Binding Path="LoginInput" UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <rules:NotNullValidationRule ValidationStep="RawProposedValue" />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox>
+
+                </Grid>
+
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                           Text="Password"
+                           FontSize="20"
+                           Foreground="White"
+                           FontWeight="DemiBold"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                    <PasswordBox Grid.Row="1"
+                             FontSize="18"
+                             Name="PasswordBoxPerso"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             PasswordChanged="PasswordBox_PasswordChanged">
+                    </PasswordBox>
+
+                    <TextBlock Grid.Row="2"
+                           Margin="0 3 0 0"
+                           Foreground="Red"
+                           FontSize="11"
+                           Text="{Binding PasswordValidation}"/>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                               Text="Role"
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="DemiBold"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    <ComboBox Grid.Row="1" 
+                              Foreground="White"
+                              FontSize="20"
+                              Width="100px"
+                              Name="RoleComboBox"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                        <ComboBoxItem IsSelected="True">User</ComboBoxItem>
+                        <ComboBoxItem>Admin</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="1" Grid.Row="0">
+                <materialDesign:Snackbar
+                    x:Name="UserAddSnackbar"
+                    Background="Lime"
+                    HorizontalAlignment="Center"
+                    Foreground="White"
+                    MessageQueue="{materialDesign:MessageQueue}"/>
+            </Grid>
+            <Button Grid.Column="1" Grid.Row="1" 
+                    Content="Add this user" 
+                    Command="{Binding AddUserCommand}"
+                    Background="Lime"/>
+            
+        </Grid>
+
+    </Grid>
+</Window>

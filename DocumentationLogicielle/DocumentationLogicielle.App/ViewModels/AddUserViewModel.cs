@@ -1,8 +1,9 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using DocumentationLogicielle.App.Rules;
 using DocumentationLogicielle.App.Views;
 using DocumentationLogicielle.Models;
@@ -10,30 +11,17 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class AddUserViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Model of a user to login
-        /// See <see cref="User"/> 
-        /// </summary>
         private User user;
+        public ICommand GoBackCommand { get; }
+        public ICommand AddUserCommand { get; }
 
-        #region Command
 
-        /// <summary>
-        /// Command to exit of the application
-        /// </summary>
-        public ICommand ExitCommand { get; }
-
-        /// <summary>
-        /// Asynchronous command to log in the application
-        /// </summary>
-        public IAsyncCommand LogInCommand { get; }
-
-        #endregion
+        public string CurrentUserName { get; set; }
 
         #region Inputs
-
+        
         /// <summary>
         /// Represents the input of the login of the user
         /// The "set" has a personal implementation
@@ -115,30 +103,25 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-        /// <summary>
-        /// The page that correspond to the display window
-        /// </summary>
-        public MainWindow CurrentPage { get; set; }
 
-        /// <summary>
-        /// Services to interact with the table "User" (model : <see cref="User"/>) of the database
-        /// </summary>
+        public AddUserWindow CurrentPage { get; set; }
         public UserServices UserServices { get; set; }
 
-        public MainWindowViewModel(MainWindow currentPage, UserServices userServices)
+        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices)
         {
-            CurrentPage = currentPage;
+            CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             UserServices = userServices;
 
             user = new User
             {
                 Login = string.Empty,
                 Password = string.Empty,
-                Role = string.Empty
+                Role = ERole.User.ToString()
             };
-            
-            ExitCommand = new CommandHandler(Exit, () => true);
-            LogInCommand = new AsyncCommand(LogIn, CanLogIn);
+
+            CurrentPage = currentPage;
+            GoBackCommand = new CommandHandler(GoBack, () => true);
+            AddUserCommand = new CommandHandler(Create, CanCreate);
         }
 
         #region Property Changes
@@ -160,34 +143,37 @@ namespace DocumentationLogicielle.App.ViewModels
         #endregion
 
 
-        /// <summary>
-        /// Quit the application
-        /// </summary>
-        /// <param name="parameter"></param>
-        private void Exit(object parameter)
+        private void GoBack(object parameter)
         {
-            Application.Current.Shutdown();
+            BoardWindow page = new BoardWindow(UserServices);
+            page.Show();
+            CurrentPage.Close();
         }
 
-        /// <summary>
-        /// Check if the user exists in the database the connect it and save his info the storage
-        /// <remarks>If the user do not exists in the database, display an error message</remarks>
-        /// </summary>
-        /// <returns></returns>
-        private async Task LogIn()
+        private void Create(object parameter)
         {
-            IsButtonOk = await UserServices.IsUserExists(LoginInput, PasswordInput);
-            if (IsButtonOk)
+            try
             {
-                AppSettings.CurrentUser = await UserServices.GetUser(LoginInput, PasswordInput);
-                BoardWindow page = new BoardWindow(UserServices);
-                page.Show();
-                CurrentPage.Close();
+                UserServices.CreateUser(LoginInput, PasswordInput, CurrentPage.RoleComboBox.Text);
+
+                if (CurrentPage.UserAddSnackbar.MessageQueue is { } messageQueue)
+                {
+                    var message = $"User '{LoginInput}' has been add !";
+                    Task.Factory.StartNew(() => messageQueue.Enqueue(message));
+                }
+
+                LoginInput = string.Empty;
+                PasswordInput = string.Empty;
+                CurrentPage.PasswordBoxPerso.Password = "";
             }
-            else
+            catch (Exception e)
             {
-                OnPropertyChange(nameof(IsButtonOk));
-                OnPropertyChange(nameof(ButtonValidation));
+                if (CurrentPage.UserAddSnackbar.MessageQueue is { } messageQueue)
+                {
+                    var message = $"A problem occurs, please retry or contact the support.";
+                    CurrentPage.UserAddSnackbar.Background = Brushes.Red;
+                    Task.Factory.StartNew(() => messageQueue.Enqueue(message));
+                }
             }
         }
 
@@ -195,9 +181,10 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Check if the user can click on the button login
         /// </summary>
         /// <returns></returns>
-        private bool CanLogIn()
+        private bool CanCreate()
         {
             return IsPasswordOk && IsLoginOk;
         }
+
     }
 }

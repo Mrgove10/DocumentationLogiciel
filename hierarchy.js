@@ -13,9 +13,9 @@ var hierarchy =
     [ "INotifyPropertyChanged", null, [
       [ "DocumentationLogicielle.App.ViewModels.MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html", null ]
     ] ],
-    [ "DocumentationLogicielle.App.Models.ProjectDatabase", "class_documentation_logicielle_1_1_app_1_1_models_1_1_project_database.html", null ],
-    [ "DocumentationLogicielle.App.Models.User", "class_documentation_logicielle_1_1_app_1_1_models_1_1_user.html", null ],
-    [ "DocumentationLogicielle.App.Services.UserServices", "class_documentation_logicielle_1_1_app_1_1_services_1_1_user_services.html", null ],
+    [ "DocumentationLogicielle.Models.ProjectDatabase", "class_documentation_logicielle_1_1_models_1_1_project_database.html", null ],
+    [ "DocumentationLogicielle.Models.User", "class_documentation_logicielle_1_1_models_1_1_user.html", null ],
+    [ "DocumentationLogicielle.Services.UserServices", "class_documentation_logicielle_1_1_services_1_1_user_services.html", null ],
     [ "ValidationRule", null, [
       [ "DocumentationLogicielle.App.Rules.NotNullValidationRule", "class_documentation_logicielle_1_1_app_1_1_rules_1_1_not_null_validation_rule.html", null ]
     ] ],

@@ -12,6 +12,13 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class AlertsWindow : Window
     {
+        /// <summary>
+        /// Creates an alert
+        /// This is also a new window that pops up
+        /// </summary>
+        /// <param name="userServices"></param>
+        /// <param name="alertServices"></param>
+        /// <param name="alerts"></param>
         public AlertsWindow(UserServices userServices, AlertServices alertServices, List<Alert> alerts)
         {
             InitializeComponent();

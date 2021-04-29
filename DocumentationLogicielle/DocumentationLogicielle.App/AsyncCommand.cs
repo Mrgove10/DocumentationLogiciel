@@ -14,6 +14,12 @@ namespace DocumentationLogicielle.App
     {
         private readonly Func<Task> _command;
         private readonly Func<bool> _canExecute;
+        /// <summary>
+        /// Command that can be executed asyncronously
+        /// You can create a command here to the execute it later
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="canExecute"></param>
         public AsyncCommand(Func<Task> command, Func<bool> canExecute = null)
         {
             _command = command;
@@ -41,6 +47,11 @@ namespace DocumentationLogicielle.App
             return _canExecute.Invoke();
         }
 
+        /// <summary>
+        /// Execute a command asyncronously
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public Task ExecuteAsync(object parameter)
         {
             return _command();

@@ -12,7 +12,7 @@ namespace DocumentationLogicielle.App
         /// Creates instance of the command handler
         /// </summary>
         /// <param name="action">Action to be executed by the command</param>
-        /// <param name="canExecute">A bolean property to containing current permissions to execute the command</param>
+        /// <param name="canExecute">A boolean property to containing current permissions to execute the command</param>
         public CommandHandler(Action<object> action, Func<bool> canExecute)
         {
             _execute = action;

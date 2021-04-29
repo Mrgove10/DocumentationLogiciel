@@ -4,7 +4,9 @@ using System.Windows.Controls;
 namespace DocumentationLogicielle.App.Rules
 {
     /// <summary>
-    /// Validation rule to check empty value
+    /// Checks if a value is null or empty
+    /// if a value is empty, a value is null then ir returns false
+    /// else the value returned is false
     /// </summary>
     public class NotNullValidationRule : ValidationRule
     {

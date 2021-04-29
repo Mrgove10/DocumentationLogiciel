@@ -9,6 +9,12 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class BoardWindow : Window
     {
+        /// <summary>
+        /// Creates a new window
+        /// </summary>
+        /// <param name="userServices"></param>
+        /// <param name="alertServices"></param>
+        /// <param name="countAlerts"></param>
         public BoardWindow(UserServices userServices, AlertServices alertServices, int countAlerts)
         {
             InitializeComponent();

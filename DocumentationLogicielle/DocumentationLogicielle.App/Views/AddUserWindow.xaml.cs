@@ -11,6 +11,11 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class AddUserWindow : Window
     {
+        /// <summary>
+        /// This window is for adding a user 
+        /// </summary>
+        /// <param name="userServices"></param>
+        /// <param name="alertServices"></param>
         public AddUserWindow(UserServices userServices, AlertServices alertServices)
         {
             InitializeComponent();

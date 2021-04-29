@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/modules.xml
+/.idea.DocumentationLogicielle.iml
+/projectSettingsUpdater.xml
+/contentModel.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../:\PERSO\EPSI\I1_(2020-2021)\Documentation logiciel\DocumentationLogiciel\DocumentationLogicielle\.idea\.idea.DocumentationLogicielle\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

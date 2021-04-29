@@ -10,6 +10,11 @@ namespace DocumentationLogicielle.App.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Main window of the application.
+        /// </summary>
+        /// <param name="userServices"></param>
+        /// <param name="alertServices"></param>
         public MainWindow(UserServices userServices, AlertServices alertServices)
         {
             InitializeComponent();

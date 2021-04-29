@@ -2,6 +2,10 @@
 
 namespace DocumentationLogicielle.Models
 {
+    /// <summary>
+    /// Main Database class of the project
+    /// This class contains the main reference to the database and can be reused
+    /// </summary>
     public class ProjectDatabase
     {
         public readonly SQLiteAsyncConnection database;

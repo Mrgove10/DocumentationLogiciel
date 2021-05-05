@@ -1,6 +1,6 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model =
 [
-    [ "MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a4d38b815ff0bc2471d97cb4c6beded8a", null ],
+    [ "MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a224fb56d96e0af8e22209b94d3b3f8f4", null ],
     [ "OnPropertyChange", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6673717ffb3840858453c92d44f457e7", null ],
     [ "ButtonValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a2a07e9de0c18a5e90ea451613acad221", null ],
     [ "LoginValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ab6d3600ebd5ef571a610d66e34f87d06", null ],
@@ -13,7 +13,10 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_
     [ "IsPasswordOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a5d5942da4297a32d4e913fb1a723cc6d", null ],
     [ "LogInCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a39b518a70c987de6089d52aee1029d60", null ],
     [ "LoginInput", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a147ba3b9345cacac771dfd3c40a663f1", null ],
+    [ "MaterialServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6948d24d0fc967099f4b68e7eb578841", null ],
+    [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#af962e558d35e90f193e9d1bae5fc13bc", null ],
     [ "PasswordInput", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ad6fd11283b9939b2f64ab6b20e50ee2a", null ],
+    [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a56637caeca052ea80ed869fc7688523c", null ],
     [ "UserServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#aa58a6e6608d4e23ed7fbf8e311d88b2d", null ],
     [ "PropertyChanged", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ab211e93844162978145f2aab6c23d092", null ]
 ];

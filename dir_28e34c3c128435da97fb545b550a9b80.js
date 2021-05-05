@@ -1,6 +1,7 @@
 var dir_28e34c3c128435da97fb545b550a9b80 =
 [
     [ "Rules", "dir_12937dcccf47a74ef2acf25cccc12f51.html", "dir_12937dcccf47a74ef2acf25cccc12f51" ],
+    [ "Templates", "dir_824c763ce62c8c8a720a4f02d4dc0dc9.html", "dir_824c763ce62c8c8a720a4f02d4dc0dc9" ],
     [ "ViewModels", "dir_f03890d908db95aa42f41d59bb2dcdb9.html", "dir_f03890d908db95aa42f41d59bb2dcdb9" ],
     [ "Views", "dir_2b2dff2ee203af692978e1d106689fc3.html", "dir_2b2dff2ee203af692978e1d106689fc3" ],
     [ "App.xaml.cs", "_app_8xaml_8cs.html", [

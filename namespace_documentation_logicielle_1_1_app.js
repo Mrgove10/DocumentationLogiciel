@@ -1,6 +1,7 @@
 var namespace_documentation_logicielle_1_1_app =
 [
     [ "Rules", "namespace_documentation_logicielle_1_1_app_1_1_rules.html", "namespace_documentation_logicielle_1_1_app_1_1_rules" ],
+    [ "Templates", "namespace_documentation_logicielle_1_1_app_1_1_templates.html", "namespace_documentation_logicielle_1_1_app_1_1_templates" ],
     [ "ViewModels", "namespace_documentation_logicielle_1_1_app_1_1_view_models.html", "namespace_documentation_logicielle_1_1_app_1_1_view_models" ],
     [ "Views", "namespace_documentation_logicielle_1_1_app_1_1_views.html", "namespace_documentation_logicielle_1_1_app_1_1_views" ],
     [ "App", "class_documentation_logicielle_1_1_app_1_1_app.html", "class_documentation_logicielle_1_1_app_1_1_app" ],

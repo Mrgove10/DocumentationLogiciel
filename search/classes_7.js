@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['user_106',['User',['../class_documentation_logicielle_1_1_models_1_1_user.html',1,'DocumentationLogicielle::Models']]],
-  ['userservices_107',['UserServices',['../class_documentation_logicielle_1_1_services_1_1_user_services.html',1,'DocumentationLogicielle::Services']]]
+  ['neededproducttemplate_145',['NeededProductTemplate',['../class_documentation_logicielle_1_1_app_1_1_templates_1_1_needed_product_template.html',1,'DocumentationLogicielle::App::Templates']]],
+  ['notnullvalidationrule_146',['NotNullValidationRule',['../class_documentation_logicielle_1_1_app_1_1_rules_1_1_not_null_validation_rule.html',1,'DocumentationLogicielle::App::Rules']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['passwordbox_5fpasswordchanged_157',['PasswordBox_PasswordChanged',['../class_documentation_logicielle_1_1_app_1_1_views_1_1_add_user_window.html#a864cc26a185068917da2858115cefc04',1,'DocumentationLogicielle::App::Views::AddUserWindow']]],
-  ['projectdatabase_158',['ProjectDatabase',['../class_documentation_logicielle_1_1_models_1_1_project_database.html#a45cd18c281e8914843fc36e03c7c4aa8',1,'DocumentationLogicielle::Models::ProjectDatabase']]]
+  ['onpropertychange_217',['OnPropertyChange',['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#af7d4ce2eb17c250187b1e96811e4afcb',1,'DocumentationLogicielle.App.ViewModels.AddUserViewModel.OnPropertyChange()'],['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6673717ffb3840858453c92d44f457e7',1,'DocumentationLogicielle.App.ViewModels.MainWindowViewModel.OnPropertyChange()']]]
 ];

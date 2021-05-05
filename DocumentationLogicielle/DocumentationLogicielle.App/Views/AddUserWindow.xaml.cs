@@ -16,10 +16,10 @@ namespace DocumentationLogicielle.App.Views
         /// </summary>
         /// <param name="userServices"></param>
         /// <param name="alertServices"></param>
-        public AddUserWindow(UserServices userServices, AlertServices alertServices)
+        public AddUserWindow(UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices)
         {
             InitializeComponent();
-            DataContext = new AddUserViewModel(this, userServices, alertServices);
+            DataContext = new AddUserViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices);
         }
 
         /// <summary>

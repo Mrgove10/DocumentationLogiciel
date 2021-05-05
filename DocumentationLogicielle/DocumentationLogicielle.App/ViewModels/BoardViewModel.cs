@@ -26,6 +26,11 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public IAsyncCommand GoToAlertsCommand { get; }
 
+        /// <summary>
+        /// Command to go to the page "ListingElements"
+        /// </summary>
+        public IAsyncCommand GoToListingElementsCommand { get; }
+
         #endregion
 
         /// <summary>
@@ -66,8 +71,11 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "Alert" (<see cref="Alert"/>)
         /// </summary>
         public AlertServices AlertServices { get; set; }
+        public MaterialServices MaterialServices { get; set; }
+        public ProductServices ProductServices { get; set; }
+        public MaterialsProductServices MaterialsProductServices { get; set; }
 
-        public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, int countAlerts)
+        public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, int countAlerts)
         {
             CurrentPage = currentPage;
 
@@ -77,12 +85,16 @@ namespace DocumentationLogicielle.App.ViewModels
 
             UserServices = userServices;
             AlertServices = alertServices;
+            MaterialServices = materialServices;
+            ProductServices = productServices;
+            MaterialsProductServices = materialsProductServices;
 
             BadgeAlert = countAlerts;
 
             GoBackCommand = new CommandHandler(GoBack, () => true);
             GoToAddUserCommand = new CommandHandler(GoToAddUser, () => true);
             GoToAlertsCommand = new AsyncCommand(GoToAlerts, () => true);
+            GoToListingElementsCommand = new AsyncCommand(GoToListingElements, () => true);
         }
 
         /// <summary>
@@ -91,7 +103,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private void GoBack(object parameter)
         {
-            MainWindow page = new MainWindow(UserServices, AlertServices);
+            MainWindow page = new MainWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices);
             page.Show();
             CurrentPage.Close();
         }
@@ -102,7 +114,14 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <returns></returns>
         private async Task GoToAlerts()
         {
-            AlertsWindow page = new AlertsWindow(UserServices, AlertServices, await AlertServices.GetAllAlerts());
+            AlertsWindow page = new AlertsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.GetAllAlerts());
+            page.Show();
+            CurrentPage.Close();
+        }
+
+        private async Task GoToListingElements()
+        {
+            ListingElementsWindow page = new ListingElementsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await ProductServices.GetAll(), await MaterialServices.GetAll(), await MaterialsProductServices.GetAll());
             page.Show();
             CurrentPage.Close();
         }
@@ -113,7 +132,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private void GoToAddUser(object parameter)
         {
-            AddUserWindow page = new AddUserWindow(UserServices, AlertServices);
+            AddUserWindow page = new AddUserWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices);
             page.Show();
             CurrentPage.Close();
         }

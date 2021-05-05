@@ -194,7 +194,7 @@
                     <Button Grid.Row="1" 
                             Content="Listing stock" 
                             Background="DarkGoldenrod" 
-                            Command="{Binding GoToAddUserCommand}"/>
+                            Command="{Binding GoToListingElementsCommand}"/>
                 </Grid>
             </Grid>
 

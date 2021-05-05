@@ -131,12 +131,19 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "Alert" (<see cref="Alert"/>)
         /// </summary>
         public AlertServices AlertServices { get; set; }
+        public MaterialServices MaterialServices { get; set; }
+        public ProductServices ProductServices { get; set; }
+        public MaterialsProductServices MaterialsProductServices { get; set; }
 
-        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices)
+        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
+            
             UserServices = userServices;
             AlertServices = alertServices;
+            MaterialServices = materialServices;
+            ProductServices = productServices;
+            MaterialsProductServices = materialsProductServices;
 
             user = new User
             {
@@ -174,7 +181,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private async Task GoBack()
         {
-            BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

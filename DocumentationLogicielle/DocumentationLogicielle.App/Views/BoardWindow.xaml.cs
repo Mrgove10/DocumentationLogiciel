@@ -15,10 +15,10 @@ namespace DocumentationLogicielle.App.Views
         /// <param name="userServices"></param>
         /// <param name="alertServices"></param>
         /// <param name="countAlerts"></param>
-        public BoardWindow(UserServices userServices, AlertServices alertServices, int countAlerts)
+        public BoardWindow(UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, int countAlerts)
         {
             InitializeComponent();
-            DataContext = new BoardViewModel(this, userServices, alertServices, countAlerts);
+            DataContext = new BoardViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, countAlerts);
         }
     }
 }

@@ -42,18 +42,26 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "User" (<see cref="User"/>)
         /// </summary>
         public UserServices UserServices { get; set; }
+        public MaterialServices MaterialServices { get; set; }
+        public ProductServices ProductServices { get; set; }
+        public MaterialsProductServices MaterialsProductServices { get; set; }
 
         /// <summary>
         /// Correspond to the current page
         /// </summary>
         public AlertsWindow CurrentPage { get; set; }
 
-        public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, List<Alert> alerts)
+        public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, List<Alert> alerts)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             CurrentPage = currentPage;
+            
             AlertServices = alertServices;
             UserServices = userServices;
+            MaterialServices = materialServices;
+            ProductServices = productServices;
+            MaterialsProductServices = materialsProductServices;
+            
             Alerts = alerts;
             
             GenerateAlertsCards();
@@ -69,7 +77,7 @@ namespace DocumentationLogicielle.App.ViewModels
         private async Task GoBack()
         {
             UpdateAlerts();
-            BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

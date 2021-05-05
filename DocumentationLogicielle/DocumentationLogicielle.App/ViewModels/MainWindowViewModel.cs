@@ -129,12 +129,19 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "Alert" (model : <see cref="Alert"/>) of the database
         /// </summary>
         public AlertServices AlertServices { get; set; }
+        public MaterialServices MaterialServices { get; set; }
+        public ProductServices ProductServices { get; set; }
+        public MaterialsProductServices MaterialsProductServices { get; set; }
 
-        public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices)
+        public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices)
         {
             CurrentPage = currentPage;
+            
             UserServices = userServices;
             AlertServices = alertServices;
+            MaterialServices = materialServices;
+            ProductServices = productServices;
+            MaterialsProductServices = materialsProductServices;
 
             user = new User
             {
@@ -186,7 +193,7 @@ namespace DocumentationLogicielle.App.ViewModels
             if (IsButtonOk)
             {
                 AppSettings.CurrentUser = await UserServices.GetUser(LoginInput, PasswordInput);
-                BoardWindow page = new BoardWindow(UserServices, AlertServices, await AlertServices.CountAlerts());
+                BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
                 page.Show();
                 CurrentPage.Close();
             }

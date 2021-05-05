@@ -31,11 +31,18 @@ namespace DocumentationLogicielle.App
         private void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ProjectDatabase>();
+
             services.AddSingleton<UserServices>();
             services.AddSingleton<AlertServices>();
+            services.AddSingleton<MaterialServices>();
+            services.AddSingleton<ProductServices>();
+            services.AddSingleton<MaterialsProductServices>();
+
             services.AddSingleton<MainWindow>();
             services.AddSingleton<BoardWindow>();
             services.AddSingleton<AddUserWindow>();
+            services.AddSingleton<AlertsWindow>();
+            services.AddSingleton<ListingElementsWindow>();
         }
 
         /// <summary>

@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using DocumentationLogicielle.App.Templates;
 using DocumentationLogicielle.App.Views;
 using DocumentationLogicielle.Models;
@@ -71,50 +73,56 @@ namespace DocumentationLogicielle.App.ViewModels
             GoBackCommand = new AsyncCommand(GoBack, () => true);
         }
 
-        private void GenerateDatagrid()
+        public void GenerateDatagrid()
         {
             CurrentPage.ListElements.ItemsSource = Convert();
         }
 
 
-        public List<ElementTemplate> Convert()
+        private List<ElementTemplate> Convert()
         {
             List<ElementTemplate> elements = new List<ElementTemplate>();
-
-            foreach (var material in Materials)
+            
+            if (((ComboBoxItem)CurrentPage.FilterbyComboBox.SelectedItem).Content.Equals("Construction materials") || ((ComboBoxItem)CurrentPage.FilterbyComboBox.SelectedItem).Content.Equals("All"))
             {
-                ElementTemplate element = new ElementTemplate
+                foreach (var material in Materials)
                 {
-                    Label = material.Label,
-                    Price = material.Price + " €",
-                    Quantity = material.Quantity
-                };
+                    ElementTemplate element = new ElementTemplate
+                    {
+                        Label = material.Label,
+                        Price = material.Price + " €",
+                        Quantity = material.Quantity
+                    };
 
-                elements.Add(element);
+                    elements.Add(element);
+                }
             }
 
-            foreach (var product in Products)
+            if (((ComboBoxItem)CurrentPage.FilterbyComboBox.SelectedItem).Content.Equals("Final products") || ((ComboBoxItem)CurrentPage.FilterbyComboBox.SelectedItem).Content.Equals("All"))
             {
-                var listMadeOf = new List<NeededProductTemplate>();
-                foreach (var matprod in MaterialsProducts)
+                foreach (var product in Products)
                 {
-                    if (matprod.IdProduct == product.Id)
+                    var listMadeOf = new List<NeededProductTemplate>();
+                    foreach (var matprod in MaterialsProducts)
                     {
-                        var label = Materials.First(x => x.Id == matprod.IdMaterial).Label;
-                        var quantity = matprod.QuantityNeeded;
-                        listMadeOf.Add(new NeededProductTemplate{Material = label, QuantityNeeded = quantity});
+                        if (matprod.IdProduct == product.Id)
+                        {
+                            var label = Materials.First(x => x.Id == matprod.IdMaterial).Label;
+                            var quantity = matprod.QuantityNeeded;
+                            listMadeOf.Add(new NeededProductTemplate { Material = label, QuantityNeeded = quantity });
+                        }
                     }
+
+                    ElementTemplate element = new ElementTemplate
+                    {
+                        Label = product.Label,
+                        Price = product.Price + " €",
+                        Quantity = product.Quantity,
+                        MadeOf = listMadeOf
+                    };
+
+                    elements.Add(element);
                 }
-
-                ElementTemplate element = new ElementTemplate
-                {
-                    Label = product.Label,
-                    Price = product.Price + " €",
-                    Quantity = product.Quantity,
-                    MadeOf = listMadeOf
-                };
-
-                elements.Add(element);
             }
 
             return elements;

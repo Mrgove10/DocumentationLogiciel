@@ -40,5 +40,13 @@ namespace DocumentationLogicielle.App.Views
                 e.Row.DetailsVisibility = Visibility.Collapsed;
             }
         }
+
+        private void FilterbyComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.DataContext != null)
+            {
+                ((dynamic)this.DataContext).GenerateDatagrid();
+            }
+        }
     }
 }

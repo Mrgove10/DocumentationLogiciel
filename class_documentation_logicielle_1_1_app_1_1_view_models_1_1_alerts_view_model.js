@@ -1,6 +1,6 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model =
 [
-    [ "AlertsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a3438391d2ed01c67be5490db72703139", null ],
+    [ "AlertsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a74df3a86bb48b751ff84b123ac052cb4", null ],
     [ "GenerateAlertsCards", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a2ba96f7c0a3d323215236ad998f69ea8", null ],
     [ "UpdateAlerts", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#ae749755b80b8849b885dc42787ce5606", null ],
     [ "Alerts", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a296d11988986a24e96d473b69086aef5", null ],
@@ -11,5 +11,6 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model
     [ "MaterialServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#ae693224dd3993ef4159bf7faa26f9908", null ],
     [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a6144e0012dd35552d9f5a5b3eeb38c44", null ],
     [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a6633666257373c19e04ddeee7b0c0a08", null ],
+    [ "SaleServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a6e65f15d2c50fb8efd3ced99f6bf33a7", null ],
     [ "UserServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a9ede2cfc5ae94beeab20eee68af4c490", null ]
 ];

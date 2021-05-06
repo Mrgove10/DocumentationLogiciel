@@ -1,6 +1,6 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model =
 [
-    [ "MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a224fb56d96e0af8e22209b94d3b3f8f4", null ],
+    [ "MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6a66a2ad82c5d1e1685da40b1092206a", null ],
     [ "OnPropertyChange", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a6673717ffb3840858453c92d44f457e7", null ],
     [ "ButtonValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a2a07e9de0c18a5e90ea451613acad221", null ],
     [ "LoginValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ab6d3600ebd5ef571a610d66e34f87d06", null ],
@@ -17,6 +17,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_
     [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#af962e558d35e90f193e9d1bae5fc13bc", null ],
     [ "PasswordInput", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ad6fd11283b9939b2f64ab6b20e50ee2a", null ],
     [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a56637caeca052ea80ed869fc7688523c", null ],
+    [ "SaleServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#a515d68747aa51adf2e62fd687a3cb1e7", null ],
     [ "UserServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#aa58a6e6608d4e23ed7fbf8e311d88b2d", null ],
     [ "PropertyChanged", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ab211e93844162978145f2aab6c23d092", null ]
 ];

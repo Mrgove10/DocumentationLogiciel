@@ -5,5 +5,6 @@ var namespace_documentation_logicielle_1_1_models =
     [ "MaterialsProduct", "class_documentation_logicielle_1_1_models_1_1_materials_product.html", "class_documentation_logicielle_1_1_models_1_1_materials_product" ],
     [ "Product", "class_documentation_logicielle_1_1_models_1_1_product.html", "class_documentation_logicielle_1_1_models_1_1_product" ],
     [ "ProjectDatabase", "class_documentation_logicielle_1_1_models_1_1_project_database.html", "class_documentation_logicielle_1_1_models_1_1_project_database" ],
+    [ "Sale", "class_documentation_logicielle_1_1_models_1_1_sale.html", "class_documentation_logicielle_1_1_models_1_1_sale" ],
     [ "User", "class_documentation_logicielle_1_1_models_1_1_user.html", "class_documentation_logicielle_1_1_models_1_1_user" ]
 ];

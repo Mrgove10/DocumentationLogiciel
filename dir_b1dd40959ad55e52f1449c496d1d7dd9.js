@@ -12,6 +12,9 @@ var dir_b1dd40959ad55e52f1449c496d1d7dd9 =
     [ "ProductServices.cs", "_product_services_8cs.html", [
       [ "ProductServices", "class_documentation_logicielle_1_1_services_1_1_product_services.html", "class_documentation_logicielle_1_1_services_1_1_product_services" ]
     ] ],
+    [ "SaleServices.cs", "_sale_services_8cs.html", [
+      [ "SaleServices", "class_documentation_logicielle_1_1_services_1_1_sale_services.html", "class_documentation_logicielle_1_1_services_1_1_sale_services" ]
+    ] ],
     [ "UserServices.cs", "_user_services_8cs.html", [
       [ "UserServices", "class_documentation_logicielle_1_1_services_1_1_user_services.html", "class_documentation_logicielle_1_1_services_1_1_user_services" ]
     ] ]

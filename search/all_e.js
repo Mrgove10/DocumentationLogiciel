@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['title_117',['Title',['../class_documentation_logicielle_1_1_models_1_1_alert.html#a4ba5cc5c547a8fea3d8512780d715ca5',1,'DocumentationLogicielle::Models::Alert']]]
+  ['role_137',['Role',['../class_documentation_logicielle_1_1_models_1_1_user.html#a4ed310a177777feb0839b7f06638728c',1,'DocumentationLogicielle::Models::User']]]
 ];

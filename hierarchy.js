@@ -27,6 +27,9 @@ var hierarchy =
     [ "DocumentationLogicielle.Models.Product", "class_documentation_logicielle_1_1_models_1_1_product.html", null ],
     [ "DocumentationLogicielle.Services.ProductServices", "class_documentation_logicielle_1_1_services_1_1_product_services.html", null ],
     [ "DocumentationLogicielle.Models.ProjectDatabase", "class_documentation_logicielle_1_1_models_1_1_project_database.html", null ],
+    [ "DocumentationLogicielle.Models.Sale", "class_documentation_logicielle_1_1_models_1_1_sale.html", null ],
+    [ "DocumentationLogicielle.Services.SaleServices", "class_documentation_logicielle_1_1_services_1_1_sale_services.html", null ],
+    [ "DocumentationLogicielle.App.ViewModels.StatisticsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html", null ],
     [ "DocumentationLogicielle.Models.User", "class_documentation_logicielle_1_1_models_1_1_user.html", null ],
     [ "DocumentationLogicielle.Services.UserServices", "class_documentation_logicielle_1_1_services_1_1_user_services.html", null ],
     [ "ValidationRule", null, [
@@ -37,6 +40,7 @@ var hierarchy =
       [ "DocumentationLogicielle.App.Views.AlertsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_alerts_window.html", null ],
       [ "DocumentationLogicielle.App.Views.BoardWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_board_window.html", null ],
       [ "DocumentationLogicielle.App.Views.ListingElementsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_listing_elements_window.html", null ],
-      [ "DocumentationLogicielle.App.Views.MainWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_main_window.html", null ]
+      [ "DocumentationLogicielle.App.Views.MainWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_main_window.html", null ],
+      [ "DocumentationLogicielle.App.Views.StatisticsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_statistics_window.html", null ]
     ] ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exitcommand_240',['ExitCommand',['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html#ac8b6f3f9ca1d3585382a817c06cf4e74',1,'DocumentationLogicielle::App::ViewModels::MainWindowViewModel']]]
+  ['dateofsale_302',['DateOfSale',['../class_documentation_logicielle_1_1_models_1_1_sale.html#ac6c3d66d4677ef7c8ea76db7330c5af6',1,'DocumentationLogicielle::Models::Sale']]]
 ];

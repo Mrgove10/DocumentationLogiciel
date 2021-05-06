@@ -28,7 +28,7 @@ namespace DocumentationLogicielle.App.ViewModels
         public string[] LabelsCountSalesBySite { get; set; }
         public string[] LabelsEvolutionByMonth { get; set; }
         public string[] LabelsMoneyByYear { get; set; }
-        public Func<int, string> FormatterCountSalesBySite { get; set; }
+        public Func<double, string> FormatterCountSalesBySite { get; set; }
         public Func<double, string> YFormatterEvolutionByMonth { get; set; }
         public Func<double, string> YFormatterMoneyByYear { get; set; }
         public string MoneyEarned { get; set; }
@@ -143,7 +143,7 @@ namespace DocumentationLogicielle.App.ViewModels
 
         public void GenerateCountSalesBySite(Dictionary<string, int> countBySite)
         {
-            var values = new ChartValues<int>();
+            var values = new ChartValues<double>();
             foreach (var tuple in countBySite)
             {
                 values.Add(tuple.Value);

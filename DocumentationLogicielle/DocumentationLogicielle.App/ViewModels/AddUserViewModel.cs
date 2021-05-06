@@ -134,8 +134,9 @@ namespace DocumentationLogicielle.App.ViewModels
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
+        public SaleServices SaleServices { get; set; }
 
-        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices)
+        public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             
@@ -144,6 +145,7 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialServices = materialServices;
             ProductServices = productServices;
             MaterialsProductServices = materialsProductServices;
+            SaleServices = saleServices;
 
             user = new User
             {
@@ -181,7 +183,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private async Task GoBack()
         {
-            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

@@ -33,5 +33,8 @@ namespace DocumentationLogicielle.Models
         /// </summary>
         [NotNull]
         public bool IsDismiss { get; set; } = false;
+        
+        [NotNull]
+        public int MaterialId { get; set; }
     }
 }

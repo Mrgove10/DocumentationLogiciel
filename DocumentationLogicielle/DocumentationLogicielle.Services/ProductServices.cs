@@ -21,5 +21,10 @@ namespace DocumentationLogicielle.Services
         {
             return await _context.Table<Product>().ToListAsync();
         }
+
+        public async Task<Product> GetById(int idProduct)
+        {
+            return await _context.Table<Product>().FirstAsync(x => x.Id == idProduct);
+        }
     }
 }

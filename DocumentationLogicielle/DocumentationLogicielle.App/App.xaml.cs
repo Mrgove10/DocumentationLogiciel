@@ -37,12 +37,14 @@ namespace DocumentationLogicielle.App
             services.AddSingleton<MaterialServices>();
             services.AddSingleton<ProductServices>();
             services.AddSingleton<MaterialsProductServices>();
+            services.AddSingleton<SaleServices>();
 
             services.AddSingleton<MainWindow>();
             services.AddSingleton<BoardWindow>();
             services.AddSingleton<AddUserWindow>();
             services.AddSingleton<AlertsWindow>();
             services.AddSingleton<ListingElementsWindow>();
+            services.AddSingleton<StatisticsWindow>();
         }
 
         /// <summary>

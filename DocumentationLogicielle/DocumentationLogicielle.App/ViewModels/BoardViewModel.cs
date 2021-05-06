@@ -30,6 +30,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Command to go to the page "ListingElements"
         /// </summary>
         public IAsyncCommand GoToListingElementsCommand { get; }
+        public IAsyncCommand GoToStatisticsCommand { get; }
 
         #endregion
 
@@ -74,8 +75,9 @@ namespace DocumentationLogicielle.App.ViewModels
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
+        public SaleServices SaleServices { get; set; }
 
-        public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, int countAlerts)
+        public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, int countAlerts)
         {
             CurrentPage = currentPage;
 
@@ -88,6 +90,7 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialServices = materialServices;
             ProductServices = productServices;
             MaterialsProductServices = materialsProductServices;
+            SaleServices = saleServices;
 
             BadgeAlert = countAlerts;
 
@@ -95,6 +98,7 @@ namespace DocumentationLogicielle.App.ViewModels
             GoToAddUserCommand = new CommandHandler(GoToAddUser, () => true);
             GoToAlertsCommand = new AsyncCommand(GoToAlerts, () => true);
             GoToListingElementsCommand = new AsyncCommand(GoToListingElements, () => true);
+            GoToStatisticsCommand = new AsyncCommand(GoToStatistics, () => true);
         }
 
         /// <summary>
@@ -103,7 +107,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private void GoBack(object parameter)
         {
-            MainWindow page = new MainWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices);
+            MainWindow page = new MainWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices);
             page.Show();
             CurrentPage.Close();
         }
@@ -114,14 +118,21 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <returns></returns>
         private async Task GoToAlerts()
         {
-            AlertsWindow page = new AlertsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.GetAllAlerts());
+            AlertsWindow page = new AlertsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.GetAllAlerts());
             page.Show();
             CurrentPage.Close();
         }
 
         private async Task GoToListingElements()
         {
-            ListingElementsWindow page = new ListingElementsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await ProductServices.GetAll(), await MaterialServices.GetAll(), await MaterialsProductServices.GetAll());
+            ListingElementsWindow page = new ListingElementsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await ProductServices.GetAll(), await MaterialServices.GetAll(), await MaterialsProductServices.GetAll());
+            page.Show();
+            CurrentPage.Close();
+        }
+
+        private async Task GoToStatistics()
+        {
+            StatisticsWindow page = new StatisticsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await SaleServices.CountBySite(), await SaleServices.EvolutionByMonth(), await SaleServices.TotalMoneyEarn(), await SaleServices.MoneyByYear());
             page.Show();
             CurrentPage.Close();
         }
@@ -132,7 +143,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <param name="parameter"></param>
         private void GoToAddUser(object parameter)
         {
-            AddUserWindow page = new AddUserWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices);
+            AddUserWindow page = new AddUserWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices);
             page.Show();
             CurrentPage.Close();
         }

@@ -20,12 +20,13 @@ namespace DocumentationLogicielle.App.Views
                                      MaterialServices materialServices,
                                      ProductServices productServices,
                                      MaterialsProductServices materialsProductServices,
+                                     SaleServices saleServices,
                                      List<Product> products, 
                                      List<Material> materials, 
                                      List<MaterialsProduct> materialsProducts)
         {
             InitializeComponent();
-            DataContext = new ListingElementsViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, products, materials, materialsProducts);
+            DataContext = new ListingElementsViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, saleServices, products, materials, materialsProducts);
             
         }
 
@@ -41,6 +42,9 @@ namespace DocumentationLogicielle.App.Views
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         private void FilterbyComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (this.DataContext != null)

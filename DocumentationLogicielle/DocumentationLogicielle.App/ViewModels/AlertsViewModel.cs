@@ -45,13 +45,14 @@ namespace DocumentationLogicielle.App.ViewModels
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
+        public SaleServices SaleServices { get; set; }
 
         /// <summary>
         /// Correspond to the current page
         /// </summary>
         public AlertsWindow CurrentPage { get; set; }
 
-        public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, List<Alert> alerts)
+        public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Alert> alerts)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
             CurrentPage = currentPage;
@@ -61,6 +62,7 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialServices = materialServices;
             ProductServices = productServices;
             MaterialsProductServices = materialsProductServices;
+            SaleServices = saleServices;
             
             Alerts = alerts;
             
@@ -77,7 +79,7 @@ namespace DocumentationLogicielle.App.ViewModels
         private async Task GoBack()
         {
             UpdateAlerts();
-            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

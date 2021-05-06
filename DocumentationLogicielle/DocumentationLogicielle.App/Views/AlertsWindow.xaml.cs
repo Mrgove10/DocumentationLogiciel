@@ -18,10 +18,10 @@ namespace DocumentationLogicielle.App.Views
         /// <param name="userServices"></param>
         /// <param name="alertServices"></param>
         /// <param name="alerts"></param>
-        public AlertsWindow(UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, List<Alert> alerts)
+        public AlertsWindow(UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Alert> alerts)
         {
             InitializeComponent();
-            DataContext = new AlertsViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, alerts);
+            DataContext = new AlertsViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, saleServices, alerts);
         }
         
     }

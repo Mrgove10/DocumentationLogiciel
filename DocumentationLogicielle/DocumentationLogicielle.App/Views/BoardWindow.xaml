@@ -142,6 +142,32 @@
                 </Grid>
             </Grid>
 
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Row="1" Grid.Column="1" Visibility="{Binding CurrentUserAdmin}">
+                    <!-- Admin : Stats -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" 
+                           Source="../Images/statistics.png"/>
+                    <Button Grid.Row="1" 
+                            Content="See statistics" 
+                            Background="DarkGoldenrod" 
+                            Command="{Binding GoToStatisticsCommand}"/>
+                </Grid>
+            </Grid>
+
             <Grid Grid.Row="1" Grid.Column="0">
                 <!-- Admin : Add éléments -->
                 <Grid.RowDefinitions>

@@ -44,6 +44,7 @@ namespace DocumentationLogicielle.App.ViewModels
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
+        public SaleServices SaleServices { get; set; }
 
         public ListingElementsViewModel(ListingElementsWindow currentPage, 
                                         UserServices userServices, 
@@ -51,6 +52,7 @@ namespace DocumentationLogicielle.App.ViewModels
                                         MaterialServices materialServices, 
                                         ProductServices productServices, 
                                         MaterialsProductServices materialsProductServices,
+                                        SaleServices saleServices,
                                         List<Product> products, 
                                         List<Material> materials, 
                                         List<MaterialsProduct> materialsProducts)
@@ -63,6 +65,7 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialServices = materialServices;
             ProductServices = productServices;
             MaterialsProductServices = materialsProductServices;
+            SaleServices = saleServices;
 
             Products = products;
             Materials = materials;
@@ -116,7 +119,7 @@ namespace DocumentationLogicielle.App.ViewModels
                     ElementTemplate element = new ElementTemplate
                     {
                         Label = product.Label,
-                        Price = product.Price + " €",
+                        Price = $"{product.Price:C}",
                         Quantity = product.Quantity,
                         MadeOf = listMadeOf
                     };
@@ -134,7 +137,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <returns></returns>
         private async Task GoBack()
         {
-            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
+            BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
             page.Show();
             CurrentPage.Close();
         }

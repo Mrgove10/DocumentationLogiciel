@@ -132,8 +132,9 @@ namespace DocumentationLogicielle.App.ViewModels
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
+        public SaleServices SaleServices { get; set; }
 
-        public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices)
+        public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {
             CurrentPage = currentPage;
             
@@ -142,6 +143,7 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialServices = materialServices;
             ProductServices = productServices;
             MaterialsProductServices = materialsProductServices;
+            SaleServices = saleServices;
 
             user = new User
             {
@@ -193,7 +195,7 @@ namespace DocumentationLogicielle.App.ViewModels
             if (IsButtonOk)
             {
                 AppSettings.CurrentUser = await UserServices.GetUser(LoginInput, PasswordInput);
-                BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, await AlertServices.CountAlerts());
+                BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
                 page.Show();
                 CurrentPage.Close();
             }

@@ -1,7 +1,7 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model =
 [
     [ "ListingElementsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#add8a14c27c186cd8627182206d7261bd", null ],
-    [ "Convert", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#a6081e5c5ca528b8e7a945691f50f6ea9", null ],
+    [ "GenerateDatagrid", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#a31d367ce8ddd9cb20ccd464eb45f999d", null ],
     [ "AlertServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#ab5a8c95581fb65c18d31d750c8ab24ec", null ],
     [ "CurrentPage", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#aff45989c8b0a4e3e49c8cf85b8ba1b77", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#ad7678a0b27d5f68c6d50ec03220d6713", null ],

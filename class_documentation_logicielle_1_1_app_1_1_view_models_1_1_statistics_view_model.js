@@ -7,7 +7,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_m
     [ "AlertServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aa73bd4ac73adfad105b3885ef9206995", null ],
     [ "CurrentPage", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a7a965ea4499c358e39e853a4aabd34fa", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ae7670a33fa4187a688fae2801e3374a9", null ],
-    [ "FormatterCountSalesBySite", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a4005b842e3d9920a01e857d2faecf27f", null ],
+    [ "FormatterCountSalesBySite", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#abe4aa7f2a296f8a7a57e96b36815bb2b", null ],
     [ "GoBackCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a86a5f1bdbbeefb14d8463e1651d62f37", null ],
     [ "LabelsCountSalesBySite", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a86a5b6f5cb80525b5a7de5597dd38266", null ],
     [ "LabelsEvolutionByMonth", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a47f39ceabecd9feee353e135e04847a8", null ],

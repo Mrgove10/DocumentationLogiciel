@@ -13,6 +13,9 @@ using LiveCharts.Wpf;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class StatisticsViewModel
     {
         /// <summary>

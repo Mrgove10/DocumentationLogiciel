@@ -30,6 +30,10 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Command to go to the page "ListingElements"
         /// </summary>
         public IAsyncCommand GoToListingElementsCommand { get; }
+
+        /// <summary>
+        /// Command to go to the page "Statistics"
+        /// </summary>
         public IAsyncCommand GoToStatisticsCommand { get; }
 
         #endregion
@@ -63,6 +67,8 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public BoardWindow CurrentPage { get; set; }
 
+        #region Services
+
         /// <summary>
         /// Services to interact with the table "User" (<see cref="User"/>)
         /// </summary>
@@ -72,10 +78,29 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Services to interact with the table "Alert" (<see cref="Alert"/>)
         /// </summary>
         public AlertServices AlertServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Material"/>)
+        /// </summary>
         public MaterialServices MaterialServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Product"/>)
+        /// </summary>
         public ProductServices ProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="MaterialsProduct"/>)
+        /// </summary>
         public MaterialsProductServices MaterialsProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Sale"/>)
+        /// </summary>
         public SaleServices SaleServices { get; set; }
+
+        #endregion
+
 
         public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, int countAlerts)
         {
@@ -123,6 +148,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Method to go to the "Listing" page
+        /// </summary>
+        /// <returns></returns>
         private async Task GoToListingElements()
         {
             ListingElementsWindow page = new ListingElementsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await ProductServices.GetAll(), await MaterialServices.GetAll(), await MaterialsProductServices.GetAll());
@@ -130,6 +159,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Method to go to the "Statistic" page
+        /// </summary>
+        /// <returns></returns>
         private async Task GoToStatistics()
         {
             StatisticsWindow page = new StatisticsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await SaleServices.CountBySite(), await SaleServices.EvolutionByMonth(), await SaleServices.TotalMoneyEarn(), await SaleServices.MoneyByYear());

@@ -120,19 +120,40 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public MainWindow CurrentPage { get; set; }
 
+        #region Services
+
         /// <summary>
-        /// Services to interact with the table "User" (model : <see cref="User"/>) of the database
+        /// Services to interact with the table "User" (<see cref="User"/>)
         /// </summary>
         public UserServices UserServices { get; set; }
 
         /// <summary>
-        /// Services to interact with the table "Alert" (model : <see cref="Alert"/>) of the database
+        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
         /// </summary>
         public AlertServices AlertServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Material"/>)
+        /// </summary>
         public MaterialServices MaterialServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Product"/>)
+        /// </summary>
         public ProductServices ProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="MaterialsProduct"/>)
+        /// </summary>
         public MaterialsProductServices MaterialsProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Sale"/>)
+        /// </summary>
         public SaleServices SaleServices { get; set; }
+
+        #endregion
+
 
         public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {

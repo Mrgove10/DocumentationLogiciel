@@ -10,6 +10,9 @@ using SQLite;
 
 namespace DocumentationLogicielle.Services
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SaleServices
     {
         private readonly SQLiteAsyncConnection _context;

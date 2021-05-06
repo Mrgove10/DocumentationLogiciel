@@ -12,7 +12,7 @@ using LiveCharts.Wpf;
 namespace DocumentationLogicielle.App.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StatisticsWindow.xaml
     /// </summary>
     public partial class StatisticsWindow : Window
     {

@@ -3,6 +3,9 @@ using SQLite;
 
 namespace DocumentationLogicielle.Models
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Sale
     {
         [PrimaryKey, AutoIncrement]

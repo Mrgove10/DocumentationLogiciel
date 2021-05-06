@@ -38,13 +38,40 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public ListingElementsWindow CurrentPage { get; set; }
 
+        #region Services
+
+        /// <summary>
+        /// Services to interact with the table "User" (<see cref="User"/>)
+        /// </summary>
         public UserServices UserServices { get; set; }
 
+        /// <summary>
+        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
+        /// </summary>
         public AlertServices AlertServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Material"/>)
+        /// </summary>
         public MaterialServices MaterialServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Product"/>)
+        /// </summary>
         public ProductServices ProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="MaterialsProduct"/>)
+        /// </summary>
         public MaterialsProductServices MaterialsProductServices { get; set; }
+
+        /// <summary>
+        /// Services to interact with the table "Material" (<see cref="Sale"/>)
+        /// </summary>
         public SaleServices SaleServices { get; set; }
+
+        #endregion
+
 
         public ListingElementsViewModel(ListingElementsWindow currentPage, 
                                         UserServices userServices, 

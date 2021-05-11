@@ -11,19 +11,31 @@ using SQLite;
 namespace DocumentationLogicielle.Services
 {
     /// <summary>
-    /// TODO
+    /// Service assigned to the sales
     /// </summary>
     public class SaleServices
     {
+        /// <summary>
+        /// Context of the saleservice
+        /// </summary>
         private readonly SQLiteAsyncConnection _context;
         private readonly ProductServices _productServices;
 
+        /// <summary>
+        /// Sale service constructor
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="productServices"></param>
         public SaleServices(ProjectDatabase context, ProductServices productServices)
         {
             _context = context.database;
             _productServices = productServices;
         }
 
+        /// <summary>
+        /// Count all the sales for every site
+        /// </summary>
+        /// <returns></returns>
         public async Task<Dictionary<string, int>> CountBySite()
         {
             var sales = await _context.Table<Sale>().ToListAsync();
@@ -45,6 +57,10 @@ namespace DocumentationLogicielle.Services
             return countBySite;
         }
 
+        /// <summary>
+        /// Get the evolution of sales month by month
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Tuple<string, int, int, int>>> EvolutionByMonth()
         {
             var sales = await _context.Table<Sale>().ToListAsync();
@@ -65,6 +81,10 @@ namespace DocumentationLogicielle.Services
             return evolutionByMonthAndSite;
         }
 
+        /// <summary>
+        /// Get the total amount of money earned
+        /// </summary>
+        /// <returns></returns>
         public async Task<float> TotalMoneyEarn()
         {
             var sales = await _context.Table<Sale>().ToListAsync();
@@ -78,6 +98,10 @@ namespace DocumentationLogicielle.Services
             return total;
         }
 
+        /// <summary>
+        /// Get all the total amount of money every year
+        /// </summary>
+        /// <returns></returns>
         public async Task<Dictionary<int,float>> MoneyByYear()
         {
             var sales = await _context.Table<Sale>().ToListAsync();

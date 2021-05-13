@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using DocumentationLogicielle.Models;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DocumentationLogicielle.App.Templates
 {
@@ -27,5 +27,10 @@ namespace DocumentationLogicielle.App.Templates
         /// What the element if made of
         /// </summary>
         public List<NeededProductTemplate> MadeOf { get; set; }
+
+        /// <summary>
+        /// The element is available until this date
+        /// </summary>
+        public string AvailableUntil { get; set; }
     }
 }

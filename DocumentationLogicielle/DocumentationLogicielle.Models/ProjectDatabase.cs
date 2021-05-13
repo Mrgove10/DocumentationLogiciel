@@ -24,7 +24,7 @@ namespace DocumentationLogicielle.Models
 
             //database.InsertAsync(new User { Login = "user", Password = "user", Role = ERole.User.ToString() });
             //database.InsertAsync(new User { Login = "admin", Password = "admin", Role = ERole.Administrator.ToString() });
-            //database.InsertAsync(new User { Login = "lou", Password = "lou", Role = ERole.Administrator.ToString() }); 
+            //database.InsertAsync(new User { Login = "lou", Password = "lou", Role = ERole.Administrator.ToString() });
             //database.InsertAllAsync(new List<Material>
             //{
             //    new() {Label = "Wood", Price = 1.5f, Quantity = 15},
@@ -35,8 +35,8 @@ namespace DocumentationLogicielle.Models
             //});
             //database.InsertAllAsync(new List<Product>
             //{
-            //    new (){Label = "House", Price = 250400, Quantity = 1},
-            //    new (){Label = "Roof", Price = 16321, Quantity = 3}
+            //    new (){Label = "House", Price = 250400, Quantity = 1, AvailableUntil = new DateTime(2021,08,07)},
+            //    new (){Label = "Roof", Price = 16321, Quantity = 3, AvailableUntil = new DateTime(2021,06,13)}
             //});
             //database.InsertAllAsync(new List<MaterialsProduct>
             //{
@@ -46,10 +46,10 @@ namespace DocumentationLogicielle.Models
             //    new() {IdProduct = 2, IdMaterial = 1, QuantityNeeded = 76},
             //    new() {IdProduct = 2, IdMaterial = 4, QuantityNeeded = 23}
             //});
-            //database.InsertAsync(new Alert { Title = "Stock critique de colles", Message = "Le stock de colles est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 4});
-            //database.InsertAsync(new Alert { Title = "Stock critique de vis", Message = "Le stock de vis est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 3});
-            //database.InsertAsync(new Alert { Title = "Stock critique de peintures", Message = "Le stock de peintures est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 5});
-            //database.InsertAsync(new Alert { Title = "Stock critique de bois", Message = "Le stock de bois est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = true, MaterialId = 1});
+            //database.InsertAsync(new Alert { Title = "Stock critique de colles", Message = "Le stock de colles est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 4 });
+            //database.InsertAsync(new Alert { Title = "Stock critique de vis", Message = "Le stock de vis est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 3 });
+            //database.InsertAsync(new Alert { Title = "Stock critique de peintures", Message = "Le stock de peintures est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 5 });
+            //database.InsertAsync(new Alert { Title = "Stock critique de bois", Message = "Le stock de bois est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = true, MaterialId = 1 });
 
             //database.InsertAsync(new Sale { ProductIdSold = 1, DateOfSale = DateTime.Now, Site = ESite.Annecy.ToString() });
             //database.InsertAsync(new Sale { ProductIdSold = 2, DateOfSale = DateTime.Now, Site = ESite.Annecy.ToString() });

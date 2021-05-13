@@ -129,16 +129,24 @@
                 </DataGrid.Columns>
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
-                        <ListView ItemsSource="{Binding MadeOf}" HorizontalAlignment="Center">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Header="Material" 
-                                                    DisplayMemberBinding="{Binding Material}"/>
-                                    <GridViewColumn Header="Quantity Needed" 
-                                                    DisplayMemberBinding="{Binding QuantityNeeded}"/>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
+                        <Grid>
+                            <TextBlock Foreground="White" 
+                                       HorizontalAlignment="Center" 
+                                       FontSize="13"
+                                       FontWeight="Bold"
+                                       Margin="0 0 0 15"
+                                       Text="{Binding AvailableUntil}"/>
+                            <ListView ItemsSource="{Binding MadeOf}" HorizontalAlignment="Center">
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Header="Material" 
+                                                        DisplayMemberBinding="{Binding Material}"/>
+                                        <GridViewColumn Header="Quantity Needed" 
+                                                        DisplayMemberBinding="{Binding QuantityNeeded}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </Grid>
                     </DataTemplate>
                 </DataGrid.RowDetailsTemplate>
             </DataGrid>

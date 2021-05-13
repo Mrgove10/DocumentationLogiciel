@@ -148,6 +148,7 @@ namespace DocumentationLogicielle.App.ViewModels
                         Label = product.Label,
                         Price = $"{product.Price:C}",
                         Quantity = product.Quantity,
+                        AvailableUntil = $"⚠ Product available until : {product.AvailableUntil:D} ⚠",
                         MadeOf = listMadeOf
                     };
 

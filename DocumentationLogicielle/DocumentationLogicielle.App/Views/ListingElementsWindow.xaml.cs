@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using DocumentationLogicielle.App.Templates;
 using DocumentationLogicielle.App.ViewModels;
 using DocumentationLogicielle.Models;

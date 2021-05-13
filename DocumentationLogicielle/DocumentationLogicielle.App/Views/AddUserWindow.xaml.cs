@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using DocumentationLogicielle.App.ViewModels;
 using DocumentationLogicielle.Services;
@@ -7,7 +6,7 @@ using DocumentationLogicielle.Services;
 namespace DocumentationLogicielle.App.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddUserWindow.xaml
     /// </summary>
     public partial class AddUserWindow : Window
     {
@@ -16,6 +15,10 @@ namespace DocumentationLogicielle.App.Views
         /// </summary>
         /// <param name="userServices"></param>
         /// <param name="alertServices"></param>
+        /// <param name="materialServices"></param>
+        /// <param name="productServices"></param>
+        /// <param name="materialsProductServices"></param>
+        /// <param name="saleServices"></param>
         public AddUserWindow(UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {
             InitializeComponent();

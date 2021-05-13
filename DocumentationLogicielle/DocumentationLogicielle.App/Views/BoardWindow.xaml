@@ -13,7 +13,7 @@
         Background="{DynamicResource MaterialDesignPaper}" 
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="BoardWindow" Height="450" Width="800"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>

@@ -7,7 +7,7 @@ using DocumentationLogicielle.Services;
 namespace DocumentationLogicielle.App.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AlertsWindow.xaml
     /// </summary>
     public partial class AlertsWindow : Window
     {

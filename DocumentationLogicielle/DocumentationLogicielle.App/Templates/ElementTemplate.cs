@@ -34,6 +34,9 @@ namespace DocumentationLogicielle.App.Templates
         /// </summary>
         public string AvailableUntil { get; set; }
 
+        /// <summary>
+        /// Color for the date
+        /// </summary>
         public Brush ColorDate { get; set; }
     }
 }

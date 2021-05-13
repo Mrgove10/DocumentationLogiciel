@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using System.Windows;
-using System.Windows.Media;
 using DocumentationLogicielle.App.ViewModels;
 using DocumentationLogicielle.Services;
-using LiveCharts;
-using LiveCharts.Wpf;
 
 namespace DocumentationLogicielle.App.Views
 {

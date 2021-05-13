@@ -1,12 +1,20 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Markup;
+using System.Windows.Media;
+using DocumentationLogicielle.App.Templates;
 using DocumentationLogicielle.App.Views;
 using DocumentationLogicielle.Models;
 using DocumentationLogicielle.Services;
+using MaterialDesignThemes.Wpf;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
@@ -14,6 +22,9 @@ namespace DocumentationLogicielle.App.ViewModels
     {
         #region Private properties
 
+        private ElementTemplate elementTemplate;
+        private NeededProductTemplate neededProductTemplate;
+        private List<NeededProductTemplate> neededMaterials;
         private Visibility displayProduct;
         private Visibility displayMaterial;
         private Visibility buttonDisplay;
@@ -24,8 +35,74 @@ namespace DocumentationLogicielle.App.ViewModels
 
         public IAsyncCommand GoBackCommand { get; }
         public ICommand AddElementCommand { get; }
+        public ICommand AddNeededMaterialCommand { get; }
 
         #endregion
+
+        #region Inputs
+
+        public string ElementLabel
+        {
+            get => elementTemplate.Label;
+            set
+            {
+                elementTemplate.Label = value;
+                OnPropertyChange();
+            }
+        }
+
+        public int ElementQuantity
+        {
+            get => elementTemplate.Quantity;
+            set
+            {
+                elementTemplate.Quantity = value;
+                OnPropertyChange();
+            }
+        }
+
+        public int NeededMaterialQuantity
+        {
+            get => neededProductTemplate.QuantityNeeded;
+            set
+            {
+                neededProductTemplate.QuantityNeeded = value;
+                OnPropertyChange();
+            }
+        }
+
+        public float ElementPrice
+        {
+            get => elementTemplate.Price;
+            set
+            {
+                elementTemplate.Price = value;
+                OnPropertyChange();
+            }
+        }
+
+        public DateTime ProductAvailableDate
+        {
+            get => elementTemplate.AvailableUntil;
+            set
+            {
+                elementTemplate.AvailableUntil = value;
+                OnPropertyChange();
+            }
+        }
+
+        public Brush ProductAvailableDateColor
+        {
+            get => elementTemplate.ColorDate;
+            set
+            {
+                elementTemplate.ColorDate = value;
+                OnPropertyChange();
+            }
+        }
+        #endregion
+
+        #region Visibility
 
         public Visibility DisplayProduct
         {
@@ -46,7 +123,7 @@ namespace DocumentationLogicielle.App.ViewModels
                 OnPropertyChange();
             }
         }
-        
+
         public Visibility ButtonDisplay
         {
             get => buttonDisplay;
@@ -57,6 +134,9 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        #endregion
+
+        public List<NeededProductTemplate> NeededMaterials { get; set; }
         public string CurrentUserName { get; set; }
         public AddElementWindow CurrentPage { get; set; }
 
@@ -71,11 +151,11 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-        public AddElementViewModel(AddElementWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
+        public AddElementViewModel(AddElementWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Material> materials)
         {
             CurrentPage = currentPage;
-
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
+            NeededMaterials = new List<NeededProductTemplate>();
 
             UserServices = userServices;
             AlertServices = alertServices;
@@ -84,12 +164,18 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialsProductServices = materialsProductServices;
             SaleServices = saleServices;
 
+            elementTemplate = new ElementTemplate();
+            neededProductTemplate = new NeededProductTemplate();
+
+            CurrentPage.NeededMaterialsComboBox.ItemsSource = materials.Select(x => x.Label);
+
             DisplayProduct = Visibility.Hidden;
             DisplayMaterial = Visibility.Hidden;
             ButtonDisplay = Visibility.Hidden;
 
             GoBackCommand = new AsyncCommand(GoBack, () => true);
             AddElementCommand = new CommandHandler(CreateElement, () => true);
+            AddNeededMaterialCommand = new CommandHandler(AddNeededMaterial, () => true);
         }
 
         #region Property Changes
@@ -124,6 +210,7 @@ namespace DocumentationLogicielle.App.ViewModels
                     case "Product":
                         DisplayProduct = Visibility.Visible;
                         DisplayMaterial = Visibility.Hidden;
+                        ProductAvailableDate = DateTime.Today;
                         break;
                 }
 
@@ -131,18 +218,118 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        public void AddNeededMaterial(object parameter)
+        {
+            var materialSelected = CurrentPage.NeededMaterialsComboBox.SelectedItem.ToString();
+            NeededMaterials.Add(new NeededProductTemplate{Material = materialSelected, QuantityNeeded = NeededMaterialQuantity});
+            OnPropertyChange(nameof(NeededMaterials));
+
+            CurrentPage.NeededMaterialsList.RowDefinitions.Add(new RowDefinition());
+            Card card = new Card();
+            StringBuilder sb = new StringBuilder();
+
+            //Create card
+            sb.Append(@"<materialDesign:Card Margin='1' Grid.Row='"+(NeededMaterials.Count-1)+@"' xmlns='http://schemas.microsoft.com/winfx/2006/xaml/presentation' xmlns:x='http://schemas.microsoft.com/winfx/2006/xaml' xmlns:materialDesign='http://materialdesigninxaml.net/winfx/xaml/themes'>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width = '2*'></ColumnDefinition>
+                                        <ColumnDefinition Width = '*'></ColumnDefinition>
+                                        <ColumnDefinition Width = '*'></ColumnDefinition>
+                                        <ColumnDefinition Width = '*'></ColumnDefinition>
+                                    </Grid.ColumnDefinitions >
+
+                                    <TextBlock Grid.Column='0'
+                                               Foreground='White'
+                                               VerticalAlignment = 'Center'
+                                               HorizontalAlignment='Center'
+                                               FontSize='15'
+                                               FontWeight='Bold'
+                                               Text='"+materialSelected+@"'/>
+                                    <TextBlock Grid.Column='1'
+                                               Foreground='White'
+                                               VerticalAlignment = 'Center'
+                                               HorizontalAlignment='Center'
+                                               FontSize='15'
+                                               FontWeight='Bold'
+                                               Text=':'/>
+                                    <TextBlock Grid.Column = '2'
+                                               VerticalAlignment = 'Center'
+                                               HorizontalAlignment='Center'
+                                               Foreground = 'White'
+                                               FontSize = '15'
+                                               Text = '"+NeededMaterialQuantity+@"' />
+
+                                    <Border CornerRadius='5' 
+                                            Grid.Column='3'
+                                            BorderBrush='Red'>
+                                        <Button Height='20'
+                                                VerticalAlignment='Center'
+                                                Background='Red'
+                                                FontSize='10'>
+                                            -
+                                        </Button>
+                                    </Border>
+                                </Grid>
+                            </materialDesign:Card>
+");
+
+
+            card = (Card)XamlReader.Parse(sb.ToString());
+            CurrentPage.NeededMaterialsList.Children.Add(card);
+        }
+
         public void CreateElement(object parameter)
         {
-            if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
+            try
             {
-                var message = $"Element of ... has been changed !";
-                Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
-            }
+                var itemSelected = ((ComboBoxItem)CurrentPage.TypeElementComboBox.SelectedItem).Content.ToString();
 
-            DisplayProduct = Visibility.Hidden;
-            DisplayMaterial = Visibility.Hidden;
-            ButtonDisplay = Visibility.Hidden;
-            CurrentPage.TypeElementComboBox.SelectedItem = null;
+                switch (itemSelected)
+                {
+                    case "Material":
+                        MaterialServices.Create(new Material
+                        {
+                            Label = ElementLabel,
+                            Quantity = ElementQuantity,
+                            Price = ElementPrice
+                        });
+                        break;
+                    case "Product":
+                        ProductServices.Create(new Product
+                        {
+                            Label = ElementLabel,
+                            Quantity = ElementQuantity,
+                            Price = ElementPrice,
+                            AvailableUntil = ProductAvailableDate
+                        });
+                        break;
+                }
+
+                DisplayProduct = Visibility.Hidden;
+                DisplayMaterial = Visibility.Hidden;
+                ButtonDisplay = Visibility.Hidden;
+                ElementLabel = string.Empty;
+                ElementPrice = 0;
+                ElementQuantity = 0;
+                ProductAvailableDate = DateTime.Today;
+                CurrentPage.TypeElementComboBox.SelectedItem = null; 
+                
+                if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
+                {
+                    var message = $"Element of ... has been changed !";
+                    Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
+                }
+            }
+            catch (Exception e)
+            {
+                if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
+                {
+                    var message = $"A problem occurs, please retry or contact the support.";
+                    CurrentPage.ElementAddSnackbar.Background = Brushes.Red;
+                    Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
+                }
+            }
+            
         }
 
         /// <summary>

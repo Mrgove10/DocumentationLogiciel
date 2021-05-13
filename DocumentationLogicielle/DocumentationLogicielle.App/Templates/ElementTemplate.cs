@@ -15,9 +15,14 @@ namespace DocumentationLogicielle.App.Templates
         public string Label { get; set; }
         
         /// <summary>
+        /// Price of the element into String
+        /// </summary>
+        public string PriceString { get; set; }
+
+        /// <summary>
         /// Price of the element
         /// </summary>
-        public string Price { get; set; }
+        public float Price { get; set; }
         
         /// <summary>
         /// Quantity of the element
@@ -30,9 +35,14 @@ namespace DocumentationLogicielle.App.Templates
         public List<NeededProductTemplate> MadeOf { get; set; }
 
         /// <summary>
+        /// The element is available until this date into String
+        /// </summary>
+        public string AvailableUntilString { get; set; }
+
+        /// <summary>
         /// The element is available until this date
         /// </summary>
-        public string AvailableUntil { get; set; }
+        public DateTime AvailableUntil { get; set; }
 
         /// <summary>
         /// Color for the date

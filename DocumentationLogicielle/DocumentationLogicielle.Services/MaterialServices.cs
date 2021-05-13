@@ -31,5 +31,10 @@ namespace DocumentationLogicielle.Services
         {
             _context.UpdateAsync(materialToUpdate).Wait();
         }
+
+        public void Create(Material material)
+        {
+            _context.InsertAsync(material).Wait();
+        }
     }
 }

@@ -122,7 +122,7 @@ namespace DocumentationLogicielle.App.ViewModels
                     ElementTemplate element = new ElementTemplate
                     {
                         Label = material.Label,
-                        Price = material.Price + " €",
+                        PriceString = material.Price + " €",
                         Quantity = material.Quantity
                     };
 
@@ -148,9 +148,9 @@ namespace DocumentationLogicielle.App.ViewModels
                     ElementTemplate element = new ElementTemplate
                     {
                         Label = product.Label,
-                        Price = $"{product.Price:C}",
+                        PriceString = $"{product.Price:C}",
                         Quantity = product.Quantity,
-                        AvailableUntil = $"⚠ Product available until : {product.AvailableUntil:D} ⚠",
+                        AvailableUntilString = $"⚠ Product available until : {product.AvailableUntil:D} ⚠",
                         ColorDate = product.AvailableUntil >= DateTime.Today ? Brushes.Lime : Brushes.Red,
                         MadeOf = listMadeOf
                     };

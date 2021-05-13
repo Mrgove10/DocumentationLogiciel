@@ -45,7 +45,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <summary>
         /// Command to go to the page "AddElement"
         /// </summary>
-        public ICommand GoToAddElementCommand { get; }
+        public IAsyncCommand GoToAddElementCommand { get; }
 
         #endregion
 
@@ -137,7 +137,7 @@ namespace DocumentationLogicielle.App.ViewModels
             GoToListingElementsCommand = new AsyncCommand(GoToListingElements, () => true);
             GoToStatisticsCommand = new AsyncCommand(GoToStatistics, () => true);
             GoToUpdateStockCommand = new AsyncCommand(GoToUpdateStock, () => true);
-            GoToAddElementCommand = new CommandHandler(GoToAddElement, () => true);
+            GoToAddElementCommand = new AsyncCommand(GoToAddElement, () => true);
         }
 
         /// <summary>
@@ -151,9 +151,9 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
-        private void GoToAddElement(object parameter)
+        private async Task GoToAddElement()
         {
-            AddElementWindow page = new AddElementWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices);
+            AddElementWindow page = new AddElementWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await MaterialServices.GetAll());
             page.Show();
             CurrentPage.Close();
         }

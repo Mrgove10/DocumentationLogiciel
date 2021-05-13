@@ -120,7 +120,7 @@
                     <DataGridTextColumn Header="Unit price" 
                                         FontSize="18"
                                         Width="200"
-                                        Binding="{Binding Price}" >
+                                        Binding="{Binding PriceString}" >
                     </DataGridTextColumn>
                     <DataGridTextColumn Header="Quantity" 
                                         FontSize="18"
@@ -135,7 +135,7 @@
                                        FontSize="13"
                                        FontWeight="Bold"
                                        Margin="0 0 0 15"
-                                       Text="{Binding AvailableUntil}"/>
+                                       Text="{Binding AvailableUntilString}"/>
                             <ListView ItemsSource="{Binding MadeOf}" HorizontalAlignment="Center">
                                 <ListView.View>
                                     <GridView>

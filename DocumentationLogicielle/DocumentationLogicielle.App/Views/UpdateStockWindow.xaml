@@ -164,7 +164,6 @@
                                  VerticalAlignment="Center"
                                  Foreground="White"
                                  Width="150"
-                                 PreviewTextInput="PreviewTextInput"
                                  Text="{Binding ProductPrice, StringFormat='#.00'}" />
                     </Grid>
 

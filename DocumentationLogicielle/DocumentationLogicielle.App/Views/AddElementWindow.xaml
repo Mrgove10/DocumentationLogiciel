@@ -106,12 +106,307 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Row="1">
-                <Grid Visibility="{Binding DisplayProduct}">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Form for product</TextBlock>
+            <Grid Grid.Row="1" Visibility="{Binding DisplayProduct}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Label :
+                            </TextBlock>
+                            <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="200"
+                                     Text="{Binding ElementLabel}"/>
+
+                        </Grid>
+
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" 
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Available date :
+                            </TextBlock>
+                            <DatePicker Grid.Row="1" 
+                                        Foreground="{Binding ProductAvailableDateColor}"
+                                        Width="150px"
+                                        HorizontalContentAlignment="Center"
+                                        SelectedDateChanged="DatePicker_OnSelectedDateChanged"
+                                        SelectedDate="{Binding ProductAvailableDate}"/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Quantity :
+                            </TextBlock>
+                            <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="100"
+                                     PreviewTextInput="PreviewTextInput"
+                                     Text="{Binding ElementQuantity}"/>
+
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Price :
+                            </TextBlock>
+                            <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="150"
+                                     Text="{Binding ElementPrice, StringFormat='#.00'}"/>
+
+                        </Grid>
+                    </Grid>
+
                 </Grid>
-                <Grid Visibility="{Binding DisplayMaterial}">
-                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Form for material</TextBlock>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Foreground="White"
+                               FontSize="15">
+                        Needed materials :
+                    </TextBlock>
+
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="4*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"></RowDefinition>
+                                <RowDefinition Height="5*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       FontSize="10">
+                                Material :
+                            </TextBlock>
+                            <ComboBox Grid.Column="0"
+                                     Grid.Row="1"
+                                     Width="150"
+                                     HorizontalContentAlignment="Center"
+                                     Name="NeededMaterialsComboBox"/>
+
+
+                            <TextBlock Grid.Row="0"
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       Foreground="White"
+                                       FontSize="10">
+                                Quantity :
+                            </TextBlock>
+                            <TextBox Grid.Column="1"
+                                     Grid.Row="1"
+                                     Width="50"
+                                     Height="23"
+                                     Text="{Binding NeededMaterialQuantity}"
+                                     PreviewTextInput="PreviewTextInput" />
+
+                        </Grid>
+                        
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Column="1"
+                                    Foreground="White"
+                                    FontSize="10"
+                                    Height="20"
+                                    Command="{Binding AddNeededMaterialCommand}"
+                                    Background="Blue">
+                                Add material
+                            </Button>
+                        </Grid>
+
+                        <Grid Grid.Row="3" Name="NeededMaterialsList">
+
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" Visibility="Hidden">
+                <!--<Grid Grid.Row="1" Visibility="{Binding DisplayMaterial}" >-->
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Label :
+                        </TextBlock>
+                        <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="200"
+                                     Text="{Binding ElementLabel}"/>
+
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Quantity :
+                        </TextBlock>
+                        <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="100"
+                                     PreviewTextInput="PreviewTextInput"
+                                     Text="{Binding ElementQuantity}"/>
+
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Bottom"
+                                       Foreground="White"
+                                       FontSize="15">
+                                Price :
+                        </TextBlock>
+                        <TextBox Grid.Row="1"
+                                     HorizontalAlignment="Center"
+                                     HorizontalContentAlignment="Center"
+                                     VerticalAlignment="Center"
+                                     Foreground="White"
+                                     Width="150"
+                                     Text="{Binding ElementPrice, StringFormat='#.00'}"/>
+
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

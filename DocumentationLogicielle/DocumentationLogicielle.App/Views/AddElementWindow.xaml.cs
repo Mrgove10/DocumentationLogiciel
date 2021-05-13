@@ -1,6 +1,12 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 using DocumentationLogicielle.App.ViewModels;
+using DocumentationLogicielle.Models;
 using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.Views
@@ -19,28 +25,23 @@ namespace DocumentationLogicielle.App.Views
         /// <param name="productServices"></param>
         /// <param name="materialsProductServices"></param>
         /// <param name="saleServices"></param>
+        /// <param name="materials"></param>
         public AddElementWindow(UserServices userServices, 
                                 AlertServices alertServices, 
                                 MaterialServices materialServices, 
                                 ProductServices productServices, 
                                 MaterialsProductServices materialsProductServices, 
-                                SaleServices saleServices)
+                                SaleServices saleServices,
+                                List<Material> materials)
         {
             InitializeComponent();
-            DataContext = new AddElementViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, saleServices);
+            DataContext = new AddElementViewModel(this, userServices, alertServices, materialServices, productServices, materialsProductServices, saleServices, materials);
         }
-
-        /// <summary>
-        /// Each time the user write a letter, call this function and set field in DataContext (see <see cref="MainWindowViewModel"/>)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        
+        private void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (this.DataContext != null)
-            {
-                ((dynamic)this.DataContext).PasswordInput = ((PasswordBox)sender).Password;
-            }
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void TypeElementComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,6 +50,11 @@ namespace DocumentationLogicielle.App.Views
             {
                 ((dynamic)this.DataContext).GenerateForm();
             }
+        }
+
+        private void DatePicker_OnSelectedDateChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            ((DatePicker)sender).Foreground = ((DatePicker)sender).SelectedDate >= DateTime.Today ? Brushes.Lime : Brushes.Red;
         }
     }
 }

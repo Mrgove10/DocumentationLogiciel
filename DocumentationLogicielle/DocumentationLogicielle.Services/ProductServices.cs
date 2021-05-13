@@ -50,5 +50,10 @@ namespace DocumentationLogicielle.Services
         {
             _context.UpdateAsync(productToUpdate).Wait();
         }
+
+        public void Create(Product product)
+        {
+            _context.InsertAsync(product).Wait();
+        }
     }
 }

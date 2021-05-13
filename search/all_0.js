@@ -22,5 +22,5 @@ var searchData=
   ['assemblyinfo_2ecs_19',['AssemblyInfo.cs',['../_assembly_info_8cs.html',1,'']]],
   ['asynccommand_20',['AsyncCommand',['../class_documentation_logicielle_1_1_app_1_1_async_command.html',1,'DocumentationLogicielle.App.AsyncCommand'],['../class_documentation_logicielle_1_1_app_1_1_async_command.html#a69af7017f12f2307922b1969f1316007',1,'DocumentationLogicielle.App.AsyncCommand.AsyncCommand(Func&lt; Task &gt; command, Func&lt; bool &gt; canExecute=null)'],['../class_documentation_logicielle_1_1_app_1_1_async_command.html#a73485f61c3b78fbfe59ca1b51fe4f32e',1,'DocumentationLogicielle.App.AsyncCommand.AsyncCommand(Func&lt; Task &gt; action)']]],
   ['asynccommand_2ecs_21',['AsyncCommand.cs',['../_async_command_8cs.html',1,'']]],
-  ['availableuntil_22',['AvailableUntil',['../class_documentation_logicielle_1_1_models_1_1_product.html#a6bb1160bd3bf9d1c60211e3b0f106849',1,'DocumentationLogicielle::Models::Product']]]
+  ['availableuntil_22',['AvailableUntil',['../class_documentation_logicielle_1_1_app_1_1_templates_1_1_element_template.html#ae4f40834bf65dc7535fa0d676a619155',1,'DocumentationLogicielle.App.Templates.ElementTemplate.AvailableUntil()'],['../class_documentation_logicielle_1_1_models_1_1_product.html#a6bb1160bd3bf9d1c60211e3b0f106849',1,'DocumentationLogicielle.Models.Product.AvailableUntil()']]]
 ];

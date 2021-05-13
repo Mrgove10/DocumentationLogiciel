@@ -8,7 +8,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model 
     [ "CurrentUserLambda", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#ab36bbfc7cb2bd29e8c6d307c7575ac26", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#ae0819a8c4cc557b3356a842303bb6f4a", null ],
     [ "GoBackCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a2c45f7110f352cb9d3f7cdc37d527b8a", null ],
-    [ "GoToAddElementCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#af20573eb10db488ff434e054e800d5d0", null ],
+    [ "GoToAddElementCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a2074e8cca8a4a0e7f4c4e06e305cf197", null ],
     [ "GoToAddUserCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a8b610c05a6acbc40dfb6f1aaa713f57e", null ],
     [ "GoToAlertsCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#ab52a729237e21da5c72b47b1aa48f8ff", null ],
     [ "GoToListingElementsCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a65b6fa023b793ce592491662d9fb06d1", null ],

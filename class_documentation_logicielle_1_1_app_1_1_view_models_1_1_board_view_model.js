@@ -12,6 +12,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model 
     [ "GoToAlertsCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#ab52a729237e21da5c72b47b1aa48f8ff", null ],
     [ "GoToListingElementsCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a65b6fa023b793ce592491662d9fb06d1", null ],
     [ "GoToStatisticsCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#aececa398a5f1c4b7e31323ca2be21075", null ],
+    [ "GoToUpdateStockCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#abe88253f2b54e0192bfc53587273fc79", null ],
     [ "MaterialServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a06d96ba8b2bde05d12e381345a39d777", null ],
     [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#a8760f48ae516d4a3f3be34b7f9216a41", null ],
     [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html#aa4b2665e8696ce41dc86b757f03ce241", null ],

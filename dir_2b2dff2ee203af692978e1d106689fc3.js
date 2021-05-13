@@ -17,5 +17,8 @@ var dir_2b2dff2ee203af692978e1d106689fc3 =
     ] ],
     [ "StatisticsWindow.xaml.cs", "_statistics_window_8xaml_8cs.html", [
       [ "StatisticsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_statistics_window.html", "class_documentation_logicielle_1_1_app_1_1_views_1_1_statistics_window" ]
+    ] ],
+    [ "UpdateStockWindow.xaml.cs", "_update_stock_window_8xaml_8cs.html", [
+      [ "UpdateStockWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_update_stock_window.html", "class_documentation_logicielle_1_1_app_1_1_views_1_1_update_stock_window" ]
     ] ]
 ];

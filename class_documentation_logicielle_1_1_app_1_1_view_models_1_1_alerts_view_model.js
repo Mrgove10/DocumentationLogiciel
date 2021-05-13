@@ -2,6 +2,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model
 [
     [ "AlertsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a74df3a86bb48b751ff84b123ac052cb4", null ],
     [ "GenerateAlertsCards", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a2ba96f7c0a3d323215236ad998f69ea8", null ],
+    [ "GoBack", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a62cf28e2bf3e85a332e82cb31f0bd7c4", null ],
     [ "UpdateAlerts", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#ae749755b80b8849b885dc42787ce5606", null ],
     [ "Alerts", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#a296d11988986a24e96d473b69086aef5", null ],
     [ "AlertServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html#ab5ec82b9a4b7eb89e693e84b9040e705", null ],

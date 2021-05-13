@@ -1,6 +1,7 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model =
 [
     [ "AddUserViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#a2ca74812f9d48918245eed3877ff8891", null ],
+    [ "GoBack", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#aa4ef166fa5601fd98f6069aa7f7a5c79", null ],
     [ "OnPropertyChange", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#af7d4ce2eb17c250187b1e96811e4afcb", null ],
     [ "ButtonValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#ad1e7816ff3db05e1f4ffc15e84f2d7ca", null ],
     [ "LoginValidation", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#a93a3067fd22d8abf5610c9febeb7d816", null ],

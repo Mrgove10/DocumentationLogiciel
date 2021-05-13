@@ -5,5 +5,8 @@ var dir_824c763ce62c8c8a720a4f02d4dc0dc9 =
     ] ],
     [ "NeededProductTemplate.cs", "_needed_product_template_8cs.html", [
       [ "NeededProductTemplate", "class_documentation_logicielle_1_1_app_1_1_templates_1_1_needed_product_template.html", "class_documentation_logicielle_1_1_app_1_1_templates_1_1_needed_product_template" ]
+    ] ],
+    [ "StockTemplate.cs", "_stock_template_8cs.html", [
+      [ "StockTemplate", "class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html", "class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template" ]
     ] ]
 ];

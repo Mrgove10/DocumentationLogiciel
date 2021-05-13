@@ -1,5 +1,8 @@
 var dir_2b2dff2ee203af692978e1d106689fc3 =
 [
+    [ "AddElementWindow.xaml.cs", "_add_element_window_8xaml_8cs.html", [
+      [ "AddElementWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_element_window.html", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_element_window" ]
+    ] ],
     [ "AddUserWindow.xaml.cs", "_add_user_window_8xaml_8cs.html", [
       [ "AddUserWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_user_window.html", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_user_window" ]
     ] ],

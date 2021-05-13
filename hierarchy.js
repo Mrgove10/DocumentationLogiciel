@@ -13,11 +13,15 @@ var hierarchy =
       ] ]
     ] ],
     [ "INotifyPropertyChanged", null, [
+      [ "DocumentationLogicielle.App.ViewModels.AddElementViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_element_view_model.html", null ],
       [ "DocumentationLogicielle.App.ViewModels.AddUserViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html", null ],
       [ "DocumentationLogicielle.App.ViewModels.MainWindowViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_main_window_view_model.html", null ],
       [ "DocumentationLogicielle.App.ViewModels.UpdateStockViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html", null ]
     ] ],
     [ "DocumentationLogicielle.App.ViewModels.IViewModel< T, Y >", "interface_documentation_logicielle_1_1_app_1_1_view_models_1_1_i_view_model.html", null ],
+    [ "DocumentationLogicielle.App.ViewModels.IViewModel< AddElementWindow, IAsyncCommand >", "interface_documentation_logicielle_1_1_app_1_1_view_models_1_1_i_view_model.html", [
+      [ "DocumentationLogicielle.App.ViewModels.AddElementViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_element_view_model.html", null ]
+    ] ],
     [ "DocumentationLogicielle.App.ViewModels.IViewModel< AddUserWindow, IAsyncCommand >", "interface_documentation_logicielle_1_1_app_1_1_view_models_1_1_i_view_model.html", [
       [ "DocumentationLogicielle.App.ViewModels.AddUserViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html", null ]
     ] ],
@@ -53,6 +57,7 @@ var hierarchy =
       [ "DocumentationLogicielle.App.Rules.NotNullValidationRule", "class_documentation_logicielle_1_1_app_1_1_rules_1_1_not_null_validation_rule.html", null ]
     ] ],
     [ "Window", null, [
+      [ "DocumentationLogicielle.App.Views.AddElementWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_element_window.html", null ],
       [ "DocumentationLogicielle.App.Views.AddUserWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_add_user_window.html", null ],
       [ "DocumentationLogicielle.App.Views.AlertsWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_alerts_window.html", null ],
       [ "DocumentationLogicielle.App.Views.BoardWindow", "class_documentation_logicielle_1_1_app_1_1_views_1_1_board_window.html", null ],

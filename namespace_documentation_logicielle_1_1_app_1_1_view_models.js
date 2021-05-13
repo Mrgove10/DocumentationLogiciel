@@ -1,5 +1,6 @@
 var namespace_documentation_logicielle_1_1_app_1_1_view_models =
 [
+    [ "AddElementViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_element_view_model.html", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_element_view_model" ],
     [ "AddUserViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model" ],
     [ "AlertsViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model.html", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_alerts_view_model" ],
     [ "BoardViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model.html", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_board_view_model" ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"class_documentation_logicielle_1_1_models_1_1_product.html":[1,0,0,1,3],
 "class_documentation_logicielle_1_1_models_1_1_product.html#a05df045686e9ed38bc4a55e876a78434":[1,0,0,1,3,4],
 "class_documentation_logicielle_1_1_models_1_1_product.html#a0ccc903a4ce7e923b2c4dbd522266cfa":[1,0,0,1,3,1],
 "class_documentation_logicielle_1_1_models_1_1_product.html#a6bb1160bd3bf9d1c60211e3b0f106849":[1,0,0,1,3,0],
@@ -111,8 +112,8 @@ var NAVTREEINDEX1 =
 "namespace_documentation_logicielle_1_1_app_1_1_view_models.html":[0,0,0,0,2],
 "namespace_documentation_logicielle_1_1_app_1_1_views.html":[0,0,0,0,3],
 "namespace_documentation_logicielle_1_1_app_1_1_views.html":[1,0,0,0,3],
-"namespace_documentation_logicielle_1_1_models.html":[1,0,0,1],
 "namespace_documentation_logicielle_1_1_models.html":[0,0,0,1],
+"namespace_documentation_logicielle_1_1_models.html":[1,0,0,1],
 "namespace_documentation_logicielle_1_1_services.html":[0,0,0,2],
 "namespace_documentation_logicielle_1_1_services.html":[1,0,0,2],
 "namespacemembers.html":[0,1,0],

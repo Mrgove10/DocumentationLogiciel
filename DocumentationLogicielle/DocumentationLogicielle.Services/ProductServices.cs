@@ -39,5 +39,15 @@ namespace DocumentationLogicielle.Services
         {
             return await _context.Table<Product>().FirstAsync(x => x.Id == idProduct);
         }
+
+        public async Task<Product> GetByLabel(string labelProduct)
+        {
+            return await _context.Table<Product>().FirstOrDefaultAsync(x => x.Label == labelProduct);
+        }
+
+        public void Update(Product productToUpdate)
+        {
+            _context.UpdateAsync(productToUpdate).Wait();
+        }
     }
 }

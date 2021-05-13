@@ -11,7 +11,7 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
-    public class AddUserViewModel : INotifyPropertyChanged
+    public class AddUserViewModel : INotifyPropertyChanged, IViewModel<AddUserWindow, IAsyncCommand>
     {
         private User user;
 
@@ -203,7 +203,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Method to go back to the precedent page
         /// </summary>
         /// <param name="parameter"></param>
-        private async Task GoBack()
+        public async Task GoBack()
         {
             BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
             page.Show();

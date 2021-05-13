@@ -16,7 +16,7 @@ namespace DocumentationLogicielle.App.ViewModels
     /// <summary>
     /// TODO
     /// </summary>
-    public class StatisticsViewModel
+    public class StatisticsViewModel : IViewModel<StatisticsWindow, IAsyncCommand>
     {
         /// <summary>
         /// Command to go back to the precedent page

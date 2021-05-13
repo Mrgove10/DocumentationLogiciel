@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using DocumentationLogicielle.App.Views;
@@ -7,7 +8,7 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
-    public class BoardViewModel
+    public class BoardViewModel : IViewModel<BoardWindow, ICommand>
     {
         #region Commands
 
@@ -35,6 +36,11 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Command to go to the page "Statistics"
         /// </summary>
         public IAsyncCommand GoToStatisticsCommand { get; }
+
+        /// <summary>
+        /// Command to go to the page "UpdateStock"
+        /// </summary>
+        public IAsyncCommand GoToUpdateStockCommand { get; }
 
         #endregion
 
@@ -99,6 +105,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public SaleServices SaleServices { get; set; }
 
+
         #endregion
 
 
@@ -124,6 +131,7 @@ namespace DocumentationLogicielle.App.ViewModels
             GoToAlertsCommand = new AsyncCommand(GoToAlerts, () => true);
             GoToListingElementsCommand = new AsyncCommand(GoToListingElements, () => true);
             GoToStatisticsCommand = new AsyncCommand(GoToStatistics, () => true);
+            GoToUpdateStockCommand = new AsyncCommand(GoToUpdateStock, () => true);
         }
 
         /// <summary>
@@ -137,6 +145,7 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+
         /// <summary>
         /// Method to go to the "Alert" page
         /// </summary>
@@ -144,6 +153,13 @@ namespace DocumentationLogicielle.App.ViewModels
         private async Task GoToAlerts()
         {
             AlertsWindow page = new AlertsWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.GetAllAlerts());
+            page.Show();
+            CurrentPage.Close();
+        }
+
+        private async Task GoToUpdateStock()
+        {
+            UpdateStockWindow page = new UpdateStockWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await ProductServices.GetAll(), await MaterialServices.GetAll());
             page.Show();
             CurrentPage.Close();
         }

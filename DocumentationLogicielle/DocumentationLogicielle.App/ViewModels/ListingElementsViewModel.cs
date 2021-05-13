@@ -13,7 +13,7 @@ namespace DocumentationLogicielle.App.ViewModels
     /// <summary>
     /// TODO
     /// </summary>
-    public class ListingElementsViewModel
+    public class ListingElementsViewModel : IViewModel<ListingElementsWindow, IAsyncCommand>
     {
         #region Commands
 

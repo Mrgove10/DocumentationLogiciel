@@ -12,7 +12,7 @@ using MaterialDesignThemes.Wpf;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
-    public class AlertsViewModel
+    public class AlertsViewModel : IViewModel<AlertsWindow, IAsyncCommand>
     {
         #region Commands
 
@@ -76,7 +76,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// Update the alerts in the same time
         /// </summary>
         /// <returns></returns>
-        private async Task GoBack()
+        public async Task GoBack()
         {
             UpdateAlerts();
             BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());

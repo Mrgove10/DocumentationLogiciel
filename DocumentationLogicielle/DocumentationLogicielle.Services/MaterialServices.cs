@@ -21,5 +21,15 @@ namespace DocumentationLogicielle.Services
         {
             return await _context.Table<Material>().ToListAsync();
         }
+
+        public async Task<Material> GetByLabel(string labelMaterial)
+        {
+            return await _context.Table<Material>().FirstOrDefaultAsync(x => x.Label == labelMaterial);
+        }
+
+        public void Update(Material materialToUpdate)
+        {
+            _context.UpdateAsync(materialToUpdate).Wait();
+        }
     }
 }

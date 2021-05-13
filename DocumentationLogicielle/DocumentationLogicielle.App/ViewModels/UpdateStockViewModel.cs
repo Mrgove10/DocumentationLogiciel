@@ -73,16 +73,6 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-        public Visibility DisplayForm
-        {
-            get => displayForm;
-            set
-            {
-                displayForm = value;
-                OnPropertyChange();
-            }
-        }
-
         public string CurrentUserName { get; set; }
         public UpdateStockWindow CurrentPage { get; set; }
 
@@ -170,7 +160,6 @@ namespace DocumentationLogicielle.App.ViewModels
             {
                 CurrentPage.GridForm.Visibility = Visibility.Hidden;
             }
-            
         }
 
         public async Task UpdateElement()
@@ -192,6 +181,34 @@ namespace DocumentationLogicielle.App.ViewModels
                     material.Quantity = ProductStock;
                     material.Price = ProductPrice;
                     MaterialServices.Update(material);
+                    if (material.Quantity <= 10)
+                    {
+                        var alert = await AlertServices.GetAlertByMaterial(material.Id);
+                        if (alert == null)
+                        {
+                            AlertServices.Create(new Alert
+                            {
+                                IsDismiss = false,
+                                MaterialId = material.Id,
+                                Title = $"Stock critique de {material.Label}",
+                                Message = $"Le stock de {material.Label} est au plus bas. Contactez le fournisseur pour recommander du stock."
+                            });
+                        }
+                        else
+                        {
+                            alert.IsDismiss = false;
+                            AlertServices.UpdateAlert(alert);
+                        }
+                    }
+                    else
+                    {
+                        var alert = await AlertServices.GetAlertByMaterial(material.Id);
+                        if (alert != null)
+                        {
+                            alert.IsDismiss = true;
+                            AlertServices.UpdateAlert(alert);
+                        }
+                    }
                 }
 
                 if (CurrentPage.StockUpdateSnackbar.MessageQueue is { } messageQueue)

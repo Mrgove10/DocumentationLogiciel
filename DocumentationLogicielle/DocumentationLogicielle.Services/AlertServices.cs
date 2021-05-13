@@ -32,6 +32,16 @@ namespace DocumentationLogicielle.Services
             return await _context.Table<Alert>().Where(x => !x.IsDismiss).ToListAsync();
         }
 
+        public async Task<Alert> GetAlertByMaterial(int materialId)
+        {
+            return await _context.Table<Alert>().FirstOrDefaultAsync(x => x.MaterialId == materialId);
+        }
+
+        public void UpdateAlert(Alert alert)
+        {
+            _context.UpdateAsync(alert).Wait();
+        }
+
         /// <summary>
         /// Method to update a list of alerts
         /// </summary>
@@ -39,6 +49,11 @@ namespace DocumentationLogicielle.Services
         public void UpdateAlerts(List<Alert> alerts)
         {
             _context.UpdateAllAsync(alerts).Wait();
+        }
+
+        public void Create(Alert alert)
+        {
+            _context.InsertAsync(alert).Wait();
         }
     }
 }

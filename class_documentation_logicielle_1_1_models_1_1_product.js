@@ -1,5 +1,6 @@
 var class_documentation_logicielle_1_1_models_1_1_product =
 [
+    [ "AvailableUntil", "class_documentation_logicielle_1_1_models_1_1_product.html#a6bb1160bd3bf9d1c60211e3b0f106849", null ],
     [ "Id", "class_documentation_logicielle_1_1_models_1_1_product.html#a0ccc903a4ce7e923b2c4dbd522266cfa", null ],
     [ "Label", "class_documentation_logicielle_1_1_models_1_1_product.html#a6c0dc2627bf172672174dc7b5ccc0331", null ],
     [ "Price", "class_documentation_logicielle_1_1_models_1_1_product.html#a838fc7900bf8dfdd53d7411d1adcad31", null ],

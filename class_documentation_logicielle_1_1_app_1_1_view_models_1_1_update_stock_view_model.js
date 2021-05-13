@@ -15,6 +15,8 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view
     [ "IsStockOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a3b3fd4f6798540c37ebfe992fbcd6960", null ],
     [ "MaterialServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a1d91d064b5133b439cfbd1ae218c7471", null ],
     [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a8b7fe4c549bcd02198d6304f8e40552e", null ],
+    [ "ProductAvailableDate", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a388f1c2c0bab3ac7ea68999f4ea267b8", null ],
+    [ "ProductAvailableDateColor", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ace56e9e84b78de4858615df553a9df6d", null ],
     [ "ProductPrice", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a887d95b4b25fabc4cf159dbac16a25bd", null ],
     [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaeb196707b82467de2c20bbb1e5cce48", null ],
     [ "ProductStock", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a08799c0631285b12e9d9a012417b7a82", null ],

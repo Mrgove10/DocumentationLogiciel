@@ -77,10 +77,9 @@ var NAVTREEINDEX0 =
 "class_documentation_logicielle_1_1_app_1_1_templates_1_1_needed_product_template.html#a76e841bdc7a6befa1ba5278a88e2d75f":[1,0,0,0,1,1,1],
 "class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html":[1,0,0,0,1,2],
 "class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#a460a4c0d0b57be41e099d7fa6dc593b7":[1,0,0,0,1,2,1],
-"class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#a5fbca4f169ebb8302ee0edb57bec940f":[1,0,0,0,1,2,4],
-"class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#a84ecc67e6424cd1c8f52debec0663ec4":[1,0,0,0,1,2,2],
+"class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#a5fbca4f169ebb8302ee0edb57bec940f":[1,0,0,0,1,2,3],
 "class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#aeb81fb9160dbd2f6e9c13fa7ecb45a05":[1,0,0,0,1,2,0],
-"class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#aed48935ade0aa0bfe12f61e7825715e4":[1,0,0,0,1,2,3],
+"class_documentation_logicielle_1_1_app_1_1_templates_1_1_stock_template.html#aed48935ade0aa0bfe12f61e7825715e4":[1,0,0,0,1,2,2],
 "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html":[1,0,0,0,2,0],
 "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#a0115ee007e8d67c8dfc4424be9863391":[1,0,0,0,2,0,18],
 "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_add_user_view_model.html#a0cebf3504e77f2b76507a5d3b704ef95":[1,0,0,0,2,0,20],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "class_documentation_logicielle_1_1_models_1_1_material.html#a572a45b088c47f2ab8eb0d0636886df2":[1,0,0,1,1,1],
 "class_documentation_logicielle_1_1_models_1_1_material.html#ad8e79da416349bf12ddef402907b5c84":[1,0,0,1,1,0],
 "class_documentation_logicielle_1_1_models_1_1_material.html#afa93a48473e158e0725335c0092d59c6":[1,0,0,1,1,2],
-"class_documentation_logicielle_1_1_models_1_1_materials_product.html":[1,0,0,1,2]
+"class_documentation_logicielle_1_1_models_1_1_materials_product.html":[1,0,0,1,2],
+"class_documentation_logicielle_1_1_models_1_1_materials_product.html#a20517268c1d24b0d7cf9f0fe5132a135":[1,0,0,1,2,0]
 };

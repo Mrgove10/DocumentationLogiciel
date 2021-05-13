@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using DocumentationLogicielle.Models;
 using SQLite;
@@ -27,7 +28,7 @@ namespace DocumentationLogicielle.Services
         /// <returns>List of Products</returns>
         public async Task<List<Product>> GetAll()
         {
-            return await _context.Table<Product>().ToListAsync();
+            return await _context.Table<Product>().Where(x => x.AvailableUntil >= DateTime.Now).ToListAsync();
         }
 
         /// <summary>

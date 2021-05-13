@@ -9,7 +9,6 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view
     [ "AlertServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a8592360246ea95925b8064b995964efc", null ],
     [ "CurrentPage", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a7ecc721a1d92703eff33766a12e504dd", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ad53faa5e0ba66814e2c075b6089b2391", null ],
-    [ "DisplayForm", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a1596986258f8d168b23b620df06e4d60", null ],
     [ "GoBackCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#af6a34f0939c13b01e503e276a3021041", null ],
     [ "IsButtonOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a1d1fab5be453160f943d10f2ce42a699", null ],
     [ "IsPriceOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaa18c8a45a90d0a5e8e4472ed4f6dbb6", null ],

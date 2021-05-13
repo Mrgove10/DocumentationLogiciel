@@ -51,6 +51,26 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        public DateTime ProductAvailableDate
+        {
+            get => stockTemplate.AvailableDate;
+            set
+            {
+                stockTemplate.AvailableDate = value;
+                OnPropertyChange();
+            }
+        }
+
+        public Brush ProductAvailableDateColor
+        {
+            get => stockTemplate.AvailableDateColor;
+            set
+            {
+                stockTemplate.AvailableDateColor = value;
+                OnPropertyChange();
+            }
+        }
+
 
         #endregion
 
@@ -147,13 +167,16 @@ namespace DocumentationLogicielle.App.ViewModels
                 {
                     ProductStock = product.Quantity;
                     ProductPrice = product.Price;
+                    ProductAvailableDate = product.AvailableUntil;
+                    CurrentPage.AvailableDatePickerGrid.Visibility = Visibility.Visible;
+                    ProductAvailableDateColor = product.AvailableUntil >= DateTime.Today ? Brushes.Lime : Brushes.Red;
                 }
                 else if (material != null)
                 {
                     ProductStock = material.Quantity;
                     ProductPrice = material.Price;
+                    CurrentPage.AvailableDatePickerGrid.Visibility = Visibility.Hidden;
                 }
-
                 CurrentPage.GridForm.Visibility = Visibility.Visible;
             }
             else
@@ -174,6 +197,7 @@ namespace DocumentationLogicielle.App.ViewModels
                 {
                     product.Quantity = ProductStock;
                     product.Price = ProductPrice;
+                    product.AvailableUntil = ProductAvailableDate;
                     ProductServices.Update(product);
                 }
                 else if (material != null)

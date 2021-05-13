@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using DocumentationLogicielle.App.ViewModels;
 using DocumentationLogicielle.Models;
 using DocumentationLogicielle.Services;
@@ -39,6 +41,11 @@ namespace DocumentationLogicielle.App.Views
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void DatePicker_OnSelectedDateChanged(object? sender, SelectionChangedEventArgs e)
+        {
+            ((DatePicker)sender).Foreground = ((DatePicker)sender).SelectedDate >= DateTime.Today ? Brushes.Lime : Brushes.Red;
         }
     }
 }

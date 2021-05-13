@@ -85,7 +85,7 @@
                     
                     <TextBlock Grid.Column="0"
                                VerticalAlignment="Center"
-                               HorizontalAlignment="Center"
+                               HorizontalAlignment="Right"
                                Foreground="White"
                                FontWeight="DemiBold"
                                FontSize="16">
@@ -97,7 +97,8 @@
                               Width="180px"
                               Name="ProductsComboBox"
                               SelectionChanged="ProductsComboBox_OnSelectionChanged"
-                              HorizontalAlignment="Center"
+                              HorizontalAlignment="Left"
+                              HorizontalContentAlignment="Center"
                               VerticalAlignment="Center">
                     </ComboBox>
                 </Grid>
@@ -105,6 +106,7 @@
             
             <Grid Grid.Row="1" Name="GridForm">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
@@ -167,7 +169,36 @@
 
                 </Grid>
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" 
+                      Name="AvailableDatePickerGrid">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" 
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom"
+                               Foreground="White"
+                               FontSize="15">
+                        Current available date :
+                    </TextBlock>
+                    <DatePicker Grid.Row="1" 
+                                Grid.Column="1" 
+                                Foreground="{Binding ProductAvailableDateColor}"
+                                Width="150px"
+                                HorizontalContentAlignment="Center"
+                                SelectedDateChanged="DatePicker_OnSelectedDateChanged"
+                                SelectedDate="{Binding ProductAvailableDate}"/>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>

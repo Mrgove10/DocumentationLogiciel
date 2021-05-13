@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace DocumentationLogicielle.App.Templates
 {
@@ -32,5 +33,7 @@ namespace DocumentationLogicielle.App.Templates
         /// The element is available until this date
         /// </summary>
         public string AvailableUntil { get; set; }
+
+        public Brush ColorDate { get; set; }
     }
 }

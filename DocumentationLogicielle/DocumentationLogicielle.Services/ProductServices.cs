@@ -23,12 +23,12 @@ namespace DocumentationLogicielle.Services
         }
 
         /// <summary>
-        /// Get all the products
+        /// Get all the products which are still available
         /// </summary>
         /// <returns>List of Products</returns>
         public async Task<List<Product>> GetAll()
         {
-            return await _context.Table<Product>().Where(x => x.AvailableUntil >= DateTime.Now).ToListAsync();
+            return await _context.Table<Product>().ToListAsync();
         }
 
         /// <summary>

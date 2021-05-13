@@ -36,7 +36,9 @@ namespace DocumentationLogicielle.Models
             //database.InsertAllAsync(new List<Product>
             //{
             //    new (){Label = "House", Price = 250400, Quantity = 1, AvailableUntil = new DateTime(2021,08,07)},
-            //    new (){Label = "Roof", Price = 16321, Quantity = 3, AvailableUntil = new DateTime(2021,06,13)}
+            //    new (){Label = "Roof", Price = 16321, Quantity = 3, AvailableUntil = new DateTime(2021,06,13)},
+            //    new (){Label = "Terrace", Price = 3412, Quantity = 2, AvailableUntil = new DateTime(2021,05,13)},
+            //    new (){Label = "Shelter", Price = 1486, Quantity = 6, AvailableUntil = new DateTime(2020,11,04)},
             //});
             //database.InsertAllAsync(new List<MaterialsProduct>
             //{
@@ -44,7 +46,9 @@ namespace DocumentationLogicielle.Models
             //    new() {IdProduct = 1, IdMaterial = 2, QuantityNeeded = 126},
             //    new() {IdProduct = 1, IdMaterial = 3, QuantityNeeded = 418},
             //    new() {IdProduct = 2, IdMaterial = 1, QuantityNeeded = 76},
-            //    new() {IdProduct = 2, IdMaterial = 4, QuantityNeeded = 23}
+            //    new() {IdProduct = 2, IdMaterial = 4, QuantityNeeded = 23},
+            //    new() {IdProduct = 4, IdMaterial = 1, QuantityNeeded = 514},
+            //    new() {IdProduct = 3, IdMaterial = 2, QuantityNeeded = 421},
             //});
             //database.InsertAsync(new Alert { Title = "Stock critique de colles", Message = "Le stock de colles est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 4 });
             //database.InsertAsync(new Alert { Title = "Stock critique de vis", Message = "Le stock de vis est au plus bas. Contactez le fournisseur pour recommander du stock.", IsDismiss = false, MaterialId = 3 });

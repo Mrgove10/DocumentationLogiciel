@@ -130,7 +130,7 @@
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
                         <Grid>
-                            <TextBlock Foreground="White" 
+                            <TextBlock Foreground="{Binding ColorDate}" 
                                        HorizontalAlignment="Center" 
                                        FontSize="13"
                                        FontWeight="Bold"

@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using System.Windows.Media;
 using DocumentationLogicielle.App.Templates;
 using DocumentationLogicielle.App.Views;
 using DocumentationLogicielle.Models;
@@ -149,6 +151,7 @@ namespace DocumentationLogicielle.App.ViewModels
                         Price = $"{product.Price:C}",
                         Quantity = product.Quantity,
                         AvailableUntil = $"⚠ Product available until : {product.AvailableUntil:D} ⚠",
+                        ColorDate = product.AvailableUntil >= DateTime.Today ? Brushes.Lime : Brushes.Red,
                         MadeOf = listMadeOf
                     };
 

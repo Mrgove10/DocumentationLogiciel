@@ -45,6 +45,8 @@ namespace DocumentationLogicielle.App
             services.AddSingleton<AlertsWindow>();
             services.AddSingleton<ListingElementsWindow>();
             services.AddSingleton<StatisticsWindow>();
+            services.AddSingleton<UpdateStockWindow>();
+            services.AddSingleton<AddElementWindow>();
         }
 
         /// <summary>

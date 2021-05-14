@@ -34,8 +34,9 @@ namespace DocumentationLogicielle.App.ViewModels
         #region Commands
 
         public IAsyncCommand GoBackCommand { get; }
-        public ICommand AddElementCommand { get; }
+        public IAsyncCommand AddElementCommand { get; }
         public ICommand AddNeededMaterialCommand { get; }
+        public ICommand DeleteNeededMaterialCommand { get; }
 
         #endregion
 
@@ -47,7 +48,9 @@ namespace DocumentationLogicielle.App.ViewModels
             set
             {
                 elementTemplate.Label = value;
+                IsLabelOk = !string.IsNullOrEmpty(value);
                 OnPropertyChange();
+                OnPropertyChange(nameof(IsLabelOk));
             }
         }
 
@@ -57,7 +60,9 @@ namespace DocumentationLogicielle.App.ViewModels
             set
             {
                 elementTemplate.Quantity = value;
+                IsQuantityOk = value != 0;
                 OnPropertyChange();
+                OnPropertyChange(nameof(IsQuantityOk));
             }
         }
 
@@ -67,7 +72,9 @@ namespace DocumentationLogicielle.App.ViewModels
             set
             {
                 neededProductTemplate.QuantityNeeded = value;
+                IsNeededMaterialQuantityOk = value != 0;
                 OnPropertyChange();
+                OnPropertyChange(nameof(IsNeededMaterialQuantityOk));
             }
         }
 
@@ -77,7 +84,9 @@ namespace DocumentationLogicielle.App.ViewModels
             set
             {
                 elementTemplate.Price = value;
+                IsPriceOk = value != 0;
                 OnPropertyChange();
+                OnPropertyChange(nameof(IsPriceOk));
             }
         }
 
@@ -136,6 +145,16 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
+        #region Validations
+
+        public bool IsLabelOk { get; set; }
+        public bool IsPriceOk { get; set; }
+        public bool IsQuantityOk { get; set; }
+
+        public bool IsNeededMaterialQuantityOk { get; set; }
+
+        #endregion
+
         public List<NeededProductTemplate> NeededMaterials { get; set; }
         public string CurrentUserName { get; set; }
         public AddElementWindow CurrentPage { get; set; }
@@ -174,8 +193,9 @@ namespace DocumentationLogicielle.App.ViewModels
             ButtonDisplay = Visibility.Hidden;
 
             GoBackCommand = new AsyncCommand(GoBack, () => true);
-            AddElementCommand = new CommandHandler(CreateElement, () => true);
-            AddNeededMaterialCommand = new CommandHandler(AddNeededMaterial, () => true);
+            AddElementCommand = new AsyncCommand(CreateElement, CanCreateElement);
+            AddNeededMaterialCommand = new CommandHandler(AddNeededMaterial, CanAddNeededMaterial);
+            DeleteNeededMaterialCommand = new CommandHandler(DeleteNeededMaterial, () => true);
         }
 
         #region Property Changes
@@ -215,6 +235,19 @@ namespace DocumentationLogicielle.App.ViewModels
                 }
 
                 ButtonDisplay = Visibility.Visible;
+            }
+        }
+
+        public void DeleteNeededMaterial(object parameter)
+        {
+            var toDelete = NeededMaterials.First(x => x.Material == parameter.ToString());
+            var indexToDelete = NeededMaterials.FindIndex(x => x.Material == parameter.ToString());
+            NeededMaterials.Remove(toDelete);
+            CurrentPage.NeededMaterialsList.Children.RemoveAt(indexToDelete);
+            CurrentPage.NeededMaterialsList.RowDefinitions.RemoveAt(0);
+            for (int i = indexToDelete; i < NeededMaterials.Count; i++)
+            {
+                CurrentPage.NeededMaterialsList.Children[i].SetValue(Grid.RowProperty, i);
             }
         }
 
@@ -265,6 +298,8 @@ namespace DocumentationLogicielle.App.ViewModels
                                         <Button Height='20'
                                                 VerticalAlignment='Center'
                                                 Background='Red'
+                                                Command='{Binding DeleteNeededMaterialCommand}'
+                                                CommandParameter='"+materialSelected+@"'
                                                 FontSize='10'>
                                             -
                                         </Button>
@@ -278,7 +313,7 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.NeededMaterialsList.Children.Add(card);
         }
 
-        public void CreateElement(object parameter)
+        public async Task CreateElement()
         {
             try
             {
@@ -302,6 +337,17 @@ namespace DocumentationLogicielle.App.ViewModels
                             Price = ElementPrice,
                             AvailableUntil = ProductAvailableDate
                         });
+                        var list = new List<MaterialsProduct>();
+                        foreach (var pair in NeededMaterials)
+                        {
+                            list.Add(new MaterialsProduct
+                            {
+                                IdMaterial = (await MaterialServices.GetByLabel(pair.Material)).Id,
+                                IdProduct = (await ProductServices.GetByLabel(ElementLabel)).Id,
+                                QuantityNeeded = pair.QuantityNeeded
+                            });
+                        }
+                        MaterialsProductServices.AddNeededMaterials(list);
                         break;
                 }
 
@@ -316,7 +362,7 @@ namespace DocumentationLogicielle.App.ViewModels
                 
                 if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
                 {
-                    var message = $"Element of ... has been changed !";
+                    var message = $"{itemSelected} '{ElementLabel}' has been added !";
                     Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
                 }
             }
@@ -330,6 +376,16 @@ namespace DocumentationLogicielle.App.ViewModels
                 }
             }
             
+        }
+
+        public bool CanCreateElement()
+        {
+            return IsLabelOk && IsPriceOk && IsQuantityOk;
+        }
+
+        public bool CanAddNeededMaterial()
+        {
+            return IsNeededMaterialQuantityOk && !string.IsNullOrEmpty(CurrentPage.NeededMaterialsComboBox.SelectedItem.ToString());
         }
 
         /// <summary>

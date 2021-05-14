@@ -146,7 +146,7 @@
                                      VerticalAlignment="Center"
                                      Foreground="White"
                                      Width="200"
-                                     Text="{Binding ElementLabel}"/>
+                                     Text="{Binding ElementLabel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                         </Grid>
 
@@ -199,7 +199,7 @@
                                      Foreground="White"
                                      Width="100"
                                      PreviewTextInput="PreviewTextInput"
-                                     Text="{Binding ElementQuantity}"/>
+                                     Text="{Binding ElementQuantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                         </Grid>
                         <Grid Grid.Column="3">
@@ -221,7 +221,7 @@
                                      VerticalAlignment="Center"
                                      Foreground="White"
                                      Width="150"
-                                     Text="{Binding ElementPrice, StringFormat='#.00'}"/>
+                                     Text="{Binding ElementPrice, StringFormat='#.00', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                         </Grid>
                     </Grid>
@@ -287,7 +287,7 @@
                                      Grid.Row="1"
                                      Width="50"
                                      Height="23"
-                                     Text="{Binding NeededMaterialQuantity}"
+                                     Text="{Binding NeededMaterialQuantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                      PreviewTextInput="PreviewTextInput" />
 
                         </Grid>
@@ -315,8 +315,7 @@
 
                 </Grid>
             </Grid>
-            <Grid Grid.Row="1" Visibility="Hidden">
-                <!--<Grid Grid.Row="1" Visibility="{Binding DisplayMaterial}" >-->
+            <Grid Grid.Row="1" Visibility="{Binding DisplayMaterial}">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"></RowDefinition>
@@ -349,7 +348,7 @@
                                      VerticalAlignment="Center"
                                      Foreground="White"
                                      Width="200"
-                                     Text="{Binding ElementLabel}"/>
+                                     Text="{Binding ElementLabel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                     </Grid>
                 </Grid>
@@ -382,7 +381,7 @@
                                      Foreground="White"
                                      Width="100"
                                      PreviewTextInput="PreviewTextInput"
-                                     Text="{Binding ElementQuantity}"/>
+                                     Text="{Binding ElementQuantity, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                     </Grid>
                     <Grid Grid.Column="3">
@@ -404,7 +403,7 @@
                                      VerticalAlignment="Center"
                                      Foreground="White"
                                      Width="150"
-                                     Text="{Binding ElementPrice, StringFormat='#.00'}"/>
+                                     Text="{Binding ElementPrice, StringFormat='#.00', UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
 
                     </Grid>
                 </Grid>

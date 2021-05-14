@@ -90,7 +90,7 @@ $(document).ready(function(){initNavTree('class_documentation_logicielle_1_1_app
 </div><!--header-->
 <div class="contents">
 
-<p>TODO  
+<p>View Model for the page "Statistics"  
  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for DocumentationLogicielle.App.ViewModels.StatisticsViewModel:</div>
@@ -105,12 +105,16 @@ Inheritance diagram for DocumentationLogicielle.App.ViewModels.StatisticsViewMod
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad27050f8b69a2559aee66cfe61110da0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ad27050f8b69a2559aee66cfe61110da0">StatisticsViewModel</a> (<a class="el" href="class_documentation_logicielle_1_1_app_1_1_views_1_1_statistics_window.html">StatisticsWindow</a> currentPage, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_user_services.html">UserServices</a> userServices, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_alert_services.html">AlertServices</a> alertServices, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_material_services.html">MaterialServices</a> materialServices, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_product_services.html">ProductServices</a> productServices, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_materials_product_services.html">MaterialsProductServices</a> materialsProductServices, <a class="el" href="class_documentation_logicielle_1_1_services_1_1_sale_services.html">SaleServices</a> saleServices, Dictionary&lt; string, int &gt; countBySite, List&lt; Tuple&lt; string, int, int, int &gt;&gt; evolutionByMonth, float moneyEarned, Dictionary&lt; int, float &gt; moneyEarnedByYear)</td></tr>
+<tr class="memdesc:ad27050f8b69a2559aee66cfe61110da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the view model  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ad27050f8b69a2559aee66cfe61110da0">More...</a><br /></td></tr>
 <tr class="separator:ad27050f8b69a2559aee66cfe61110da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19dd277352150184b95f6ff5b28ec336"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a19dd277352150184b95f6ff5b28ec336">GenerateMoneyEarnedByYear</a> (Dictionary&lt; int, float &gt; moneyEarnedByYear)</td></tr>
+<tr class="memdesc:a19dd277352150184b95f6ff5b28ec336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the graphic "Money Earned By Year"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a19dd277352150184b95f6ff5b28ec336">More...</a><br /></td></tr>
 <tr class="separator:a19dd277352150184b95f6ff5b28ec336"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c4cebd109ea655f70c5c3296fb93af3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5c4cebd109ea655f70c5c3296fb93af3">GenerateEvolutionByMonth</a> (List&lt; Tuple&lt; string, int, int, int &gt;&gt; evolutionByMonth)</td></tr>
+<tr class="memdesc:a5c4cebd109ea655f70c5c3296fb93af3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the graphic "Evolution by month"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5c4cebd109ea655f70c5c3296fb93af3">More...</a><br /></td></tr>
 <tr class="separator:a5c4cebd109ea655f70c5c3296fb93af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addf61a0bd64949722c1dc650164c1791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#addf61a0bd64949722c1dc650164c1791">GenerateCountSalesBySite</a> (Dictionary&lt; string, int &gt; countBySite)</td></tr>
+<tr class="memdesc:addf61a0bd64949722c1dc650164c1791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the graphic "Count Sales By Site"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#addf61a0bd64949722c1dc650164c1791">More...</a><br /></td></tr>
 <tr class="separator:addf61a0bd64949722c1dc650164c1791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
@@ -119,35 +123,42 @@ Properties</h2></td></tr>
 <tr class="memdesc:a86a5f1bdbbeefb14d8463e1651d62f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command to go back to the precedent page  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a86a5f1bdbbeefb14d8463e1651d62f37">More...</a><br /></td></tr>
 <tr class="separator:a86a5f1bdbbeefb14d8463e1651d62f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36bbe439e94b7b10d99bcfc18ea6145b"><td class="memItemLeft" align="right" valign="top">SeriesCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a36bbe439e94b7b10d99bcfc18ea6145b">SeriesCollectionCountSalesBySite</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a36bbe439e94b7b10d99bcfc18ea6145b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Series for the graphic "Count Sales By Site"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a36bbe439e94b7b10d99bcfc18ea6145b">More...</a><br /></td></tr>
 <tr class="separator:a36bbe439e94b7b10d99bcfc18ea6145b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c52fd9d40ddca3aed5432c346955444"><td class="memItemLeft" align="right" valign="top">SeriesCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5c52fd9d40ddca3aed5432c346955444">SeriesCollectionEvolutionByMonth</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a5c52fd9d40ddca3aed5432c346955444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Series for the graphic "Evolution by month"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5c52fd9d40ddca3aed5432c346955444">More...</a><br /></td></tr>
 <tr class="separator:a5c52fd9d40ddca3aed5432c346955444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a554035b8966e0afabccb70051bf90b14"><td class="memItemLeft" align="right" valign="top">SeriesCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a554035b8966e0afabccb70051bf90b14">SeriesCollectionMoneyByYear</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a554035b8966e0afabccb70051bf90b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Series for the graphic "Money by year"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a554035b8966e0afabccb70051bf90b14">More...</a><br /></td></tr>
 <tr class="separator:a554035b8966e0afabccb70051bf90b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a5b6f5cb80525b5a7de5597dd38266"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a86a5b6f5cb80525b5a7de5597dd38266">LabelsCountSalesBySite</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a86a5b6f5cb80525b5a7de5597dd38266"><td class="mdescLeft">&#160;</td><td class="mdescRight">Labels for the graphic "Count Sales By Site"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a86a5b6f5cb80525b5a7de5597dd38266">More...</a><br /></td></tr>
 <tr class="separator:a86a5b6f5cb80525b5a7de5597dd38266"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47f39ceabecd9feee353e135e04847a8"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a47f39ceabecd9feee353e135e04847a8">LabelsEvolutionByMonth</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a47f39ceabecd9feee353e135e04847a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Labels for the graphic "Evolution by month"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a47f39ceabecd9feee353e135e04847a8">More...</a><br /></td></tr>
 <tr class="separator:a47f39ceabecd9feee353e135e04847a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9d4f44d80e33a3f653b32d640a077b7"><td class="memItemLeft" align="right" valign="top">string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ab9d4f44d80e33a3f653b32d640a077b7">LabelsMoneyByYear</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ab9d4f44d80e33a3f653b32d640a077b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Labels for the graphic "Money by year"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ab9d4f44d80e33a3f653b32d640a077b7">More...</a><br /></td></tr>
 <tr class="separator:ab9d4f44d80e33a3f653b32d640a077b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe4aa7f2a296f8a7a57e96b36815bb2b"><td class="memItemLeft" align="right" valign="top">Func&lt; double, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#abe4aa7f2a296f8a7a57e96b36815bb2b">FormatterCountSalesBySite</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abe4aa7f2a296f8a7a57e96b36815bb2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to format the data in the graphic "Count Sales By Site"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#abe4aa7f2a296f8a7a57e96b36815bb2b">More...</a><br /></td></tr>
 <tr class="separator:abe4aa7f2a296f8a7a57e96b36815bb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa37ad1458cb9ed2b0736b5f7faf85f8c"><td class="memItemLeft" align="right" valign="top">Func&lt; double, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aa37ad1458cb9ed2b0736b5f7faf85f8c">YFormatterEvolutionByMonth</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:aa37ad1458cb9ed2b0736b5f7faf85f8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to format the data in the graphic "Evolution by month"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aa37ad1458cb9ed2b0736b5f7faf85f8c">More...</a><br /></td></tr>
 <tr class="separator:aa37ad1458cb9ed2b0736b5f7faf85f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6703d3d50f783d4b267447e817edb1c"><td class="memItemLeft" align="right" valign="top">Func&lt; double, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ac6703d3d50f783d4b267447e817edb1c">YFormatterMoneyByYear</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:ac6703d3d50f783d4b267447e817edb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Property to format the data in the graphic "Money by year"  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ac6703d3d50f783d4b267447e817edb1c">More...</a><br /></td></tr>
 <tr class="separator:ac6703d3d50f783d4b267447e817edb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b525fe2b2df68745a3dc562579ffecb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a1b525fe2b2df68745a3dc562579ffecb">MoneyEarned</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a1b525fe2b2df68745a3dc562579ffecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Money earned until the start  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a1b525fe2b2df68745a3dc562579ffecb">More...</a><br /></td></tr>
 <tr class="separator:a1b525fe2b2df68745a3dc562579ffecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7670a33fa4187a688fae2801e3374a9"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ae7670a33fa4187a688fae2801e3374a9">CurrentUserName</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:ae7670a33fa4187a688fae2801e3374a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the current user  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#ae7670a33fa4187a688fae2801e3374a9">More...</a><br /></td></tr>
 <tr class="separator:ae7670a33fa4187a688fae2801e3374a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a965ea4499c358e39e853a4aabd34fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_views_1_1_statistics_window.html">StatisticsWindow</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a7a965ea4499c358e39e853a4aabd34fa">CurrentPage</a><code> [get, set]</code></td></tr>
 <tr class="separator:a7a965ea4499c358e39e853a4aabd34fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d0f119e4bdab8ca08b81c13be8e8744"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_documentation_logicielle_1_1_services_1_1_user_services.html">UserServices</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5d0f119e4bdab8ca08b81c13be8e8744">UserServices</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:a5d0f119e4bdab8ca08b81c13be8e8744"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> to interact with the table "User" (User)  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#a5d0f119e4bdab8ca08b81c13be8e8744">More...</a><br /></td></tr>
 <tr class="separator:a5d0f119e4bdab8ca08b81c13be8e8744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa73bd4ac73adfad105b3885ef9206995"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_documentation_logicielle_1_1_services_1_1_alert_services.html">AlertServices</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aa73bd4ac73adfad105b3885ef9206995">AlertServices</a><code> [get, set]</code></td></tr>
-<tr class="memdesc:aa73bd4ac73adfad105b3885ef9206995"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> to interact with the table "Alert" (Alert)  <a href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aa73bd4ac73adfad105b3885ef9206995">More...</a><br /></td></tr>
 <tr class="separator:aa73bd4ac73adfad105b3885ef9206995"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaadc899c641cca2dbc5eb4ac9e763a53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_documentation_logicielle_1_1_services_1_1_material_services.html">MaterialServices</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_documentation_logicielle_1_1_app_1_1_view_models_1_1_statistics_view_model.html#aaadc899c641cca2dbc5eb4ac9e763a53">MaterialServices</a><code> [get, set]</code></td></tr>
 <tr class="separator:aaadc899c641cca2dbc5eb4ac9e763a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -187,7 +198,7 @@ Properties</h2></td></tr>
 <tr class="separator:a2e42f57684b21586fbde8b9ad73aa8d9 inherit properties_interface_documentation_logicielle_1_1_app_1_1_view_models_1_1_i_view_model"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>TODO </p>
+<div class="textblock"><p>View Model for the page "Statistics" </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad27050f8b69a2559aee66cfe61110da0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad27050f8b69a2559aee66cfe61110da0">&#9670;&nbsp;</a></span>StatisticsViewModel()</h2>
@@ -269,6 +280,24 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Constructor of the view model </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentPage</td><td>Page of the view mode</td></tr>
+    <tr><td class="paramname">userServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "User" table</td></tr>
+    <tr><td class="paramname">alertServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "Alert" table</td></tr>
+    <tr><td class="paramname">materialServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "Material" table</td></tr>
+    <tr><td class="paramname">productServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "Product" table</td></tr>
+    <tr><td class="paramname">materialsProductServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "MaterialProduct" table</td></tr>
+    <tr><td class="paramname">saleServices</td><td><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> for the "Sale" table</td></tr>
+    <tr><td class="paramname">countBySite</td><td>Data to the graphic "Count Sales By Site"</td></tr>
+    <tr><td class="paramname">evolutionByMonth</td><td>Data to the graphic "Evolution by month"</td></tr>
+    <tr><td class="paramname">moneyEarned</td><td>Money earned until the start</td></tr>
+    <tr><td class="paramname">moneyEarnedByYear</td><td>Data to the graphic "Money by year"</td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -288,6 +317,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generate the graphic "Count Sales By Site" </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countBySite</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a5c4cebd109ea655f70c5c3296fb93af3"></a>
@@ -306,6 +343,14 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generate the graphic "Evolution by month" </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">evolutionByMonth</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a19dd277352150184b95f6ff5b28ec336"></a>
@@ -323,6 +368,14 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Generate the graphic "Money Earned By Year" </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">moneyEarnedByYear</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -346,8 +399,6 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> to interact with the table "Alert" (Alert) </p>
 
 </div>
 </div>
@@ -393,8 +444,6 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The name of the current user </p>
-
 </div>
 </div>
 <a id="abe4aa7f2a296f8a7a57e96b36815bb2b"></a>
@@ -416,6 +465,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Property to format the data in the graphic "Count Sales By Site" </p>
 
 </div>
 </div>
@@ -463,6 +514,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Labels for the graphic "Count Sales By Site" </p>
+
 </div>
 </div>
 <a id="a47f39ceabecd9feee353e135e04847a8"></a>
@@ -485,6 +538,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Labels for the graphic "Evolution by month" </p>
+
 </div>
 </div>
 <a id="ab9d4f44d80e33a3f653b32d640a077b7"></a>
@@ -506,6 +561,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Labels for the graphic "Money by year" </p>
 
 </div>
 </div>
@@ -573,6 +630,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Money earned until the start </p>
+
 </div>
 </div>
 <a id="a3793140465ba0c815aedfe05780752bf"></a>
@@ -639,6 +698,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Series for the graphic "Count Sales By Site" </p>
+
 </div>
 </div>
 <a id="a5c52fd9d40ddca3aed5432c346955444"></a>
@@ -660,6 +721,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Series for the graphic "Evolution by month" </p>
 
 </div>
 </div>
@@ -683,6 +746,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Series for the graphic "Money by year" </p>
+
 </div>
 </div>
 <a id="a5d0f119e4bdab8ca08b81c13be8e8744"></a>
@@ -704,8 +769,6 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p><a class="el" href="namespace_documentation_logicielle_1_1_services.html">Services</a> to interact with the table "User" (User) </p>
 
 </div>
 </div>
@@ -729,6 +792,8 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Property to format the data in the graphic "Evolution by month" </p>
+
 </div>
 </div>
 <a id="ac6703d3d50f783d4b267447e817edb1c"></a>
@@ -750,6 +815,8 @@ Properties</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Property to format the data in the graphic "Money by year" </p>
 
 </div>
 </div>

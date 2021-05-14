@@ -11,6 +11,8 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view
     [ "CurrentPage", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a7ecc721a1d92703eff33766a12e504dd", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ad53faa5e0ba66814e2c075b6089b2391", null ],
     [ "DeleteElementCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a6d15d15d57938ecc9a9734517d7d64b4", null ],
+    [ "ElementPrice", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#acd2247dd5029f34ee44863f8b6f17f77", null ],
+    [ "ElementStock", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ab6d7817cb673a0ea1a6ccbe851e01f05", null ],
     [ "GoBackCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#af6a34f0939c13b01e503e276a3021041", null ],
     [ "IsButtonOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a1d1fab5be453160f943d10f2ce42a699", null ],
     [ "IsPriceOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaa18c8a45a90d0a5e8e4472ed4f6dbb6", null ],
@@ -19,11 +21,9 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view
     [ "MaterialsProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a8b7fe4c549bcd02198d6304f8e40552e", null ],
     [ "ProductAvailableDate", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a388f1c2c0bab3ac7ea68999f4ea267b8", null ],
     [ "ProductAvailableDateColor", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ace56e9e84b78de4858615df553a9df6d", null ],
-    [ "ProductPrice", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a887d95b4b25fabc4cf159dbac16a25bd", null ],
     [ "ProductServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaeb196707b82467de2c20bbb1e5cce48", null ],
-    [ "ProductStock", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a08799c0631285b12e9d9a012417b7a82", null ],
     [ "SaleServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a18f4003ba20175f66cf90f4a6d4bc172", null ],
-    [ "UpdateProductCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaf334517030ffb127581cdc474c26261", null ],
+    [ "UpdateElementCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a4f439dbabbace1c97c56e561a21aa9ce", null ],
     [ "UserServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a826e6142374a8892951bd77553689598", null ],
     [ "PropertyChanged", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a6b008ab587799ea53f8b7f6a39a374c3", null ]
 ];

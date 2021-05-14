@@ -1,6 +1,7 @@
 var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model =
 [
     [ "UpdateStockViewModel", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aa50a9696670c865d7db6ef2a4c844cda", null ],
+    [ "DeleteElement", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a84b1306b60d62b2e1a87ef2a8ee0ec02", null ],
     [ "GenerateForm", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a6cf67e81ca1a7ea65f0e73e968973b24", null ],
     [ "GenerateProductsComboBox", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a01f19ff5360e1118cacf867bb2b10e9d", null ],
     [ "GoBack", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a29a5bb98ef4a519e86bc26bbd54914f9", null ],
@@ -9,6 +10,7 @@ var class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view
     [ "AlertServices", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a8592360246ea95925b8064b995964efc", null ],
     [ "CurrentPage", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a7ecc721a1d92703eff33766a12e504dd", null ],
     [ "CurrentUserName", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#ad53faa5e0ba66814e2c075b6089b2391", null ],
+    [ "DeleteElementCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a6d15d15d57938ecc9a9734517d7d64b4", null ],
     [ "GoBackCommand", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#af6a34f0939c13b01e503e276a3021041", null ],
     [ "IsButtonOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#a1d1fab5be453160f943d10f2ce42a699", null ],
     [ "IsPriceOk", "class_documentation_logicielle_1_1_app_1_1_view_models_1_1_update_stock_view_model.html#aaa18c8a45a90d0a5e8e4472ed4f6dbb6", null ],

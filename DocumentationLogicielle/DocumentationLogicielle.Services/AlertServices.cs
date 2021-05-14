@@ -55,5 +55,11 @@ namespace DocumentationLogicielle.Services
         {
             _context.InsertAsync(alert).Wait();
         }
+
+        public async Task DeleteAlertOfMaterial(int materialId)
+        {
+            var alert = await GetAlertByMaterial(materialId);
+            _context.DeleteAsync(alert).Wait();
+        }
     }
 }

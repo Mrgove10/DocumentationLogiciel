@@ -328,6 +328,16 @@ namespace DocumentationLogicielle.App.ViewModels
                             Quantity = ElementQuantity,
                             Price = ElementPrice
                         });
+                        if (ElementQuantity <= 10)
+                        {
+                            AlertServices.Create(new Alert
+                            {
+                                IsDismiss = false,
+                                MaterialId = (await MaterialServices.GetByLabel(ElementLabel)).Id,
+                                Title = $"Stock critique de {ElementLabel}",
+                                Message = $"Le stock de {ElementLabel} est au plus bas. Contactez le fournisseur pour recommander du stock."
+                            });
+                        }
                         break;
                     case "Product":
                         ProductServices.Create(new Product
@@ -351,6 +361,12 @@ namespace DocumentationLogicielle.App.ViewModels
                         break;
                 }
 
+                if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
+                {
+                    var message = $"{itemSelected} '{ElementLabel}' has been added !";
+                    Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
+                }
+
                 DisplayProduct = Visibility.Hidden;
                 DisplayMaterial = Visibility.Hidden;
                 ButtonDisplay = Visibility.Hidden;
@@ -358,13 +374,7 @@ namespace DocumentationLogicielle.App.ViewModels
                 ElementPrice = 0;
                 ElementQuantity = 0;
                 ProductAvailableDate = DateTime.Today;
-                CurrentPage.TypeElementComboBox.SelectedItem = null; 
-                
-                if (CurrentPage.ElementAddSnackbar.MessageQueue is { } messageQueue)
-                {
-                    var message = $"{itemSelected} '{ElementLabel}' has been added !";
-                    Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
-                }
+                CurrentPage.TypeElementComboBox.SelectedItem = null;
             }
             catch (Exception e)
             {

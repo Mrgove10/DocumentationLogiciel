@@ -273,13 +273,13 @@ namespace DocumentationLogicielle.App.ViewModels
             }
             else if (material != null)
             {
-                MaterialServices.Delete(material);
+                await MaterialServices.Delete(material);
             }
 
             if (CurrentPage.StockUpdateSnackbar.MessageQueue is { } messageQueue)
             {
                 var label = product != null ? product.Label : material.Label;
-                var message = $"{itemSelected} '{label}' has been deleted";
+                var message = $"Element '{label}' has been deleted";
                 CurrentPage.StockUpdateSnackbar.Background = Brushes.Orange;
                 Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
             }

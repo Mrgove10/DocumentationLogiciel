@@ -11,10 +11,12 @@ namespace DocumentationLogicielle.Services
     public class MaterialServices
     {
         private readonly SQLiteAsyncConnection _context;
+        private readonly AlertServices _alertServices;
 
-        public MaterialServices(ProjectDatabase context)
+        public MaterialServices(ProjectDatabase context, AlertServices alertServices)
         {
             _context = context.database;
+            _alertServices = alertServices;
         }
 
         public async Task<List<Material>> GetAll()
@@ -37,8 +39,9 @@ namespace DocumentationLogicielle.Services
             _context.InsertAsync(material).Wait();
         }
 
-        public void Delete(Material material)
+        public async Task Delete(Material material)
         {
+            await _alertServices.DeleteAlertOfMaterial(material.Id);
             _context.DeleteAsync(material).Wait();
         }
     }

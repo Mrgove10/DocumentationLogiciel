@@ -30,6 +30,10 @@ namespace DocumentationLogicielle.Services
             return await _context.Table<MaterialsProduct>().ToListAsync();
         }
 
+        /// <summary>
+        /// Add a list of materials for a product
+        /// </summary>
+        /// <param name="materialsProducts"></param>
         public void AddNeededMaterials(List<MaterialsProduct> materialsProducts)
         {
             _context.InsertAllAsync(materialsProducts).Wait();

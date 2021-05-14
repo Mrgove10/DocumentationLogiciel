@@ -6,7 +6,7 @@ using SQLite;
 namespace DocumentationLogicielle.Services
 {
     /// <summary>
-    /// TODO
+    /// Services for the "Material" table
     /// </summary>
     public class MaterialServices
     {
@@ -19,26 +19,48 @@ namespace DocumentationLogicielle.Services
             _alertServices = alertServices;
         }
 
+        /// <summary>
+        /// Get all the materials
+        /// </summary>
+        /// <returns></returns>
         public async Task<List<Material>> GetAll()
         {
             return await _context.Table<Material>().ToListAsync();
         }
 
+        /// <summary>
+        /// Get a material by its label
+        /// </summary>
+        /// <param name="labelMaterial">Label of the material</param>
+        /// <returns>The material</returns>
         public async Task<Material> GetByLabel(string labelMaterial)
         {
             return await _context.Table<Material>().FirstOrDefaultAsync(x => x.Label == labelMaterial);
         }
 
+        /// <summary>
+        /// Update a material
+        /// </summary>
+        /// <param name="materialToUpdate">Material to update</param>
         public void Update(Material materialToUpdate)
         {
             _context.UpdateAsync(materialToUpdate).Wait();
         }
 
+        /// <summary>
+        /// Create a material
+        /// </summary>
+        /// <param name="material">Material to create</param>
         public void Create(Material material)
         {
             _context.InsertAsync(material).Wait();
         }
 
+        /// <summary>
+        /// Delete a material
+        /// </summary>
+        /// <param name="material">Material to delete</param>
+        /// <returns></returns>
         public async Task Delete(Material material)
         {
             await _alertServices.DeleteAlertOfMaterial(material.Id);

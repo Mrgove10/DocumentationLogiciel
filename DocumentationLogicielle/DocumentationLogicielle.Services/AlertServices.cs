@@ -32,11 +32,20 @@ namespace DocumentationLogicielle.Services
             return await _context.Table<Alert>().Where(x => !x.IsDismiss).ToListAsync();
         }
 
+        /// <summary>
+        /// Get the alert of a material
+        /// </summary>
+        /// <param name="materialId">Id of the material</param>
+        /// <returns></returns>
         public async Task<Alert> GetAlertByMaterial(int materialId)
         {
             return await _context.Table<Alert>().FirstOrDefaultAsync(x => x.MaterialId == materialId);
         }
 
+        /// <summary>
+        /// Update a alert
+        /// </summary>
+        /// <param name="alert">Alert to update</param>
         public void UpdateAlert(Alert alert)
         {
             _context.UpdateAsync(alert).Wait();
@@ -51,11 +60,20 @@ namespace DocumentationLogicielle.Services
             _context.UpdateAllAsync(alerts).Wait();
         }
 
+        /// <summary>
+        /// Create an alert
+        /// </summary>
+        /// <param name="alert">Alert to create</param>
         public void Create(Alert alert)
         {
             _context.InsertAsync(alert).Wait();
         }
 
+        /// <summary>
+        /// Delete an alert of a material
+        /// </summary>
+        /// <param name="materialId">Id of the material</param>
+        /// <returns></returns>
         public async Task DeleteAlertOfMaterial(int materialId)
         {
             var alert = await GetAlertByMaterial(materialId);

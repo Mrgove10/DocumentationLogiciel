@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
 using DocumentationLogicielle.App.Views;
@@ -12,6 +11,9 @@ using MaterialDesignThemes.Wpf;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// View model for the page "Alerts"
+    /// </summary>
     public class AlertsViewModel : IViewModel<AlertsWindow, IAsyncCommand>
     {
         #region Commands
@@ -28,30 +30,31 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public List<Alert> Alerts { get; set; }
 
-        /// <summary>
-        /// Name of the current user
-        /// </summary>
-        public string CurrentUserName { get; set; }
+        #region Services
 
-        /// <summary>
-        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
-        /// </summary>
         public AlertServices AlertServices { get; set; }
-
-        /// <summary>
-        /// Services to interact with the table "User" (<see cref="User"/>)
-        /// </summary>
         public UserServices UserServices { get; set; }
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
         public SaleServices SaleServices { get; set; }
 
-        /// <summary>
-        /// Correspond to the current page
-        /// </summary>
+        #endregion
+
+        public string CurrentUserName { get; set; }
         public AlertsWindow CurrentPage { get; set; }
 
+        /// <summary>
+        /// Constructor for the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="alerts">List of alerts</param>
         public AlertsViewModel(AlertsWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Alert> alerts)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";

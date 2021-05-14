@@ -1,7 +1,7 @@
 ﻿namespace DocumentationLogicielle.App.Templates
 {
     /// <summary>
-    /// Template classe fot rhe product 
+    /// Template class for the materials for a product
     /// </summary>
     public class NeededProductTemplate
     {

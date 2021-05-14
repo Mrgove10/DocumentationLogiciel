@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using DocumentationLogicielle.App.Templates;
 using DocumentationLogicielle.App.Views;
@@ -15,24 +14,41 @@ using DocumentationLogicielle.Services;
 namespace DocumentationLogicielle.App.ViewModels
 {
     /// <summary>
-    /// TODO => pas besoin de commenter les éléments qui viennent de l'interface IViewModel : ils sont déjà commentés dans l'interface
+    /// View model for the page "Update Stock"
     /// </summary>
     public class UpdateStockViewModel : IViewModel<UpdateStockWindow, IAsyncCommand>, INotifyPropertyChanged
     {
+        #region Private properties
+        
+        /// <summary>
+        /// Private property for the stock of the product
+        /// </summary>
         private StockTemplate stockTemplate;
-        private Visibility displayForm;
+
+        #endregion
 
         #region Commands
 
         public IAsyncCommand GoBackCommand { get; }
-        public IAsyncCommand UpdateProductCommand { get; }
+
+        /// <summary>
+        /// Command to update the element
+        /// </summary>
+        public IAsyncCommand UpdateElementCommand { get; }
+
+        /// <summary>
+        /// Command to delete the element
+        /// </summary>
         public IAsyncCommand DeleteElementCommand { get; }
 
         #endregion
 
         #region Inputs
-
-        public int ProductStock
+        
+        /// <summary>
+        /// Quantity for the element
+        /// </summary>
+        public int ElementStock
         {
             get => stockTemplate.Stock;
             set
@@ -42,7 +58,10 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
-        public float ProductPrice
+        /// <summary>
+        /// Price for the element
+        /// </summary>
+        public float ElementPrice
         {
             get => stockTemplate.Price;
             set
@@ -52,6 +71,9 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        /// <summary>
+        /// Available date for the product
+        /// </summary>
         public DateTime ProductAvailableDate
         {
             get => stockTemplate.AvailableDate;
@@ -62,6 +84,9 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        /// <summary>
+        /// Available date color for the product
+        /// </summary>
         public Brush ProductAvailableDateColor
         {
             get => stockTemplate.AvailableDateColor;
@@ -108,6 +133,18 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="products">List of products</param>
+        /// <param name="materials">List of materials</param>
         public UpdateStockViewModel(UpdateStockWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Product> products, List<Material> materials)
         {
             CurrentPage = currentPage;
@@ -126,7 +163,7 @@ namespace DocumentationLogicielle.App.ViewModels
             GenerateProductsComboBox(products, materials);
 
             GoBackCommand = new AsyncCommand(GoBack, () => true);
-            UpdateProductCommand = new AsyncCommand(UpdateElement, () => true);
+            UpdateElementCommand = new AsyncCommand(UpdateElement, () => true);
             DeleteElementCommand = new AsyncCommand(DeleteElement, () => true);
         }
 
@@ -148,6 +185,11 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
+        /// <summary>
+        /// Generate the combobox containing products and materials
+        /// </summary>
+        /// <param name="products">List of products</param>
+        /// <param name="materials">List of materials</param>
         public void GenerateProductsComboBox(List<Product> products, List<Material> materials)
         {
             var list = products.Select(x => x.Label).ToList();
@@ -158,6 +200,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.ButtonToDeleteElement.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Generate the form with the info the element
+        /// </summary>
+        /// <returns></returns>
         public async Task GenerateForm()
         {
             var itemSelected = CurrentPage.ProductsComboBox.SelectedItem;
@@ -168,16 +214,16 @@ namespace DocumentationLogicielle.App.ViewModels
 
                 if (product != null)
                 {
-                    ProductStock = product.Quantity;
-                    ProductPrice = product.Price;
+                    ElementStock = product.Quantity;
+                    ElementPrice = product.Price;
                     ProductAvailableDate = product.AvailableUntil;
                     CurrentPage.AvailableDatePickerGrid.Visibility = Visibility.Visible;
                     ProductAvailableDateColor = product.AvailableUntil >= DateTime.Today ? Brushes.Lime : Brushes.Red;
                 }
                 else if (material != null)
                 {
-                    ProductStock = material.Quantity;
-                    ProductPrice = material.Price;
+                    ElementStock = material.Quantity;
+                    ElementPrice = material.Price;
                     CurrentPage.AvailableDatePickerGrid.Visibility = Visibility.Hidden;
                 }
                 CurrentPage.GridForm.Visibility = Visibility.Visible;
@@ -190,6 +236,10 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        /// <summary>
+        /// Update the element
+        /// </summary>
+        /// <returns></returns>
         public async Task UpdateElement()
         {
             try
@@ -200,15 +250,15 @@ namespace DocumentationLogicielle.App.ViewModels
 
                 if (product != null)
                 {
-                    product.Quantity = ProductStock;
-                    product.Price = ProductPrice;
+                    product.Quantity = ElementStock;
+                    product.Price = ElementPrice;
                     product.AvailableUntil = ProductAvailableDate;
                     ProductServices.Update(product);
                 }
                 else if (material != null)
                 {
-                    material.Quantity = ProductStock;
-                    material.Price = ProductPrice;
+                    material.Quantity = ElementStock;
+                    material.Price = ElementPrice;
                     MaterialServices.Update(material);
                     if (material.Quantity <= 10)
                     {
@@ -261,6 +311,11 @@ namespace DocumentationLogicielle.App.ViewModels
             
         }
 
+        /// <summary>
+        /// Delete the element
+        /// <remarks>Delete also the alerts in the case of a material</remarks>
+        /// </summary>
+        /// <returns></returns>
         public async Task DeleteElement()
         {
             var itemSelected = CurrentPage.ProductsComboBox.SelectedItem.ToString();
@@ -292,8 +347,11 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.ProductsComboBox.ItemsSource = newList;
 
         }
-        
 
+        /// <summary>
+        /// Method to go back to the precedent page
+        /// </summary>
+        /// <returns></returns>
         public async Task GoBack()
         {
             BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());

@@ -11,9 +11,19 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// View model for the page "AddUser"
+    /// </summary>
     public class AddUserViewModel : INotifyPropertyChanged, IViewModel<AddUserWindow, IAsyncCommand>
     {
+        #region Private properties
+
+        /// <summary>
+        /// Private property for user
+        /// </summary>
         private User user;
+
+        #endregion
 
         #region Commands
 
@@ -118,7 +128,7 @@ namespace DocumentationLogicielle.App.ViewModels
         #endregion
 
         /// <summary>
-        /// Property which correspond to the current page
+        /// Property which correspond to the current page <see cref="AddUserWindow"/>
         /// </summary>
         public AddUserWindow CurrentPage { get; set; }
         
@@ -157,7 +167,16 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Constructor for the view model
+        /// </summary>
+        /// <param name="currentPage">Current page for this view model</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
         public AddUserViewModel(AddUserWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {
             CurrentUserName = $"Welcome {AppSettings.CurrentUser.Login} {(AppSettings.CurrentUser.Role == ERole.Administrator.ToString() ? "(admin)" : "")} !";
@@ -202,7 +221,6 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <summary>
         /// Method to go back to the precedent page
         /// </summary>
-        /// <param name="parameter"></param>
         public async Task GoBack()
         {
             BoardWindow page = new BoardWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await AlertServices.CountAlerts());
@@ -213,7 +231,7 @@ namespace DocumentationLogicielle.App.ViewModels
         /// <summary>
         /// Method to create a user
         /// </summary>
-        /// <param name="parameter"></param>
+        /// <param name="parameter">Potential parameter passed to the command</param>
         private void Create(object parameter)
         {
             try

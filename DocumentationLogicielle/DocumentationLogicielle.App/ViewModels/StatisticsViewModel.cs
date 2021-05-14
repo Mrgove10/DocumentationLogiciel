@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using System.Windows.Media;
 using DocumentationLogicielle.App.Views;
 using DocumentationLogicielle.Models;
@@ -14,7 +13,7 @@ using LiveCharts.Wpf;
 namespace DocumentationLogicielle.App.ViewModels
 {
     /// <summary>
-    /// TODO
+    /// View Model for the page "Statistics"
     /// </summary>
     public class StatisticsViewModel : IViewModel<StatisticsWindow, IAsyncCommand>
     {
@@ -25,39 +24,86 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #region Properties
 
+        /// <summary>
+        /// Series for the graphic "Count Sales By Site"
+        /// </summary>
         public SeriesCollection SeriesCollectionCountSalesBySite { get; set; }
+
+        /// <summary>
+        /// Series for the graphic "Evolution by month"
+        /// </summary>
         public SeriesCollection SeriesCollectionEvolutionByMonth { get; set; }
+
+        /// <summary>
+        /// Series for the graphic "Money by year"
+        /// </summary>
         public SeriesCollection SeriesCollectionMoneyByYear { get; set; }
+
+        /// <summary>
+        /// Labels for the graphic "Count Sales By Site"
+        /// </summary>
         public string[] LabelsCountSalesBySite { get; set; }
+
+        /// <summary>
+        /// Labels for the graphic "Evolution by month"
+        /// </summary>
         public string[] LabelsEvolutionByMonth { get; set; }
+
+        /// <summary>
+        /// Labels for the graphic "Money by year"
+        /// </summary>
         public string[] LabelsMoneyByYear { get; set; }
+
+        /// <summary>
+        /// Property to format the data in the graphic "Count Sales By Site"
+        /// </summary>
         public Func<double, string> FormatterCountSalesBySite { get; set; }
+
+        /// <summary>
+        /// Property to format the data in the graphic "Evolution by month"
+        /// </summary>
         public Func<double, string> YFormatterEvolutionByMonth { get; set; }
+
+        /// <summary>
+        /// Property to format the data in the graphic "Money by year"
+        /// </summary>
         public Func<double, string> YFormatterMoneyByYear { get; set; }
+
+        /// <summary>
+        /// Money earned until the start
+        /// </summary>
         public string MoneyEarned { get; set; }
 
         #endregion
 
-        /// <summary>
-        /// The name of the current user
-        /// </summary>
         public string CurrentUserName { get; set; }
         public StatisticsWindow CurrentPage { get; set; }
 
-        /// <summary>
-        /// Services to interact with the table "User" (<see cref="User"/>)
-        /// </summary>
-        public UserServices UserServices { get; set; }
+        #region Services
 
-        /// <summary>
-        /// Services to interact with the table "Alert" (<see cref="Alert"/>)
-        /// </summary>
+        public UserServices UserServices { get; set; }
         public AlertServices AlertServices { get; set; }
         public MaterialServices MaterialServices { get; set; }
         public ProductServices ProductServices { get; set; }
         public MaterialsProductServices MaterialsProductServices { get; set; }
         public SaleServices SaleServices { get; set; }
 
+        #endregion
+
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="countBySite">Data to the graphic "Count Sales By Site"</param>
+        /// <param name="evolutionByMonth">Data to the graphic "Evolution by month"</param>
+        /// <param name="moneyEarned">Money earned until the start</param>
+        /// <param name="moneyEarnedByYear">Data to the graphic "Money by year"</param>
         public StatisticsViewModel(StatisticsWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, Dictionary<string, int> countBySite, List<Tuple<string, int, int, int>> evolutionByMonth, float moneyEarned, Dictionary<int, float> moneyEarnedByYear)
         {
             CurrentPage = currentPage;
@@ -78,6 +124,10 @@ namespace DocumentationLogicielle.App.ViewModels
             GoBackCommand = new AsyncCommand(GoBack, () => true);
         }
 
+        /// <summary>
+        /// Generate the graphic "Money Earned By Year"
+        /// </summary>
+        /// <param name="moneyEarnedByYear"></param>
         public void GenerateMoneyEarnedByYear(Dictionary<int, float> moneyEarnedByYear)
         {
             var values = new ChartValues<float>();
@@ -107,6 +157,10 @@ namespace DocumentationLogicielle.App.ViewModels
             YFormatterMoneyByYear = value => value.ToString("C");
         }
 
+        /// <summary>
+        /// Generate the graphic "Evolution by month"
+        /// </summary>
+        /// <param name="evolutionByMonth"></param>
         public void GenerateEvolutionByMonth(List<Tuple<string, int, int, int>> evolutionByMonth)
         {
             var lineSeries = new SeriesCollection();
@@ -144,6 +198,10 @@ namespace DocumentationLogicielle.App.ViewModels
             YFormatterEvolutionByMonth = value => value.ToString("####");
         }
 
+        /// <summary>
+        /// Generate the graphic "Count Sales By Site"
+        /// </summary>
+        /// <param name="countBySite"></param>
         public void GenerateCountSalesBySite(Dictionary<string, int> countBySite)
         {
             var values = new ChartValues<double>();

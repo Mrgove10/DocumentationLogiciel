@@ -5,7 +5,7 @@ using System.Windows.Media;
 namespace DocumentationLogicielle.App.Templates
 {
     /// <summary>
-    /// Templace classe for an element
+    /// Template class for an element
     /// </summary>
     public class ElementTemplate
     {

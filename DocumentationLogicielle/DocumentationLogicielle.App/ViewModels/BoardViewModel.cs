@@ -8,13 +8,13 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// View model for the page "Board"
+    /// </summary>
     public class BoardViewModel : IViewModel<BoardWindow, ICommand>
     {
         #region Commands
-
-        /// <summary>
-        /// Command to go back to the precedent page
-        /// </summary>
+        
         public ICommand GoBackCommand { get; }
 
         /// <summary>
@@ -73,9 +73,6 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-        /// <summary>
-        /// Property which correspond to the current page
-        /// </summary>
         public BoardWindow CurrentPage { get; set; }
 
         #region Services
@@ -113,7 +110,17 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="countAlerts">Number of alerts</param>
         public BoardViewModel(BoardWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, int countAlerts)
         {
             CurrentPage = currentPage;
@@ -151,6 +158,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Go to the page to add an element
+        /// </summary>
+        /// <returns></returns>
         private async Task GoToAddElement()
         {
             AddElementWindow page = new AddElementWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await MaterialServices.GetAll());
@@ -169,6 +180,10 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.Close();
         }
 
+        /// <summary>
+        /// Go to the page to update stock of element
+        /// </summary>
+        /// <returns></returns>
         private async Task GoToUpdateStock()
         {
             UpdateStockWindow page = new UpdateStockWindow(UserServices, AlertServices, MaterialServices, ProductServices, MaterialsProductServices, SaleServices, await ProductServices.GetAll(), await MaterialServices.GetAll());

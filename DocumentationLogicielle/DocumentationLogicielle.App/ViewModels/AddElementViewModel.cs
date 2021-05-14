@@ -18,94 +18,147 @@ using MaterialDesignThemes.Wpf;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// View Model for the page "AddElement"
+    /// </summary>
     public class AddElementViewModel : IViewModel<AddElementWindow, IAsyncCommand>, INotifyPropertyChanged
     {
         #region Private properties
+        
+        /// <summary>
+        /// Private property for the template
+        /// </summary>
+        private readonly ElementTemplate _elementTemplate;
 
-        private ElementTemplate elementTemplate;
-        private NeededProductTemplate neededProductTemplate;
-        private List<NeededProductTemplate> neededMaterials;
-        private Visibility displayProduct;
-        private Visibility displayMaterial;
-        private Visibility buttonDisplay;
+        /// <summary>
+        /// Private property for the template
+        /// </summary>
+        private readonly NeededProductTemplate _neededProductTemplate;
+
+        /// <summary>
+        /// Private property to display product form
+        /// </summary>
+        private Visibility _displayProduct;
+
+        /// <summary>
+        /// Private property to display material form
+        /// </summary>
+        private Visibility _displayMaterial;
+
+        /// <summary>
+        /// Private property to display button
+        /// </summary>
+        private Visibility _buttonDisplay;
 
         #endregion
 
         #region Commands
-
+        
         public IAsyncCommand GoBackCommand { get; }
+
+        /// <summary>
+        /// Command to add an element product or material
+        /// </summary>
         public IAsyncCommand AddElementCommand { get; }
+
+        /// <summary>
+        /// Command to add a material to a product
+        /// </summary>
         public ICommand AddNeededMaterialCommand { get; }
+
+        /// <summary>
+        /// Command to delete a material to a product
+        /// </summary>
         public ICommand DeleteNeededMaterialCommand { get; }
 
         #endregion
 
         #region Inputs
 
+        /// <summary>
+        /// Label for an element
+        /// </summary>
         public string ElementLabel
         {
-            get => elementTemplate.Label;
+            get => _elementTemplate.Label;
             set
             {
-                elementTemplate.Label = value;
+                _elementTemplate.Label = value;
                 IsLabelOk = !string.IsNullOrEmpty(value);
                 OnPropertyChange();
                 OnPropertyChange(nameof(IsLabelOk));
             }
         }
 
+        /// <summary>
+        /// Quantity for an element
+        /// </summary>
         public int ElementQuantity
         {
-            get => elementTemplate.Quantity;
+            get => _elementTemplate.Quantity;
             set
             {
-                elementTemplate.Quantity = value;
+                _elementTemplate.Quantity = value;
                 IsQuantityOk = value != 0;
                 OnPropertyChange();
                 OnPropertyChange(nameof(IsQuantityOk));
             }
         }
 
+        /// <summary>
+        /// Quantity of a material of a product
+        /// </summary>
         public int NeededMaterialQuantity
         {
-            get => neededProductTemplate.QuantityNeeded;
+            get => _neededProductTemplate.QuantityNeeded;
             set
             {
-                neededProductTemplate.QuantityNeeded = value;
+                _neededProductTemplate.QuantityNeeded = value;
                 IsNeededMaterialQuantityOk = value != 0;
                 OnPropertyChange();
                 OnPropertyChange(nameof(IsNeededMaterialQuantityOk));
             }
         }
 
+        /// <summary>
+        /// Price of an element
+        /// </summary>
         public float ElementPrice
         {
-            get => elementTemplate.Price;
+            get => _elementTemplate.Price;
             set
             {
-                elementTemplate.Price = value;
+                _elementTemplate.Price = value;
                 IsPriceOk = value != 0;
                 OnPropertyChange();
                 OnPropertyChange(nameof(IsPriceOk));
             }
         }
 
+        /// <summary>
+        /// Date until a product is available
+        /// </summary>
         public DateTime ProductAvailableDate
         {
-            get => elementTemplate.AvailableUntil;
+            get => _elementTemplate.AvailableUntil;
             set
             {
-                elementTemplate.AvailableUntil = value;
+                _elementTemplate.AvailableUntil = value;
                 OnPropertyChange();
             }
         }
 
+        /// <summary>
+        /// Color for the date
+        /// <remarks>Red if the date is passed</remarks>
+        /// <remarks>Green if the date is in the future</remarks>
+        /// </summary>
         public Brush ProductAvailableDateColor
         {
-            get => elementTemplate.ColorDate;
+            get => _elementTemplate.ColorDate;
             set
             {
-                elementTemplate.ColorDate = value;
+                _elementTemplate.ColorDate = value;
                 OnPropertyChange();
             }
         }
@@ -113,32 +166,41 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #region Visibility
 
+        /// <summary>
+        /// Allow to display the product form
+        /// </summary>
         public Visibility DisplayProduct
         {
-            get => displayProduct;
+            get => _displayProduct;
             set
             {
-                displayProduct = value;
+                _displayProduct = value;
                 OnPropertyChange();
             }
         }
 
+        /// <summary>
+        /// Allow to display the material form
+        /// </summary>
         public Visibility DisplayMaterial
         {
-            get => displayMaterial;
+            get => _displayMaterial;
             set
             {
-                displayMaterial = value;
+                _displayMaterial = value;
                 OnPropertyChange();
             }
         }
 
+        /// <summary>
+        /// Allow to display the button add element
+        /// </summary>
         public Visibility ButtonDisplay
         {
-            get => buttonDisplay;
+            get => _buttonDisplay;
             set
             {
-                buttonDisplay = value;
+                _buttonDisplay = value;
                 OnPropertyChange();
             }
         }
@@ -147,14 +209,31 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #region Validations
 
+        /// <summary>
+        /// Boolean saying if the label is Ok
+        /// </summary>
         public bool IsLabelOk { get; set; }
+
+        /// <summary>
+        /// Boolean saying if the price is Ok
+        /// </summary>
         public bool IsPriceOk { get; set; }
+
+        /// <summary>
+        /// Boolean saying if the quantity is Ok
+        /// </summary>
         public bool IsQuantityOk { get; set; }
 
+        /// <summary>
+        /// Boolean saying if the quantity of the material's product is Ok
+        /// </summary>
         public bool IsNeededMaterialQuantityOk { get; set; }
 
         #endregion
 
+        /// <summary>
+        /// List which contains the materials of the product 
+        /// </summary>
         public List<NeededProductTemplate> NeededMaterials { get; set; }
         public string CurrentUserName { get; set; }
         public AddElementWindow CurrentPage { get; set; }
@@ -170,6 +249,17 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="materials">List of materials</param>
         public AddElementViewModel(AddElementWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices, List<Material> materials)
         {
             CurrentPage = currentPage;
@@ -183,8 +273,8 @@ namespace DocumentationLogicielle.App.ViewModels
             MaterialsProductServices = materialsProductServices;
             SaleServices = saleServices;
 
-            elementTemplate = new ElementTemplate();
-            neededProductTemplate = new NeededProductTemplate();
+            _elementTemplate = new ElementTemplate();
+            _neededProductTemplate = new NeededProductTemplate();
 
             CurrentPage.NeededMaterialsComboBox.ItemsSource = materials.Select(x => x.Label);
 
@@ -216,6 +306,9 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
+        /// <summary>
+        /// Allow to generate the form when an element is selected (<see cref="Product"/> or <see cref="Material"/>)
+        /// </summary>
         public void GenerateForm()
         {
             if (CurrentPage.TypeElementComboBox.SelectedItem != null)
@@ -238,6 +331,10 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        /// <summary>
+        /// Allow to delete a material from a product
+        /// </summary>
+        /// <param name="parameter"></param>
         public void DeleteNeededMaterial(object parameter)
         {
             var toDelete = NeededMaterials.First(x => x.Material == parameter.ToString());
@@ -251,6 +348,10 @@ namespace DocumentationLogicielle.App.ViewModels
             }
         }
 
+        /// <summary>
+        /// Allow to add a material to a product
+        /// </summary>
+        /// <param name="parameter"></param>
         public void AddNeededMaterial(object parameter)
         {
             var materialSelected = CurrentPage.NeededMaterialsComboBox.SelectedItem.ToString();
@@ -313,6 +414,11 @@ namespace DocumentationLogicielle.App.ViewModels
             CurrentPage.NeededMaterialsList.Children.Add(card);
         }
 
+        /// <summary>
+        /// Method to create an element (<see cref="Product"/> or <see cref="Material"/>)
+        /// <remarks>if it's a product, create also the list of materials associated (<see cref="MaterialsProduct"/>)</remarks>
+        /// </summary>
+        /// <returns></returns>
         public async Task CreateElement()
         {
             try
@@ -388,11 +494,24 @@ namespace DocumentationLogicielle.App.ViewModels
             
         }
 
+        /// <summary>
+        /// Method to check if an element can be added (<see cref="Product"/> or <see cref="Material"/>)
+        /// - Label must not be empty
+        /// - Price must be > 0
+        /// - Quantity must be > 0
+        /// </summary>
+        /// <returns><b>true</b> if all element are ok, else <b>false</b></returns>
         public bool CanCreateElement()
         {
             return IsLabelOk && IsPriceOk && IsQuantityOk;
         }
 
+        /// <summary>
+        /// Method to check if a material can be added into a product (<see cref="MaterialsProduct"/>)
+        /// - Quantity of the material must be > 0
+        /// - Label must not be empty
+        /// </summary>
+        /// <returns></returns>
         public bool CanAddNeededMaterial()
         {
             return IsNeededMaterialQuantityOk && !string.IsNullOrEmpty(CurrentPage.NeededMaterialsComboBox.SelectedItem.ToString());

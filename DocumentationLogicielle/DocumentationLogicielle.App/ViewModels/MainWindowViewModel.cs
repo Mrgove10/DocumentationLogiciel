@@ -10,6 +10,9 @@ using DocumentationLogicielle.Services;
 
 namespace DocumentationLogicielle.App.ViewModels
 {
+    /// <summary>
+    /// View model of the page "MainWindow"
+    /// </summary>
     public class MainWindowViewModel : INotifyPropertyChanged
     {
         /// <summary>
@@ -154,7 +157,16 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
         public MainWindowViewModel(MainWindow currentPage, UserServices userServices, AlertServices alertServices, MaterialServices materialServices, ProductServices productServices, MaterialsProductServices materialsProductServices, SaleServices saleServices)
         {
             CurrentPage = currentPage;

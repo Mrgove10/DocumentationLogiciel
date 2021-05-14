@@ -13,7 +13,7 @@ using DocumentationLogicielle.Services;
 namespace DocumentationLogicielle.App.ViewModels
 {
     /// <summary>
-    /// TODO
+    /// View model for the page "ListingElement"
     /// </summary>
     public class ListingElementsViewModel : IViewModel<ListingElementsWindow, IAsyncCommand>
     {
@@ -31,8 +31,19 @@ namespace DocumentationLogicielle.App.ViewModels
         /// </summary>
         public string CurrentUserName { get; set; }
 
+        /// <summary>
+        /// List of products
+        /// </summary>
         public List<Product> Products { get; set; }
+
+        /// <summary>
+        /// List of materials
+        /// </summary>
         public List<Material> Materials { get; set; }
+
+        /// <summary>
+        /// List of materials of product
+        /// </summary>
         public List<MaterialsProduct> MaterialsProducts { get; set; }
 
         /// <summary>
@@ -74,7 +85,19 @@ namespace DocumentationLogicielle.App.ViewModels
 
         #endregion
 
-
+        /// <summary>
+        /// Constructor of the view model
+        /// </summary>
+        /// <param name="currentPage">Page of the view mode</param>
+        /// <param name="userServices">Services for the "User" table</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
+        /// <param name="materialServices">Services for the "Material" table</param>
+        /// <param name="productServices">Services for the "Product" table</param>
+        /// <param name="materialsProductServices">Services for the "MaterialProduct" table</param>
+        /// <param name="saleServices">Services for the "Sale" table</param>
+        /// <param name="products">List of products</param>
+        /// <param name="materials">List of materials</param>
+        /// <param name="materialsProducts">List of materials product</param>
         public ListingElementsViewModel(ListingElementsWindow currentPage, 
                                         UserServices userServices, 
                                         AlertServices alertServices, 
@@ -105,12 +128,18 @@ namespace DocumentationLogicielle.App.ViewModels
             GoBackCommand = new AsyncCommand(GoBack, () => true);
         }
 
+        /// <summary>
+        /// Method to generate the datagrid of elements
+        /// </summary>
         public void GenerateDatagrid()
         {
             CurrentPage.ListElements.ItemsSource = Convert();
         }
 
-
+        /// <summary>
+        /// Transform <see cref="Product"/> and <see cref="Material"/> into <see cref="ElementTemplate"/>
+        /// </summary>
+        /// <returns>Return a list of <see cref="ElementTemplate"/> based on products and materials</returns>
         private List<ElementTemplate> Convert()
         {
             List<ElementTemplate> elements = new List<ElementTemplate>();

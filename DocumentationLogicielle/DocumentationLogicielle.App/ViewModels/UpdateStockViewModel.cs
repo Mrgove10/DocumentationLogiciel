@@ -26,6 +26,7 @@ namespace DocumentationLogicielle.App.ViewModels
 
         public IAsyncCommand GoBackCommand { get; }
         public IAsyncCommand UpdateProductCommand { get; }
+        public IAsyncCommand DeleteElementCommand { get; }
 
         #endregion
 
@@ -126,6 +127,7 @@ namespace DocumentationLogicielle.App.ViewModels
 
             GoBackCommand = new AsyncCommand(GoBack, () => true);
             UpdateProductCommand = new AsyncCommand(UpdateElement, () => true);
+            DeleteElementCommand = new AsyncCommand(DeleteElement, () => true);
         }
 
         #region Property Changes
@@ -153,6 +155,7 @@ namespace DocumentationLogicielle.App.ViewModels
             
             CurrentPage.ProductsComboBox.ItemsSource = list;
             CurrentPage.GridForm.Visibility = Visibility.Hidden;
+            CurrentPage.ButtonToDeleteElement.Visibility = Visibility.Hidden;
         }
 
         public async Task GenerateForm()
@@ -178,10 +181,12 @@ namespace DocumentationLogicielle.App.ViewModels
                     CurrentPage.AvailableDatePickerGrid.Visibility = Visibility.Hidden;
                 }
                 CurrentPage.GridForm.Visibility = Visibility.Visible;
+                CurrentPage.ButtonToDeleteElement.Visibility = Visibility.Visible;
             }
             else
             {
                 CurrentPage.GridForm.Visibility = Visibility.Hidden;
+                CurrentPage.ButtonToDeleteElement.Visibility = Visibility.Hidden;
             }
         }
 
@@ -255,6 +260,39 @@ namespace DocumentationLogicielle.App.ViewModels
             }
             
         }
+
+        public async Task DeleteElement()
+        {
+            var itemSelected = CurrentPage.ProductsComboBox.SelectedItem.ToString();
+            var product = await ProductServices.GetByLabel(itemSelected);
+            var material = await MaterialServices.GetByLabel(itemSelected);
+
+            if (product != null)
+            {
+                ProductServices.Delete(product);
+            }
+            else if (material != null)
+            {
+                MaterialServices.Delete(material);
+            }
+
+            if (CurrentPage.StockUpdateSnackbar.MessageQueue is { } messageQueue)
+            {
+                var label = product != null ? product.Label : material.Label;
+                var message = $"{itemSelected} '{label}' has been deleted";
+                CurrentPage.StockUpdateSnackbar.Background = Brushes.Orange;
+                Task.Factory.StartNew(() => messageQueue.Enqueue(message)).Wait();
+            }
+
+            CurrentPage.ProductsComboBox.SelectedItem = null;
+            CurrentPage.GridForm.Visibility = Visibility.Hidden;
+
+            var newList = (await ProductServices.GetAll()).Select(x => x.Label).ToList();
+            newList.AddRange((await MaterialServices.GetAll()).Select(x => x.Label).ToList());
+            CurrentPage.ProductsComboBox.ItemsSource = newList;
+
+        }
+        
 
         public async Task GoBack()
         {

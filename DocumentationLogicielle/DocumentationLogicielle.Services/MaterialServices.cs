@@ -36,5 +36,10 @@ namespace DocumentationLogicielle.Services
         {
             _context.InsertAsync(material).Wait();
         }
+
+        public void Delete(Material material)
+        {
+            _context.DeleteAsync(material).Wait();
+        }
     }
 }

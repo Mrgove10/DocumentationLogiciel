@@ -103,6 +103,14 @@
                               VerticalAlignment="Center">
                     </ComboBox>
                 </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="2">
+                    <Button Background="Red"
+                            Name="ButtonToDeleteElement"
+                            Command="{Binding DeleteElementCommand}">
+                        Delete this element
+                    </Button>
+                </Grid>
             </Grid>
             
             <Grid Grid.Row="1" Name="GridForm">

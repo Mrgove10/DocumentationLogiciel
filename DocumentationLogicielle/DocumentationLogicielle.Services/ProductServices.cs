@@ -55,5 +55,10 @@ namespace DocumentationLogicielle.Services
         {
             _context.InsertAsync(product).Wait();
         }
+
+        public void Delete(Product product)
+        {
+            _context.DeleteAsync(product).Wait();
+        }
     }
 }

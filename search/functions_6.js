@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['listingelementsviewmodel_348',['ListingElementsViewModel',['../class_documentation_logicielle_1_1_app_1_1_view_models_1_1_listing_elements_view_model.html#a2b0ddee7bf3b54e4eae9983979409976',1,'DocumentationLogicielle::App::ViewModels::ListingElementsViewModel']]],
-  ['listingelementswindow_349',['ListingElementsWindow',['../class_documentation_logicielle_1_1_app_1_1_views_1_1_listing_elements_window.html#a081c9d20ba734c1b862e7222727a40a4',1,'DocumentationLogicielle::App::Views::ListingElementsWindow']]]
+  ['isuserexists_359',['IsUserExists',['../class_documentation_logicielle_1_1_services_1_1_user_services.html#aa11a553bb008898978f59a3a39430af5',1,'DocumentationLogicielle::Services::UserServices']]]
 ];

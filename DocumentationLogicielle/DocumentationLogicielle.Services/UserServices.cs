@@ -23,8 +23,7 @@ namespace DocumentationLogicielle.Services
         /// <returns>Boolean : <b>True</b>, the user exists or <b>False</b>, the user does not exist</returns>
         public async Task<bool> IsUserExists(string login, string password)
         {
-            
-            return await _context.Table<User>().CountAsync(x => x.Login == login && x.Password == password) > 0;
+            return await _context.Table<User>().CountAsync(x => x.Login == login) > 0;
         }
 
         /// <summary>
@@ -33,10 +32,19 @@ namespace DocumentationLogicielle.Services
         /// </summary>
         /// <param name="login">Login of the user</param>
         /// <param name="password">Password of the user</param>
-        /// <returns>If the user exists : <b>all his information</b> OR If the user does not exist : <b>Null</b></returns>
+        /// <returns>If the user exists <b>and the password is correct</b> : <b>all his information</b> OR If the user does not exist : <b>Null</b></returns>
         public async Task<User> GetUser(string login, string password)
         {
-            return await _context.Table<User>().FirstOrDefaultAsync(x => x.Login == login && x.Password == password);
+            var tempUser = await _context.Table<User>().FirstOrDefaultAsync(x => x.Login == login);
+            // check that the password is correct 
+            if (BCrypt.Net.BCrypt.Verify(password,tempUser.Password))
+            {
+                return tempUser;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -47,7 +55,12 @@ namespace DocumentationLogicielle.Services
         /// <param name="role">Role of the user</param>
         public void CreateUser(string login, string password, string role)
         {
-            _context.InsertAsync(new User {Login = login, Password = password, Role = role}).Wait();
+            _context.InsertAsync(new User
+            {
+                Login = login,
+                Password = BCrypt.Net.BCrypt.HashPassword(password),
+                Role = role
+            }).Wait();
         }
     }
 }

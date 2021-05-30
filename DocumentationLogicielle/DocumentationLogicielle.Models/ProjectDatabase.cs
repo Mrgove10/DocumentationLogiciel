@@ -14,7 +14,8 @@ namespace DocumentationLogicielle.Models
 
         public ProjectDatabase()
         {
-            database = new SQLiteAsyncConnection(@"E:\Cours\I1\Documentation Logicielle\Projet groupe\DocumentationLogicielle.db3");
+            database = new SQLiteAsyncConnection(@"DocumentationLogicielle.db3");
+            //database = new SQLiteAsyncConnection(@"E:\Cours\I1\Documentation Logicielle\Projet groupe\DocumentationLogicielle.db3");
             database.CreateTableAsync<User>().Wait();
             database.CreateTableAsync<Alert>().Wait();
             database.CreateTableAsync<Product>().Wait();
@@ -22,9 +23,8 @@ namespace DocumentationLogicielle.Models
             database.CreateTableAsync<MaterialsProduct>().Wait();
             database.CreateTableAsync<Sale>().Wait();
 
-            //database.InsertAsync(new User { Login = "user", Password = "user", Role = ERole.User.ToString() });
-            //database.InsertAsync(new User { Login = "admin", Password = "admin", Role = ERole.Administrator.ToString() });
-            //database.InsertAsync(new User { Login = "lou", Password = "lou", Role = ERole.Administrator.ToString() });
+            //database.InsertAsync(new User { Login = "user", Password = BCrypt.Net.BCrypt.HashPassword("user"), Role = ERole.User.ToString() });
+            //database.InsertAsync(new User { Login = "admin", Password = BCrypt.Net.BCrypt.HashPassword("admin"), Role = ERole.Administrator.ToString() });
             //database.InsertAllAsync(new List<Material>
             //{
             //    new() {Label = "Wood", Price = 1.5f, Quantity = 15},

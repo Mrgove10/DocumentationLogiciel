@@ -12,17 +12,14 @@ namespace DocumentationLogicielle.Services
     /// </summary>
     public class SaleServices
     {
-        /// <summary>
-        /// Context of the saleservice
-        /// </summary>
         private readonly SQLiteAsyncConnection _context;
         private readonly ProductServices _productServices;
 
         /// <summary>
         /// Sale service constructor
         /// </summary>
-        /// <param name="context"></param>
-        /// <param name="productServices"></param>
+        /// <param name="context">Context of the database</param>
+        /// <param name="productServices">Services of the "Product" table</param>
         public SaleServices(ProjectDatabase context, ProductServices productServices)
         {
             _context = context.database;

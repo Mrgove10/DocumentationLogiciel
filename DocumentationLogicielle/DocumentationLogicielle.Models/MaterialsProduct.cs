@@ -3,25 +3,30 @@
 namespace DocumentationLogicielle.Models
 {
     /// <summary>
-    /// Material classe for a material and product
+    /// Class for the "MaterialProduct" table
     /// </summary>
     public class MaterialsProduct
     {
+        /// <summary>
+        /// Id of the user
+        /// This is the primary key of the table
+        /// It's auto increment : 0,1,2,3 ...etc
+        /// </summary>
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
         /// <summary>
-        /// id of the material
+        /// Id of the material
         /// </summary>
         public int IdMaterial { get; set; }
 
         /// <summary>
-        /// Idof the product
+        /// Id of the product
         /// </summary>
         public int IdProduct { get; set; }
 
         /// <summary>
-        /// Quantity nedded for this material
+        /// Quantity needed for this material
         /// </summary>
         public int QuantityNeeded { get; set; }
     }

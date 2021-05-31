@@ -2,6 +2,9 @@
 
 namespace DocumentationLogicielle.Models
 {
+    /// <summary>
+    /// Class for the "Alert" table
+    /// </summary>
     public class Alert
     {
         /// <summary>

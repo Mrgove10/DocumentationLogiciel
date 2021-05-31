@@ -2,6 +2,9 @@
 
 namespace DocumentationLogicielle.Models
 {
+    /// <summary>
+    /// Class for the "User" table
+    /// </summary>
     public class User
     {
         /// <summary>

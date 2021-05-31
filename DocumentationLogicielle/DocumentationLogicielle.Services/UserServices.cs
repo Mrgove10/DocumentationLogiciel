@@ -4,10 +4,17 @@ using SQLite;
 
 namespace DocumentationLogicielle.Services
 {
+    /// <summary>
+    /// Services for the "User" table
+    /// </summary>
     public class UserServices
     {
         private readonly SQLiteAsyncConnection _context;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context">Context of the database</param>
         public UserServices(ProjectDatabase context)
         {
             _context = context.database;

@@ -13,6 +13,11 @@ namespace DocumentationLogicielle.Services
         private readonly SQLiteAsyncConnection _context;
         private readonly AlertServices _alertServices;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context">Context of the database</param>
+        /// <param name="alertServices">Services for the "Alert" table</param>
         public MaterialServices(ProjectDatabase context, AlertServices alertServices)
         {
             _context = context.database;

@@ -5,10 +5,17 @@ using SQLite;
 
 namespace DocumentationLogicielle.Services
 {
+    /// <summary>
+    /// Services for the "Alert" table
+    /// </summary>
     public class AlertServices
     {
         private readonly SQLiteAsyncConnection _context;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="context">Context of the database</param>
         public AlertServices(ProjectDatabase context)
         {
             _context = context.database;

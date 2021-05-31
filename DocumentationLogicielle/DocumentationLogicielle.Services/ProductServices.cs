@@ -7,16 +7,16 @@ using SQLite;
 namespace DocumentationLogicielle.Services
 {
     /// <summary>
-    /// Product service
+    /// Services for the "Product" table
     /// </summary>
     public class ProductServices
     {
         private readonly SQLiteAsyncConnection _context;
-
+        
         /// <summary>
-        /// Service of the product (database)
+        /// Constructor
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="context">Context of the database</param>
         public ProductServices(ProjectDatabase context)
         {
             _context = context.database;

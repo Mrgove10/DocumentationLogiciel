@@ -6,23 +6,23 @@ using SQLite;
 namespace DocumentationLogicielle.Services
 {
     /// <summary>
-    /// Service for the material au product
+    /// Services for the "MaterialsProduct" table
     /// </summary>
     public class MaterialsProductServices
     {
         private readonly SQLiteAsyncConnection _context;
 
         /// <summary>
-        /// Database context for the MaterialsProduct
+        /// Constructor
         /// </summary>
-        /// <param name="context"></param>
+        /// <param name="context">Database context</param>
         public MaterialsProductServices(ProjectDatabase context)
         {
             _context = context.database;
         }
         
         /// <summary>
-        /// Get all the MaterialsProduct s as a list
+        /// Get all the MaterialsProduct as a list
         /// </summary>
         /// <returns>List of MaterialsProduct</returns>
         public async Task<List<MaterialsProduct>> GetAll()

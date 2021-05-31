@@ -4,12 +4,14 @@ using SQLite;
 namespace DocumentationLogicielle.Models
 {
     /// <summary>
-    /// Class for a product
+    /// Class for the "Product" table
     /// </summary>
     public class Product
     {
         /// <summary>
         /// Id of the product
+        /// This is the primary key of the table
+        /// It's auto increment : 0,1,2,3 ...etc
         /// </summary>
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
